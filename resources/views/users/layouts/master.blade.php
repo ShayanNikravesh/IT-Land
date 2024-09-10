@@ -50,11 +50,11 @@
 
                         <!--            Humber Btn:end-->
                     </div>
-                    <!--        Top Mobile Navbar Right:end-->
+                    <!--Top Mobile Navbar Right:end-->
 
-                    <!--        Top Mobile Navbar Middle:start-->
+                    <!--Top Mobile Navbar Middle:start-->
                     <div class="top-mobile-navbar-middle d-flex justify-content-between align-items-center">
-                        <!--            Logo:start-->
+                        <!--Logo:start-->
                         <a href="javascript:void(0)" class="navbar-brand">
                             <img src="{{asset('user-assets/img/logo.png')}}" alt="لوگوی برگ شاپ" class="blur-up">
                         </a>
@@ -427,7 +427,7 @@
             <div class="top-nav-right d-flex justify-content-between align-items-center">
                 <!--            Logo:start-->
                 <a href="index.html" class="navbar-brand" title="">
-                    <img src="{{asset('user-assets/img/logo-md.png')}}" alt="لوگوی برگ شاپ">
+                    <img src="{{asset('user-assets/img/it land.jpg')}}" style="width: 4rem" alt="لوگوی برگ شاپ">
                 </a>
                 <!--            Logo:end-->
 

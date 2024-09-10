@@ -123,4 +123,29 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    // 'providers' => [
+    //     /*
+    //      * Laravel Framework Service Providers...
+    //      */
+    //     // Illuminate\Auth\AuthServiceProvider::class,
+    //     // Illuminate\Broadcasting\BroadcastServiceProvider::class,
+    //     // Illuminate\Bus\BusServiceProvider::class,
+    //     // Illuminate\Cache\CacheServiceProvider::class,
+    //     // Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+    //     // Illuminate\Routing\RoutingServiceProvider::class,
+    //     // Illuminate\View\ViewServiceProvider::class,
+        
+    //     // اضافه کردن RouteServiceProvider خودتان
+    //     App\Providers\RouteServiceProvider::class,
+    
+    //     /*
+    //      * Package Service Providers...
+    //      */
+    
+    //     /*
+    //      * Application Service Providers...
+    //      */
+    // ],
+    
+
 ];
