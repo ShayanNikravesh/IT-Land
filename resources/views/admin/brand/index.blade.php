@@ -8,11 +8,11 @@
 				<!--begin::Info-->
 				<div class="d-flex align-items-center flex-wrap mr-2">
 					<!--begin::Page Title-->
-					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست دسته ها</h5>
+					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست برند ها</h5>
 					<!--end::Page Title-->
 					<!--begin::Actions-->
 					<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-					<span class="font-weight-bold mr-4">در این صفحه لیست دسته ها را مشاهده میکنید.</span>
+					<span class="font-weight-bold mr-4">در این صفحه لیست برند ها را مشاهده میکنید.</span>
 					<!--end::Actions-->
 				</div>
 				<!--end::Info-->
@@ -37,7 +37,7 @@
 							<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
 						</svg>
 					</span>
-					<h3 class="card-label font-weight">لیست دسته ها</h3>
+					<h3 class="card-label font-weight">لیست برند ها</h3>
 				</div>
 			</div>
 			<div class="card-body">
@@ -48,35 +48,19 @@
 							<th>#</th>
 							<th>عنوان</th>
                             <th>عنوان انگلیسی</th>
-							<th>دسته والد</th>
 							<th>عملیات</th>
 						</tr>
 					</thead>
 					<tbody>
-						@if ($categories)
-							@foreach ($categories as $category)
+						@if ($brands)
+							@foreach ($brands as $brand)
 								<tr>
 									<td>{{++$loop->index}}</td>
-									<td>{{$category->title}}</td>
-                                    <td>{{$category->english_title}}</td>
-									@php
-										$found = false;
-									@endphp
-									@foreach ($parentcategories as $parentcategory)
-										@if ($parentcategory->id == $category->parent_id)
-											<td>{{$parentcategory->title}}</td>
-											@php
-												$found = true;
-											@endphp
-											@break
-										@endif
-									@endforeach
-									@if (!$found)
-										<td>-------</td>
-									@endif
+									<td>{{$brand->title}}</td>
+                                    <td>{{$brand->english_title}}</td>
 									<td>
 										<div class="d-flex">
-											<a href="{{route('category.edit',$category->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="bottom" title="ویرایش دسته">
+											<a href="{{route('brand.edit',$brand->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="bottom" title="ویرایش برند">
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
 													<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
 												</svg>
