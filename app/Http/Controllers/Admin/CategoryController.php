@@ -14,7 +14,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        
+        $categories = Category::all();
+        $parentcategories = Category::whereNull('parent_id')->get();
+        $title = 'حذف دسته!';
+        $text = "آیا از حذف این دسته اطمینان دارید؟";
+        confirmDelete($title, $text);
+        return view('admin.category.index',compact('categories','parentcategories'));
     }
 
     /**
@@ -64,7 +69,9 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $parentcategories = Category::whereNull('parent_id')->get();
+        return view('admin.category.edit',compact('category','parentcategories'));
     }
 
     /**
@@ -72,7 +79,23 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $Category = Category::findOrFail($id);
+
+        $request -> validate([
+            'title' => ['required'],
+            'english_title' => ['required'],
+        ]);
+
+        $Category->title = $request->title;
+        $Category->english_title = $request->english_title;
+        $Category->parent_id = $request->parent_id;
+        $Category->save();
+
+        Alert::success('عملیات موفق', 'دسته ویرایش شد.');
+
+        return redirect()->route('category.index');
+
     }
 
     /**
@@ -80,6 +103,6 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd('hi');
     }
 }
