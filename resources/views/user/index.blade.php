@@ -1,4 +1,4 @@
-@extends('users.layouts.master')
+@extends('user.layouts.master')
 
 @section('content')
 
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <!--        Show Story Details:start-->
+        <!--Show Story Details:start-->
         <div class="modal fade" id="storyBanners" tabindex="-1" data-bs-backdrop="static"
              data-bs-keyboard="false">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -101,12 +101,12 @@
                 </div>
             </div>
         </div>
-        <!--        Show Story Details:end-->
+        <!--Show Story Details:end-->
     </div>
 </div>
 <!--Story Section:end-->
 
-<!--Header::start-->
+<!--Carousel::start-->
 <header class="header">
     <!-- Slider:start -->
     <div class="swiper headerSlider">
@@ -119,11 +119,10 @@
         <div class="swiper-button-next bg-light border-radius-circle"></div>
         <div class="swiper-button-prev bg-light border-radius-circle"></div>
         <div class="swiper-pagination"></div>
-
     </div>
     <!-- Slider:end -->
 </header>
-<!--Header::end-->
+<!--Carousel::end-->
 
 <!--Main:start-->
 <main class="container mt-5">
