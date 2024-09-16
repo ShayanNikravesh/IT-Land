@@ -15,10 +15,11 @@ License: You must have a valid license purchased only from themeforest(the above
 <html lang="fa" direction="rtl" dir="rtl" style="direction: rtl" >
 	<!--begin::Head-->
 	<head><base href="">
-		<meta charset="utf-8" />
+		<meta charset="utf-8"/>
 		<title>IT Land</title>
 		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="csrf-token" content="{{csrf_token()}}">
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -44,6 +45,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 		<!--begin::Main-->
 			@include('sweetalert::alert')
+			@routes
 		<!--begin::Header Mobile-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
@@ -432,6 +434,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Vendors(used by this page)-->
 		<script src="{{asset('admin-assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
 		<!--end::Page Vendors-->
+		<script src="{{asset('admin-assets/js/pages/crud/file-upload/file-upload.js')}}"></script>
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="{{asset('admin-assets/js/pages/widgets.js')}}"></script>
 		<!--end::Page Scripts-->

@@ -182,3 +182,4 @@ var KTDropzoneDemo = function () {
 KTUtil.ready(function() {
     KTDropzoneDemo.init();
 });
+

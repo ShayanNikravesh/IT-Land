@@ -421,17 +421,17 @@
 
     <!--Top Navbar::start-->
     <div class="top-navbar navbar-expand-lg navbar-light py-2">
-        <!--        Container:start-->
+        <!--Container:start-->
         <div class="container d-flex justify-content-between align-items-center">
-            <!--        Top Navbar Right:start-->
+            <!--Top Navbar Right:start-->
             <div class="top-nav-right d-flex justify-content-between align-items-center">
                 <!--            Logo:start-->
                 <a href="index.html" class="navbar-brand" title="">
                     <img src="{{asset('user-assets/img/it land.jpg')}}" style="width: 4rem" alt="لوگوی برگ شاپ">
                 </a>
-                <!--            Logo:end-->
+                <!--Logo:end-->
 
-                <!--            Search Form:start-->
+                <!--Search Form:start-->
                 <div class="main-search position-relative">
                     <form action="search.html" class="position-relative">
                         <input class="form-control border-0 border-radius-xl bg-gray-150 fs-7"
@@ -443,20 +443,20 @@
                     <div class="search-results custom-box-shadow-s-2">
                         <span class="py-2 px-3 d-block fs-7">نتایج جست و جو :</span>
 
-                        <!--                        Search Item:start-->
+                        <!--Search Item:start-->
                         <div class="search-result-item position-relative border-bottom p-3">
                             <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
                             <div class="d-inline-block ms-2">
                                 <span class="d-inline-block fw-bold ms-1">سلفون </span>
                                 <span class="d-block">در دسته <strong>زیبایی و سلامت</strong></span>
                             </div>
-                            <!--                            Search Link:start-->
+                            <!--Search Link:start-->
                             <a href="search.html" class="stretched-link"></a>
-                            <!--                            Search Link:end-->
+                            <!--Search Link:end-->
                         </div>
-                        <!--                        Search Item:end-->
+                        <!--Search Item:end-->
 
-                        <!--                        Search Item:start-->
+                        <!--Search Item:start-->
                         <div class="search-result-item position-relative border-bottom p-3">
                             <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
                             <div class="d-inline-block ms-2">
@@ -2054,7 +2054,7 @@
             <div class="footer-top-detial d-flex justify-content-between align-items-center">
                 <div class="">
                     <a href="" title=""><img src="{{asset('user-assets/img/logo-md.png')}}" alt=""></a>
-                    <p class="mt-2 fs-7">تلفن پشتیبانی : 05144445697</p>
+                    <p class="mt-2 fs-7">تلفن پشتیبانی : 0000000</p>
                 </div>
                 <a href="#top" class="back-to-top border-radius-xl px-3 py-2 gray-600 fs-7">
                     برگشت به بالا
@@ -2069,13 +2069,6 @@
                 <div class="top-right-item text-center">
                     <img src="{{asset('user-assets/img/express-delivery.svg')}}" alt="" title="">
                     <p class="mt-2 fs-8">امکان تحویل اکسپرس</p>
-                </div>
-                <!--                Top Right Item:end-->
-
-                <!--                Top Right Item:start-->
-                <div class="top-right-item text-center">
-                    <img src="{{asset('user-assets/img/cash-on-delivery.svg')}}" alt="" title="">
-                    <p class="mt-2 fs-8">امکان پرداخت در محل</p>
                 </div>
                 <!--                Top Right Item:end-->
 
@@ -2105,7 +2098,7 @@
         <div class="footer-main my-5">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
-                    <p class="fw-bold fs-6">راهنمای خرید از برگشاپ</p>
+                    <p class="fw-bold fs-6">راهنمای خرید از آیتی لند</p>
                     <ul>
                         <li class="my-2"><a href="">نحوه ثبت سفارش</a></li>
                         <li class="my-2"><a href="">رویه ارسال سفارش</a></li>
@@ -2123,12 +2116,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
-                    <p class="fw-bold fs-6">راهنمای خرید از برگشاپ</p>
-                    <ul>
-                        <li class="my-2"><a href="">نحوه ثبت سفارش</a></li>
-                        <li class="my-2"><a href="">رویه ارسال سفارش</a></li>
-                        <li class="my-2"><a href="">شیوه های پرداخت</a></li>
-                    </ul>
+                    
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
                     <p class="fw-bold fs-6">همراه ما باشید!</p>
@@ -2154,14 +2142,6 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="fw-bold fs-6 mt-4">با ثبت ایمیل، از جدیدترین اخبار با خبر شوید</p>
-                    <div class="subscribe-in-newsletter mt-3">
-                        <form action="" class=" d-flex align-items-center justify-content-around">
-                            <input type="text" placeholder="ایمیل شما" class="form-control px-3 py-2 border-radius-xl">
-                            <button type="submit" class="btn text-white fw-bold ms-2 px-3 py-2 border-radius-xl">ثبت
-                            </button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
@@ -2170,11 +2150,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mb-3">
-                    <h1 class="fw-bold fs-5">فروشگاه اینترنتی برگشاپ، بررسی، انتخاب و خرید آنلاین.</h1>
+                    <h1 class="fw-bold fs-5">فروشگاه آیتی لند ، بررسی ، انتخاب و خرید آنلاین.</h1>
                     <p class="gray-600 mt-3 fs-7">
                         خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب
                         را در مدت زمانی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد؛ ویژگی‌هایی که
-                        فروشگاه اینترنتی دیجی‌کالا سال‌هاست بر روی آن‌ها کار کرده و توانسته از این طریق مشتریان ثابت خود
+                        فروشگاه آیتی لند سال‌هاست بر روی آن‌ها کار کرده و توانسته از این طریق مشتریان ثابت خود
                         را داشته باشد.
                     </p>
                 </div>
@@ -2188,8 +2168,7 @@
     <div class="footer-copyright text-center py-4">
         <div class="container">
             <p class="fs-8 gray-600">
-                برای استفاده از مطالب برگشاپ، داشتن «هدف غیرتجاری» و ذکر «منبع» کافیست. تمام حقوق اين وب‌سايت نیز برای
-                شرکت برگزیت است.
+                طراحی شده توسط شایان نیک روش
             </p>
         </div>
     </div>
@@ -2198,7 +2177,7 @@
 
 <!--Chat Widget:start-->
 <div class="chat-widget border-radius-2xl custom-box-shadow-s-1">
-    <!--    Chat Widget Icon:start-->
+    <!--Chat Widget Icon:start-->
     <a href="javascript:void(0)" class="openChatBoxBtn">
         <!--begin::Svg Icon-->
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -2210,22 +2189,22 @@
             </g>
         </svg><!--end::Svg Icon-->
     </a>
-    <!--    Chat Widget Icon:end-->
+    <!--Chat Widget Icon:end-->
 
-    <!--    Chat Widget Box:start-->
+    <!--Chat Widget Box:start-->
     <div class="chat-widget-box custom-box-shadow-s-3 border-radius-3xl">
-        <!--    Chat Widget Card:start-->
+        <!--Chat Widget Card:start-->
         <div class="card text-center border-0 bg-white">
-            <!--    Chat Widget Card Header:start-->
+            <!--Chat Widget Card Header:start-->
             <div class="card-header text-start p-3 border-0 fs-7">
                 سوالی دارید؟ به سرعت پاسخ بگیرید!
                 <a href="javascript:void(0)" class="text-white closeChatWidgetBoxBtn">
                     <i class="fa fa-times float-end border-radius-circle"></i>
                 </a>
             </div>
-            <!--    Chat Widget Card Header:end-->
+            <!--Chat Widget Card Header:end-->
 
-            <!--    Chat Widget Card Body:start-->
+            <!--Chat Widget Card Body:start-->
             <div class="card-body py-4 bg-white ChatBodyWrapper">
                 <!--    Chat Widget Card Body Item:start-->
                 <div class="chat-widget-msg mb-3 float-end chat-info border-radius-xl">
@@ -2276,9 +2255,9 @@
                 <div class="clearfix"></div>
                 <!--    Chat Widget Card Body Item:end-->
             </div>
-            <!--    Chat Widget Card Body:end-->
+            <!--Chat Widget Card Body:end-->
 
-            <!--    Chat Widget Card Footer:start-->
+            <!--Chat Widget Card Footer:start-->
             <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                 <span class="svg-icon svg-icon-primary svg-icon-2x sendChatToCardBodyBtn">
                     <!--begin::Svg Icon-->
@@ -2310,9 +2289,9 @@
                     <!--end::Svg Icon-->
                 </span>
             </div>
-            <!--    Chat Widget Card Footer:end-->
+            <!--Chat Widget Card Footer:end-->
 
-            <!--                Send File To Chat Box:start-->
+            <!--Send File To Chat Box:start-->
             <div class="send-file-to-chat-box d-none">
                 <div class="send-file-to-chat-box-select-file">
                     <button class="d-block btn text-white" id="closeSendFileBoxBtn"><i
@@ -2326,11 +2305,11 @@
                     <button class="btn btn-primary d-block mt-3 w-100 d-none" id="sendFileBtn">ارسال فایل</button>
                 </div>
             </div>
-            <!--                Send File To Chat Box:end-->
+            <!--Send File To Chat Box:end-->
         </div>
-        <!--    Chat Widget Card:end-->
+        <!--Chat Widget Card:end-->
     </div>
-    <!--    Chat Widget Box:end-->
+    <!--Chat Widget Box:end-->
 </div>
 <!--Chat Widget:end-->
 

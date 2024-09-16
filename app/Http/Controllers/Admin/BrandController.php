@@ -24,7 +24,6 @@ class BrandController extends Controller
      */
     public function create()
     {
-
         return view('admin.brand.create');
     }
 
@@ -95,6 +94,6 @@ class BrandController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd('hi');
     }
 }
