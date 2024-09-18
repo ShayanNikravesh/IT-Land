@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->bigInteger('ram_id');
-            $table->foreign('ram_id')->references('id')->on('ram');
+        Schema::create('memories', function (Blueprint $table) {
+            $table->id();
+            $table->char('name');
+            $table->integer('size');
+            $table->timestamps();
         });
     }
 
@@ -22,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('memories');
     }
 };

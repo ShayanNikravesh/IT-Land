@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\MemoryController;
 use App\Http\Controllers\Admin\PhotoController;
 
 Route::get('index', function () {
@@ -25,3 +26,6 @@ Route::resource('photo',PhotoController::class);
 
 //color
 Route::resource('color',ColorController::class);
+
+//memory
+Route::resource('memory',MemoryController::class);
