@@ -94,7 +94,7 @@ class CategoryController extends Controller
 
         Alert::success('عملیات موفق', 'دسته ویرایش شد.');
 
-        return redirect()->route('category.index');
+        return redirect()->back();
 
     }
 

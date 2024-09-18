@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BannerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\PhotoController;
 
 Route::get('index', function () {
@@ -21,3 +22,6 @@ Route::resource('banner',BannerController::class);
 
 //photo
 Route::resource('photo',PhotoController::class);
+
+//color
+Route::resource('color',ColorController::class);
