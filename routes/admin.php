@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\MemoryController;
 use App\Http\Controllers\Admin\PhotoController;
+use App\Http\Controllers\Admin\RamController;
 
 Route::get('index', function () {
     return view('admin/index');
@@ -29,3 +30,6 @@ Route::resource('color',ColorController::class);
 
 //memory
 Route::resource('memory',MemoryController::class);
+
+//ram
+Route::resource('ram',RamController::class);

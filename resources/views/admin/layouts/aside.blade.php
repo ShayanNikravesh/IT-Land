@@ -278,11 +278,19 @@
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="custom/pages/login/login-1.html" class="menu-link">
+                                            <a href="{{route('ram.create')}}" class="menu-link">
                                                 <i class="menu-bullet menu-bullet-dot">
                                                     <span></span>
                                                 </i>
-                                                <span class="menu-text">Login 1</span>
+                                                <span class="menu-text">ایجاد رم</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item" aria-haspopup="true">
+                                            <a href="{{route('ram.index')}}" class="menu-link">
+                                                <i class="menu-bullet menu-bullet-dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="menu-text">لیست رم ها</span>
                                             </a>
                                         </li>
                                     </ul>
