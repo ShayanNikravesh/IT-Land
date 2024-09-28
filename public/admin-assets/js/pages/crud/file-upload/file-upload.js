@@ -72,3 +72,40 @@ $('div#upload_product_photo').dropzone({
         }
     },
 });
+
+$('div#upload_article_photo').dropzone({
+    url: route('store_article_photo'),
+    paramName: "article_photo",
+    maxFiles: 1,
+    maxFilesize: 1, // MB
+    addRemoveLinks: true,
+    acceptedFiles: "image/*",
+    params: {
+        article_id: $('#input_article_id').val(),
+            _token: $('meta[name="csrf-token"]').attr('content') // اضافه کردن CSRF token
+        },        
+    accept: function(file, done) {
+        done();
+    },
+    error: function (file, res) {
+        let response;
+        try {
+            response = JSON.parse(res);
+        } catch (e) {
+            response = res;
+        }
+        if (file.previewElement) {
+            file.previewElement.classList.add("dz-error");
+            if (typeof response !== "string" && response.error) {
+                response = message.error;
+            } else if (typeof response !== "string" && response.message) {
+                response = response.message;
+            }
+            for (let node of file.previewElement.querySelectorAll(
+                "[data-dz-errormessage]"
+            )) {
+                node.textContent = response;
+            }
+        }
+    },
+});

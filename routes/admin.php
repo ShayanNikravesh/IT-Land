@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\BannerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
@@ -38,3 +39,7 @@ Route::resource('ram',RamController::class);
 //product
 Route::resource('product',ProductController::class);
 Route::post('changeStatus/{id}/{status}',[ProductController::class,'changeStatus'])->name('changeStatus');
+
+//article
+Route::resource('article',ArticleController::class);
+Route::post('storePhoto',[ArticleController::class,'storePhoto'])->name('store_article_photo');

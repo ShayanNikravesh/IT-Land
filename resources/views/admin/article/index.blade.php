@@ -1,0 +1,109 @@
+@extends('admin.layouts.master')
+
+@section('content')
+	<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+		<!--begin::Subheader-->
+		<div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
+			<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+				<!--begin::Info-->
+				<div class="d-flex align-items-center flex-wrap mr-2">
+					<!--begin::Page Title-->
+					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست مقالات</h5>
+					<!--end::Page Title-->
+					<!--begin::Actions-->
+					<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
+					<span class="font-weight-bold mr-4">در این صفحه لیست مقالات را مشاهده میکنید.</span>
+					<!--end::Actions-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Toolbar-->
+				<div class="d-flex align-items-center">
+					<!--begin::Daterange-->
+						<span class="text-muted font-size-base font-weight-bold mr-2">تاریخ:</span>
+						<span class="text-primary font-size-base font-weight-bolder"><?php echo verta()->format('Y/m/d');?></span>
+					<!--end::Daterange-->
+				</div>
+				<!--end::Toolbar-->
+			</div>
+		</div>
+		<!--end::Subheader-->
+		<!--begin::Entry-->
+		<!--begin::Container-->
+		<div class="card card-custom">
+			<div class="card-header">
+				<div class="card-title">
+					<span class="card-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+						</svg>
+					</span>
+					<h3 class="card-label font-weight">لیست مقالات</h3>
+				</div>
+			</div>
+			<div class="card-body">
+				<!--begin: Datatable-->
+				<table class="table table-bordered table-hover table-checkable" id="datatable" style="margin-top: 13px !important">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>نام نویسنده</th>
+							<th>نام خانوادگی</th>
+							<th>عنوان</th>
+                            <th>عنوان انگلیسی</th>
+							<th>وضعیت</th>
+							<th>عملیات</th>
+						</tr>
+					</thead>
+					<tbody>
+						@if ($articles)
+							@foreach ($articles as $article)
+								<tr>
+									<td>{{++$loop->index}}</td>
+									<td>{{$article->first_name}}</td>
+									<td>{{$article->last_name}}</td>
+									<td>{{$article->title}}</td>
+                                    <td>{{$article->english_title}}</td>
+									@switch($article->status)
+											@case('active')
+												<td>فعال</td>
+												@break
+											@case('inactive')
+												<td>غیر فعال</td>
+												@break	
+											@default
+											<td>نا مشخص</td>
+									@endswitch
+									<td>
+										<div class="d-flex">
+											<a href="{{route('article.edit',$article->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="top" title="ویرایش مقاله">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+													<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+												</svg>
+											</a>
+											<a href="{{route('article.show',$article->id)}}" class="btn-sm btn-dark btn mx-1" data-toggle="tooltip" data-placement="top" title="تصویر مقاله">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+													<path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+													<path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z"/>
+												</svg>
+											</a>
+											<a href="{{route('article.destroy',$article->id)}}" method="POST" data-toggle="tooltip" data-placement="top" title="حذف مقاله" data-confirm-delete="true">
+												<button class="btn-sm btn-danger btn mx-1">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+													<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+													</svg>
+												</button>
+											</a>
+										</div>
+									</td>
+								</tr>
+							@endforeach
+						@endif
+					</tbody>
+				</table>
+				<!--end: Datatable-->
+			</div>
+		</div>
+		<!--end::Container-->
+	</div>
+    <!--end::Entry-->
+@endsection

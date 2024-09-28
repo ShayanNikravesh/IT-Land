@@ -17,4 +17,8 @@ class Photo extends Model
         return $this->belongsToMany(Product::class,'product_photo','photo_id','product_id')->withPivot('sort')->withTimestamps();
     }
 
+    public function article(){
+        return $this->belongsToMany(Article::class,'article_photo','photo_id','article_id')->withTimestamps();
+    }
+
 }

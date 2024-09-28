@@ -95,6 +95,7 @@ class ProductController extends Controller
             }
 
         }else{
+            
             Alert::alert('عملیات ناموفق', 'Message', 'error');
 
             $product = $request->validate([

@@ -103,6 +103,7 @@
                             <div class="col-lg-6">
                                 <label class="text-right">وضعیت:</label>
                                 <select name="status" class="form-control text-right selectpicker">
+                                    <option value="">انتخاب کنید</option>
                                     <option value="active">فعال</option>
                                     <option value="inactive">غیرفعال</option>
                                 </select>
@@ -225,11 +226,6 @@
             colorVariantsSection.insertBefore(newContainer, addButton.parentNode.parentNode);
         });
     });
-
-
-</script>
-
-
 
 </script>
 @endsection

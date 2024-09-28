@@ -1,0 +1,90 @@
+@extends('admin.layouts.master')
+
+@section('content')
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Subheader-->
+	<div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
+		<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+			<!--begin::Info-->
+			<div class="d-flex align-items-center flex-wrap mr-2">
+				<!--begin::Page Title-->
+				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">ایجاد مقاله</h5>
+				<!--end::Page Title-->
+				<!--begin::Actions-->
+				<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
+				<span class="font-weight-bold mr-4">در این صفحه می توانید مقاله درج کنید.</span>
+				<!--end::Actions-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Toolbar-->
+			<div class="d-flex align-items-center">
+				<!--begin::Daterange-->
+					<span class="text-muted font-size-base font-weight-bold mr-2">تاریخ:</span>
+					<span class="text-primary font-size-base font-weight-bolder"><?php echo verta()->format('Y/m/d');?></span>
+				<!--end::Daterange-->
+			</div>
+			<!--end::Toolbar-->
+		</div>
+	</div>
+    <!--end::Subheader-->
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class="container">
+            <div class="card card-custom gutter-b">
+                <div class="card-header">
+                    <h3 class="card-title">افزودن مقاله</h3>
+                </div>
+                <!--begin::Form-->
+                <form class="form" method="post" action="{{route('article.store')}}" id="kt_form">
+                    @csrf
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label>نام :</label>
+                                <input type="text" name="first_name" class="form-control" placeholder="نام نویسنده را وارد کنید...">
+                            </div>
+                            <div class="col-lg-6">
+                                <label>نام خانوادگی :</label>
+                                <input type="text" name="last_name" class="form-control" placeholder="نام خانوادگی را وارد کنید...">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label>عنوان :</label>
+                                <input type="text" name="title" class="form-control" placeholder="عنوان را وارد کنید...">
+                            </div>
+                            <div class="col-lg-6">
+                                <label>عنوان انگلیسی :</label>
+                                <input type="text" name="english_title" class="form-control" placeholder="عنوان انگلیسی را وارد کنید...">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <label class="text-right"> متن مقاله :</label>
+                                <textarea class="summernote" name="article" style="display: none;"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-3">
+                                <label class="text-right">وضعیت:</label>
+                                <select name="status" class="form-control text-right selectpicker">
+                                    <option value="">انتخاب کنید</option>
+                                    <option value="active">فعال</option>
+                                    <option value="inactive">غیرفعال</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-success mr-2">ثبت</button>
+                    </div>
+                </form>
+                <!--end::Form-->
+            </div>
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Entry-->
+</div>
+@endsection
