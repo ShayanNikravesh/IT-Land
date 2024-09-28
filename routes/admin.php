@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\MemoryController;
 use App\Http\Controllers\Admin\PhotoController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RamController;
 
 Route::get('index', function () {
@@ -33,3 +34,7 @@ Route::resource('memory',MemoryController::class);
 
 //ram
 Route::resource('ram',RamController::class);
+
+//product
+Route::resource('product',ProductController::class);
+Route::post('changeStatus/{id}/{status}',[ProductController::class,'changeStatus'])->name('changeStatus');

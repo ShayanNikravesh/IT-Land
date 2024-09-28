@@ -437,6 +437,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="{{asset('admin-assets/js/pages/crud/file-upload/file-upload.js')}}"></script>
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="{{asset('admin-assets/js/pages/widgets.js')}}"></script>
+		<script src="{{asset('admin-assets/js/pages/crud/forms/editors/summernote.js')}}"></script>
 		<!--end::Page Scripts-->
 		<script>
 			$('#datatable').DataTable({

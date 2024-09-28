@@ -12,4 +12,9 @@ class Photo extends Model
     public function banner(){
         return $this->belongsToMany(Banner::class,'banner_photo','photo_id','banner_id');
     }
+
+    public function product(){
+        return $this->belongsToMany(Product::class,'product_photo','photo_id','product_id')->withPivot('sort')->withTimestamps();
+    }
+
 }

@@ -66,9 +66,9 @@ class BannerController extends Controller
         $banner_id = $id;
         $banner_photos = Banner::with('photos')->findOrFail($id);
         $title = 'حذف عکس!';
-       $text = "آیا از حذف این عکس اطمینان دارید؟";
-       confirmDelete($title, $text);
-        return view('admin.banner.editPhoto',compact('banner_id','banner_photos'));
+        $text = "آیا از حذف این عکس اطمینان دارید؟";
+        confirmDelete($title, $text);
+        return view('admin.banner.managePhoto',compact('banner_id','banner_photos'));
     }
 
     /**
