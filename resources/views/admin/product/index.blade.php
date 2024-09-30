@@ -66,22 +66,7 @@
 									<td>{{$product->brand->title}}</td>
 									<td>{{$product->category->title}}</td>
 									<td>-------------</td>
-									@switch($product->status)
-											@case('active')
-												<td>فعال</td>
-												@break
-											@case('inactive')
-												<td>غیر فعال</td>
-												@break
-											@case('unavailable')
-												<td>خارج از دسترس</td>
-												@break
-											@case('stop_selling')
-												<td>توقف فروش</td>
-											@break	
-											@default
-											<td>نا مشخص</td>
-									@endswitch
+									<td><span id="{{$product->id}}">{{FetchStatus($product->status)}}</span></td>
 									<td>
 										<div class="d-flex">
 											<a href="{{route('product.show',$product->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="top" title="مشاهده جزئیات">
@@ -110,17 +95,25 @@
 									</td>
 									<td>
 										<div class="d-flex">
-											<div class="dropdown">
-												<button button type="button" class="btn btn-warning btn-sm" id="ChangeStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<div class="dropdown" id="div{{$product->id}}">
+												<button button type="button" class="btn btn-warning btn-sm" id="ChangeStatusProduct" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ui-checks-grid" viewBox="0 0 16 16">
 														<path d="M2 10h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1m9-9h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 9a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zm0-10a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM2 9a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2zm7 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2zM0 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.354.854a.5.5 0 1 0-.708-.708L3 3.793l-.646-.647a.5.5 0 1 0-.708.708l1 1a.5.5 0 0 0 .708 0z"/>
 													</svg>
 												</button>
-												<div class="dropdown-menu bg-dark" aria-labelledby="ChangeStatus">
-												  <button class="dropdown-item bg-success" onclick="ChangeStatus()" href="#">فعال</button>
-												  <a class="dropdown-item bg-danger" href="#">غیر فعال</a>
-												  <a class="dropdown-item bg-warning" href="#">توقف فروش</a>
-												  <a class="dropdown-item bg-secondary" href="#">خارج از دسترس</a>
+												<div class="dropdown-menu bg-dark" aria-labelledby="ChangeStatusProduct">
+													@if ($product->status !== 'active')
+														<button class="dropdown-item bg-success" onclick="ChangeStatusProduct('{{$product->id}}','active')">فعال</button>
+													@endif
+													@if ($product->status !== 'inactive')
+														<button class="dropdown-item bg-danger" onclick="ChangeStatusProduct('{{$product->id}}','inactive')">غیر فعال</button>
+													@endif
+													@if ($product->status !== 'stop_selling')
+														<button class="dropdown-item bg-warning" onclick="ChangeStatusProduct('{{$product->id}}','stop_selling')">توقف فروش</button>
+													@endif
+													@if ($product->status !== 'unavailable')
+														<button class="dropdown-item bg-secondary" onclick="ChangeStatusProduct('{{$product->id}}','unavailable')">نا موجود</button>
+													@endif
 												</div>
 											</div>
 											{{-- <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#Operations{{$product->id}}">

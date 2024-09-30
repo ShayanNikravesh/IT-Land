@@ -83,7 +83,7 @@ $('div#upload_article_photo').dropzone({
     params: {
         article_id: $('#input_article_id').val(),
             _token: $('meta[name="csrf-token"]').attr('content') // اضافه کردن CSRF token
-        },        
+    },        
     accept: function(file, done) {
         done();
     },

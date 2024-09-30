@@ -258,7 +258,6 @@ class ProductController extends Controller
 
     public function changeStatus(Request $request,string $id, string $Status)
     {
-        dd('hi');
         $product = Product::findOrFail($id);
         $product->status = $Status;
         $product->save();

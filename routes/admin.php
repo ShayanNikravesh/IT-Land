@@ -38,7 +38,7 @@ Route::resource('ram',RamController::class);
 
 //product
 Route::resource('product',ProductController::class);
-Route::post('changeStatus/{id}/{status}',[ProductController::class,'changeStatus'])->name('changeStatus');
+Route::post('changeStatus/{id}/{status}',[ProductController::class,'changeStatus'])->name('change_Status_product');
 
 //article
 Route::resource('article',ArticleController::class);

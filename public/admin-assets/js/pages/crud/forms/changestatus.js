@@ -1,30 +1,14 @@
-function ChangeStatus($id,$status){
+function ChangeStatusProduct(id,status){
 
     $.ajax({
-        url: route('changeStatus'),
+        url: route('change_Status_product',[id,status]),
         method: 'post',
-        dataType: 'json',
-        data: {
-            product_id: $id,
-            status: $status,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         success: function (response) {
-            if (response.status === 200) {
-                document.getElementById('photo'+$id).remove();
-                Swal.fire({
-                    title: response.title,
-                    text: response.text,
-                    icon: response.type,
-                    confirmButtonText: 'متوجه شدم!',
-                })
-            } else {
-                Swal.fire({
-                    title: response.title,
-                    html: response.messages,
-                    icon: response.type,
-                    confirmButtonText: 'متوجه شدم!',
-                })
-            }
+            $('#' + id).load(document.URL + ' #' + id)
+            $('#div' + id).load(document.URL + ' #div' + id)
         },
         error: function (error) {
             console.log(error)
