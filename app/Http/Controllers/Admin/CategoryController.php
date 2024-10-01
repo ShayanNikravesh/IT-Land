@@ -105,4 +105,24 @@ class CategoryController extends Controller
     {
         dd('hi');
     }
+
+    public function ChangeStatus(string $id)
+    {
+        $category = Category::findOrFail($id);
+
+        switch ($category->status) {
+            case 'active':
+                $status = 'inactive';
+                break;
+            case 'inactive':
+                $status = 'active';
+                break;
+            default:
+                break;
+        }
+
+        $category->status = $status;
+        $category->save();
+    }
+
 }

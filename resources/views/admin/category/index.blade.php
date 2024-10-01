@@ -49,6 +49,7 @@
 							<th>عنوان</th>
                             <th>عنوان انگلیسی</th>
 							<th>دسته والد</th>
+							<th>وضعیت</th>
 							<th>عملیات</th>
 						</tr>
 					</thead>
@@ -74,6 +75,19 @@
 									@if (!$found)
 										<td>-------</td>
 									@endif
+									<td>
+										<span id="div{{$category->id}}">
+											@switch($category->status)
+												@case('active')
+													<button class="badge bg-light-success text-dark w-50 btn" onclick="ChangeStatusCategory('{{$category->id}}')"><span id="{{$category->id}}">{{FetchStatus($category->status)}}</span></button>
+													@break
+												@case('inactive')
+													<button class="badge bg-light-danger text-dark w-50 btn" onclick="ChangeStatusCategory('{{$category->id}}')"><span id="{{$category->id}}">{{FetchStatus($category->status)}}</span></button>
+													@break
+												@default
+											@endswitch
+										</span>
+									</td>
 									<td>
 										<div class="d-flex">
 											<a href="{{route('category.edit',$category->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="bottom" title="ویرایش دسته">

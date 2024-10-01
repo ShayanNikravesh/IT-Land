@@ -63,16 +63,19 @@
 									<td>{{$article->last_name}}</td>
 									<td>{{$article->title}}</td>
                                     <td>{{$article->english_title}}</td>
-									@switch($article->status)
-											@case('active')
-												<td>فعال</td>
-												@break
-											@case('inactive')
-												<td>غیر فعال</td>
-												@break	
-											@default
-											<td>نا مشخص</td>
-									@endswitch
+									<td>
+										<span id="div{{$article->id}}">
+											@switch($article->status)
+												@case('active')
+													<button class="badge bg-light-success text-dark w-50 btn" onclick="ChangeStatusArticle('{{$article->id}}')"><span id="{{$article->id}}">{{FetchStatus($article->status)}}</span></button>
+													@break
+												@case('inactive')
+													<button class="badge bg-light-danger text-dark w-50 btn" onclick="ChangeStatusArticle('{{$article->id}}')"><span id="{{$article->id}}">{{FetchStatus($article->status)}}</span></button>
+													@break
+												@default
+											@endswitch
+										</span>
+									</td>
 									<td>
 										<div class="d-flex">
 											<a href="{{route('article.edit',$article->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="top" title="ویرایش مقاله">

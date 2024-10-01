@@ -134,5 +134,4 @@
 		<!--end::Container-->
 	</div>
     <!--end::Entry-->
-	<script src="{{asset('admin-assets/js/pages/crud/forms/changestatus.js')}}"></script>
 @endsection

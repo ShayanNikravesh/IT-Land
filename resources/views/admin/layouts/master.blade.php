@@ -22,7 +22,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<meta name="csrf-token" content="{{csrf_token()}}">
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
 		<!--begin::Fonts-->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		{{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> --}}
 		<!--end::Fonts-->
 		<!--begin::Page Vendors Styles(used by this page)-->
 		<link href="{{asset('admin-assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
@@ -439,6 +439,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="{{asset('admin-assets/js/pages/widgets.js')}}"></script>
 		<script src="{{asset('admin-assets/js/pages/crud/forms/editors/summernote.js')}}"></script>
 		<!--end::Page Scripts-->
+		<script src="{{asset('admin-assets/js/pages/crud/forms/changestatus.js')}}"></script>
 		<script>
 			$('#datatable').DataTable({
 				responsive: true

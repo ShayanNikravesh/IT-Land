@@ -17,6 +17,7 @@ Route::get('index', function () {
 
 //category
 Route::resource('category', CategoryController::class);
+Route::post('ChangeStatus/{id}',[CategoryController::class,'ChangeStatus'])->name('change_Status_category');
 
 //brand
 Route::resource('brand',BrandController::class);
@@ -43,3 +44,4 @@ Route::post('changeStatus/{id}/{status}',[ProductController::class,'changeStatus
 //article
 Route::resource('article',ArticleController::class);
 Route::post('storePhoto',[ArticleController::class,'storePhoto'])->name('store_article_photo');
+Route::post('changeStatus/{id}',[ArticleController::class,'changeStatus'])->name('change_Status_article');

@@ -157,4 +157,25 @@ class ArticleController extends Controller
             $photo->article()->attach($article);
         }
     }
+
+    public function ChangeStatus(string $id)
+    {
+        $article = Article::findOrFail($id);
+
+        switch ($article->status) {
+            case 'active':
+                $status = 'inactive';
+                break;
+            case 'inactive':
+                $status = 'active';
+                break;
+            default:
+                break;
+        }
+
+        $article->status = $status;
+        $article->save();
+        
+    }
+
 }

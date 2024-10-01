@@ -77,7 +77,7 @@
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">نمایش دسته ها</span>
+                                    <span class="menu-text">لیست دسته ها</span>
                                 </a>
                             </li>
                         </ul>
@@ -115,7 +115,7 @@
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">نمایش برند ها</span>
+                                    <span class="menu-text">لیست برند ها</span>
                                 </a>
                             </li>
                         </ul>
