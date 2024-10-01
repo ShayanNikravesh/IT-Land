@@ -96,4 +96,25 @@ class BrandController extends Controller
     {
         dd('hi');
     }
+
+    public function ChangeStatus(string $id)
+    {
+        $brand = Brand::findOrFail($id);
+
+        switch ($brand->status) {
+            case 'active':
+                $status = 'inactive';
+                break;
+            case 'inactive':
+                $status = 'active';
+                break;
+            default:
+                break;
+        }
+
+        $brand->status = $status;
+        $brand->save();
+        
+    }
+
 }

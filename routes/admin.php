@@ -21,6 +21,7 @@ Route::post('ChangeStatus/{id}',[CategoryController::class,'ChangeStatus'])->nam
 
 //brand
 Route::resource('brand',BrandController::class);
+Route::post('ChangeStatus/{id}',[BrandController::class,'ChangeStatus'])->name('change_Status_brand');
 
 //banner
 Route::resource('banner',BannerController::class);
