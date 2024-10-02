@@ -23,3 +23,13 @@ function FetchStatus ($status){
             return 'نویسنده';
     }
 }
+
+function generateRandomDigit ($length = 8):int
+{
+    $intMin = (10 ** $length) / 10; // 100...
+    $intMax = (10 ** $length) - 1;  // 999...
+
+    $codeRandom = mt_rand($intMin, $intMax);
+
+    return $codeRandom;
+}

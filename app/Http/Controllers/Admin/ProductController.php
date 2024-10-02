@@ -103,6 +103,7 @@ class ProductController extends Controller
                 'english_title' => ['required'],
                 'category'=>['required'],
                 'brand'=>['required'],
+                // 'tracking_code' => ['required','numeric','unique:products,tracking_code'],
                 'description'=>['required'],
                 'review'=>['required'],
                 'status'=>['required'],
@@ -112,11 +113,14 @@ class ProductController extends Controller
                 'price_discounted'=>['required'],
             ]);
 
+            $tracking_code = generateRandomDigit();
+            
             $product = new Product();
             $product->title = $request->title; 
             $product->english_title = $request->english_title;
             $product->category_id = $request->category;
             $product->brand_id = $request->brand;
+            $product->tracking_code = $tracking_code;
             $product->memory_id = $request->memory;
             $product->ram_id = $request->ram;
             $product->description = $request->description;
