@@ -144,7 +144,14 @@ let navbarCloseBtnElem = document.querySelector('.navbar-items-mobile-close-btn'
 let navbarItemMobileELem = document.querySelector('.navbar-items-mobile');
 let navbarItemFirstAElem = document.querySelectorAll('.showSubMenu');
 let backToProductCategoriesElem = document.querySelectorAll('.backToProductCategories');
+let child = document.querySelectorAll('.showSubMenu2');
 
+child.forEach(function (childItem){
+    childItem.addEventListener('click',function (e){
+        e.preventDefault();
+        childItem.nextElementSibling.classList.add('showElem');
+    })
+})
 navbarItemFirstAElem.forEach(function (childItem){
     childItem.addEventListener('click',function (e){
         e.preventDefault();

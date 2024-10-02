@@ -54,7 +54,6 @@
                     </form>
                     <div class="search-results custom-box-shadow-s-2">
                         <span class="py-2 px-3 d-block fs-7">نتایج جست و جو :</span>
-
                         <!--Search Item:start-->
                         <div class="search-result-item position-relative border-bottom p-3">
                             <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
@@ -67,60 +66,16 @@
                             <!--Search Link:end-->
                         </div>
                         <!--Search Item:end-->
-
-                        <!--Search Item:start-->
-                        <div class="search-result-item position-relative border-bottom p-3">
-                            <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
-                            <div class="d-inline-block ms-2">
-                                <span class="d-inline-block fw-bold ms-1">سلفون </span>
-                                <span class="d-block">در دسته <strong>زیبایی و سلامت</strong></span>
-                            </div>
-                            <!--                            Search Link:start-->
-                            <a href="search.html" class="stretched-link"></a>
-                            <!--                            Search Link:end-->
-                        </div>
-                        <!--Search Item:end-->
-
-
-                        <!--                        Search Best Searching Items:start-->
-                        <div class="search-result-item position-relative border-bottom p-3 best-searching">
-                            <div class="d-flex">
-                                <i class="fa fa-fire gray-500"></i>
-                                <span class="d-inline-block fw-bold ms-2">جست و جوهای پرطرفدار </span>
-                            </div>
-
-                            <!--                            Searches Items:start-->
-                            <div class="searches mt-2">
-                                <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">لباس شویی</a>
-                                <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">گوشی</a>
-                                <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">شلوار</a>
-                                <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">لپ تاپ</a>
-                            </div>
-                            <!--                            Searches Items:end-->
-                        </div>
-                        <!--                        Search Best Searching Items:end-->
-
-                        <!--                        See All Results:start-->
-                        <div class="search-result-item position-relative border-bottom p-3">
-                            <div class="d-flex justify-content-between align-items-center ms-2 text-center">
-                                <span class="d-inline-block fw-bold ms-1">مشاهده همه نتایج </span>
-                                <i class="fa fa-arrow-left"></i>
-                            </div>
-                            <!--                            Search Link:start-->
-                            <a href="search.html" class="stretched-link"></a>
-                            <!--                            Search Link:end-->
-                        </div>
-                        <!--                        See All Results:end-->
                     </div>
                 </div>
-                <!--            Search Form:end-->
+                <!--Search Form:end-->
             </div>
             <!--Top Navbar Right:end-->
 
             <!--Top Navbar Left:start-->
             <div class="top-nav-left d-flex justify-content-between align-items-center">
-                <!--            Login and Register:start-->
-                <a href="login.html"
+                <!--Login and Register:start-->
+                <a href="#"
                    class="btn me-3 border-gray-300 border-radius-xl fs-7" title="">
                     <!--begin::Svg Icon -->
                     <svg class="rotate-3d me-2" xmlns="http://www.w3.org/2000/svg"
@@ -142,15 +97,15 @@
                     <!--end::Svg Icon-->
                     ورود | ثبت نام
                 </a>
-                <!--            Login and Register:end-->
+                <!--Login and Register:end-->
 
-                <!--            Horizontal Line:start-->
+                <!--Horizontal Line:start-->
                 <span class="horizontal-line"></span>
-                <!--            Horizontal Line:end-->
+                <!--Horizontal Line:end-->
 
-                <!--            Shopping Cart:start-->
+                <!--Shopping Cart:start-->
                 <div class="shopping-cart-wrapper position-relative ms-2">
-                    <!--            Shopping Cart Button:start-->
+                    <!--Shopping Cart Button:start-->
                     <a href="empty-cart.html" class="btn shopping-cart-btn position-relative border-radius-xl" title="">
                         <!--begin::Svg Icon-->
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -165,11 +120,11 @@
                         </svg><!--end::Svg Icon-->
                         <span class="badge position-absolute shop-cart-badge border border-white">4</span>
                     </a>
-                    <!--            Shopping Cart Button:end-->
+                    <!--Shopping Cart Button:end-->
 
-                    <!--                Shopping Cart Box:start-->
+                    <!--Shopping Cart Box:start-->
                     <div class="card shopping-cart-box position-absolute border-0 custom-box-shadow-s-1 overflow-hidden border-radius-xl">
-                        <!--                    Cart Header:start-->
+                        <!--Cart Header:start-->
                         <div class="card-header d-flex justify-content-between align-items-center bg-white fs-7">
                             <span><span class="countOfProducts">3</span> کالا</span>
                             <a href="empty-cart.html" class="text-info fw-bold" title="">
@@ -177,16 +132,17 @@
                                 <i class="fa fa-angle-left ms-1"></i>
                             </a>
                         </div>
-                        <!--                    Cart Header:end-->
+                        <!--Cart Header:end-->
 
-                        <!--                    Cart Body:start-->
+                        <!--Cart Body:start-->
                         <div class="card-body cartParent">
-                            <!--                            No Product In Shopping Cart:start-->
+                            <!--No Product In Shopping Cart:start-->
                             <p class="noProductInCart text-center fs-6">محصولی در سبد خرید نیست!</p>
-                            <!--                            No Product In Shopping Cart:end-->
-                            <!--                    Shopping Cart Item:start-->
+                            <!--No Product In Shopping Cart:end-->
+
+                            <!--Shopping Cart Item:start-->
                             <div class="shopping-cart-item d-flex justify-content-between align-items-center py-3 border-bottom-gray-150">
-                                <!--                    Shopping Cart Item Right:start-->
+                                <!--Shopping Cart Item Right:start-->
                                 <div class="shopping-cart-item-right me-3">
                                     <img src="{{asset('user-assets/img/laptop-1.jpg')}}" alt="image" class="object-contain">
                                     <div class="shop-item-edit-box d-flex justify-content-between align-items-center px-3 pt-2 pb-1 border-radius-xl">
@@ -195,9 +151,9 @@
                                         <span class="decrease"><i class="far fa-trash-alt"></i></span>
                                     </div>
                                 </div>
-                                <!--                    Shopping Cart Item Right:end-->
+                                <!--Shopping Cart Item Right:end-->
 
-                                <!--                    Shopping Cart Item Left:start-->
+                                <!--Shopping Cart Item Left:start-->
                                 <div class="shopping-cart-item-left">
                                     <h3 class="fs-6">لپ تاپ گیمینگ حرفه ای ایسوس</h3>
                                     <span class="d-block mt-1 fs-8">
@@ -212,98 +168,34 @@
                                         <span class="productPrice">169000</span> تومان
                                     </span>
                                 </div>
-                                <!--                    Shopping Cart Item Left:end-->
+                                <!--Shopping Cart Item Left:end-->
                             </div>
-                            <!--                    Shopping Cart Item:start-->
-
-                            <!--                    Shopping Cart Item:start-->
-                            <div class="shopping-cart-item d-flex justify-content-between align-items-center py-3 border-bottom-gray-150">
-                                <!--                    Shopping Cart Item Right:start-->
-                                <div class="shopping-cart-item-right me-3">
-                                    <img src="{{asset('user-assets/img/laptop-2.jpg')}}" alt="image" class="object-contain">
-                                    <div class="shop-item-edit-box d-flex justify-content-between align-items-center px-3 pt-2 pb-1 border-radius-xl">
-                                        <span class="addition"><i class="fas fa-plus"></i></span>
-                                        <span class="fs-5">1</span>
-                                        <span class="decrease"><i class="far fa-trash-alt"></i></span>
-                                    </div>
-                                </div>
-                                <!--                    Shopping Cart Item Right:end-->
-
-                                <!--                    Shopping Cart Item Left:start-->
-                                <div class="shopping-cart-item-left">
-                                    <h3 class="fs-6">لپ تاپ گیمینگ حرفه ای ایسوس</h3>
-                                    <span class="d-block mt-1 fs-8">
-                                        <i class="far fa-check-circle text-success align-middle me-1"></i>
-                                        موجود در انبار برگ شاپ
-                                    </span>
-                                    <span class="d-block mt-1 fs-8">
-                                        <i class="fas fa-truck-moving gray-500 align-middle me-1"></i>
-                                        آماده ارسال
-                                    </span>
-                                    <span class="fs-4 pt-3 d-block">
-                                        <span class="productPrice">169000</span> تومان
-                                    </span>
-                                </div>
-                                <!--                    Shopping Cart Item Left:end-->
-                            </div>
-                            <!--                    Shopping Cart Item:start-->
-
-                            <!--                    Shopping Cart Item:start-->
-                            <div class="shopping-cart-item d-flex justify-content-between align-items-center py-3 border-bottom-gray-150">
-                                <!--                    Shopping Cart Item Right:start-->
-                                <div class="shopping-cart-item-right me-3">
-                                    <img src="{{asset('user-assets/img/laptop-3.jpg')}}" alt="image" class="object-contain">
-                                    <div class="shop-item-edit-box d-flex justify-content-between align-items-center px-3 pt-2 pb-1 border-radius-xl">
-                                        <span class="addition"><i class="fas fa-plus"></i></span>
-                                        <span class="fs-5">1</span>
-                                        <span class="decrease"><i class="far fa-trash-alt"></i></span>
-                                    </div>
-                                </div>
-                                <!--                    Shopping Cart Item Right:end-->
-
-                                <!--                    Shopping Cart Item Left:start-->
-                                <div class="shopping-cart-item-left">
-                                    <h3 class="fs-6">لپ تاپ گیمینگ حرفه ای ایسوس</h3>
-                                    <span class="d-block mt-1 fs-8">
-                                        <i class="far fa-check-circle text-success align-middle me-1"></i>
-                                        موجود در انبار برگ شاپ
-                                    </span>
-                                    <span class="d-block mt-1 fs-8">
-                                        <i class="fas fa-truck-moving gray-500 align-middle me-1"></i>
-                                        آماده ارسال
-                                    </span>
-                                    <span class="fs-4 pt-3 d-block">
-                                        <span class="productPrice">169000</span> تومان
-                                    </span>
-                                </div>
-                                <!--                    Shopping Cart Item Left:end-->
-                            </div>
-                            <!--                    Shopping Cart Item:start-->
+                            <!--Shopping Cart Item:end-->
                         </div>
-                        <!--                    Cart Body:end-->
+                        <!--Cart Body:end-->
 
-                        <!--                    Cart Footer:start-->
+                        <!--Cart Footer:start-->
                         <div class="card-footer bg-white bottom-0 d-flex justify-content-between align-items-center">
-                            <!--                    Shopping Cart Footer Right:start-->
+                            <!--Shopping Cart Footer Right:start-->
                             <div class="card-footer-right">
                                 <span class="d-block text-muted fs-7">مبلغ قابل پرداخت :</span>
                                 <span class="fs-5 fw-bold d-block mt-1"><span
                                         class="allPrices">507</span> هزار تومان</span>
                             </div>
-                            <!--                    Shopping Cart Footer Right:end-->
+                            <!--Shopping Cart Footer Right:end-->
 
-                            <!--                    Shopping Cart Footer Left:start-->
+                            <!--Shopping Cart Footer Left:start-->
                             <div class="card-footer-left">
                                 <a href="checkout.html" class="btn custom-btn-danger border-radius-xl fs-6" title="">ثبت
                                     سفارش</a>
                             </div>
-                            <!--                    Shopping Cart Footer Left:end-->
+                            <!--Shopping Cart Footer Left:end-->
                         </div>
-                        <!--                    Cart Footer:end-->
+                        <!--Cart Footer:end-->
                     </div>
-                    <!--                Shopping Cart Box:end-->
+                    <!--Shopping Cart Box:end-->
                 </div>
-                <!--            Shopping Cart:end-->
+                <!--Shopping Cart:end-->
             </div>
             <!--Top Navbar Left:end-->
         </div>
@@ -327,7 +219,8 @@
                                 <path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
                                       fill="#000000" opacity="0.3"/>
                             </g>
-                        </svg><!--end::Svg Icon-->
+                        </svg>
+                        <!--end::Svg Icon-->
                     </a>
                     <!--Humber Btn:end-->
 
@@ -335,24 +228,23 @@
                     <div class="navbar-items-mobile">
                         <!--Navbar Items Mobile Header:start-->
                         <div class="navbar-items-mobile-header d-flex justify-content-between align-items-center border-bottom-gray-300 p-3">
-                            <!--                    Navbar Items Mobile Title:start-->
+                            <!--Navbar Items Mobile Title:start-->
                             <div class="navbar-items-mobile-title">
-                                <h5 class="fw-bold">منوی برگ شاپ</h5>
+                                <h5 class="fw-bold">منوی آیتی لند</h5>
                             </div>
-                            <!--                    Navbar Items Mobile Title:end-->
+                            <!--Navbar Items Mobile Title:end-->
 
-                            <!--                    Navbar Items Mobile Close Button:start-->
+                            <!--Navbar Items Mobile Close Button:start-->
                             <div class="navbar-items-mobile-close-btn">
                                 <i class="fa fa-times fs-5"></i>
                             </div>
-                            <!--                    Navbar Items Mobile Close Button:end-->
+                            <!--Navbar Items Mobile Close Button:end-->
                         </div>
-                        <!--                    Navbar Items Mobile Header:end-->
+                        <!--Navbar Items Mobile Header:end-->
 
-                        <!--                    Navbar Items Mobile Body:start-->
+                        <!--Navbar Items Mobile Body:start-->
                         <div class="navbar-items-mobile-body p-3">
                             <ul class="navbar-parent">
-                                <li class="cyan-500 fs-6">دسته بندی کالاها</li>
                                 <li class="border-bottom-gray-150 px-2 py-3">
                                     <a href="" class="fs-6 fw-bold d-block showSubMenu">
                                         <!--begin::Svg-->
@@ -367,56 +259,46 @@
                                                       fill="#000000" fill-rule="nonzero"/>
                                             </g>
                                         </svg><!--end::Svg Icon-->
-                                        کالاهای دیجیتال
+                                        دسته بندی ها
                                         <i class="fa fa-angle-left float-end"></i>
                                     </a>
-
-                                    <!--                                Navbar Items Child:start-->
+                                    <!--Navbar Items Child:start-->
                                     <ul class="first-child-parent p-3">
                                         <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
-                                            کالاهای دیجیتال
+                                            دسته بندی ها
                                         </li>
-                                        <li class="py-3"><a href="javascript:void(0)"
-                                                            class="cyan-500 fs-6 backToProductCategories"><i
-                                                class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                موبایل
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                لپ تاپ
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                مانیتور
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                کیس
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                هدفون
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
+                                        <li class="py-3"><a href="javascript:void(0)" class="cyan-500 fs-6 backToProductCategories"><i class="fa fa-arrow-right me-2"></i>بازگشت</a></li>
+                                        @foreach ($parent_categories as $parent_category)
+                                            <li class="border-bottom-gray-150 px-2 py-3">
+                                                <a href="" class="fs-6 fw-bold d-block showSubMenu2" title="">
+                                                    {{$parent_category->title}}
+                                                    <i class="fa fa-angle-left float-end"></i>
+                                                </a>
+                                                <ul class="first-child-parent p-3">
+                                                    @php
+                                                        $found = false;
+                                                    @endphp
+                                                    <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
+                                                        {{$parent_category->title}}
+                                                    </li>
+                                                    <li class="py-3"><a href="javascript:void(0)" class="cyan-500 fs-6 backToProductCategories"><i class="fa fa-arrow-right me-2"></i>بازگشت</a></li>
+                                                    @foreach ($categories as $category)
+                                                        @if ($category->parent_id == $parent_category->id)
+                                                            <li class="border-bottom-gray-150 px-2 py-3">
+                                                                <a href="" title="">
+                                                                    {{$category->title}}
+                                                                </a>
+                                                            </li>
+                                                            @php
+                                                                $found = true;
+                                                            @endphp
+                                                        @endif 
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                    <!--                                Navbar Items Child:end-->
-
+                                    <!--Navbar Items Child:end-->
                                 </li>
                                 <li class="border-bottom-gray-150 px-2 py-3">
                                     <a href="" class="fs-6 fw-bold d-block showSubMenu">
@@ -432,189 +314,30 @@
                                                       fill="#000000" fill-rule="nonzero"></path>
                                             </g>
                                         </svg><!--end::Svg Icon-->
-                                        ورزش و سفر
+                                        برندها
                                         <i class="fa fa-angle-left float-end"></i>
                                     </a>
 
-                                    <!--                                Navbar Items Child:start-->
+                                    <!--Navbar Items Child:start-->
                                     <ul class="first-child-parent p-3">
                                         <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
-                                            ورزش و سفر
+                                            برندها
                                         </li>
-                                        <li class="py-3"><a href="javascript:void(0)"
-                                                            class="cyan-500 fs-6 backToProductCategories"><i
-                                                class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                لباس ورزشی
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                کیف ورزشی
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                چادر اسکان
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-bottom-gray-150 px-2 py-3">
-                                            <a href=""
-                                               class="fs-6 fw-bold d-block" title="">
-                                                تجهیزات ورزشی
-                                                <i class="fa fa-angle-left float-end"></i>
-                                            </a>
-                                        </li>
+                                        <li class="py-3"><a href="javascript:void(0)"class="cyan-500 fs-6 backToProductCategories"><iclass="fa fa-arrow-right me-2"></i>بازگشت</a></li>
+                                        @foreach ($brands as $brand)
+                                            <li class="border-bottom-gray-150 px-2 py-3">
+                                                <a href="" class="fs-6 fw-bold d-block" title="">
+                                                    {{$brand->title}}
+                                                </a>
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                    <!--                                Navbar Items Child:end-->
-
-                                </li>
-                                <li class="border-bottom-gray-150 px-2 py-3">
-                                    <a href="" class="fs-6 fw-bold d-block showSubMenu">
-                                        <!--begin::Svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24"></rect>
-                                                <path d="M6.182345,4.09500888 C6.73256296,3.42637697 7.56648864,3 8.5,3 L15.5,3 C16.4330994,3 17.266701,3.42600075 17.8169264,4.09412386 C17.8385143,4.10460774 17.8598828,4.11593789 17.8809917,4.1281251 L22.5900048,6.8468751 C23.0682974,7.12301748 23.2321726,7.73460788 22.9560302,8.21290051 L21.2997802,11.0816097 C21.0236378,11.5599023 20.4120474,11.7237774 19.9337548,11.4476351 L18.5,10.6198563 L18.5,19 C18.5,19.5522847 18.0522847,20 17.5,20 L6.5,20 C5.94771525,20 5.5,19.5522847 5.5,19 L5.5,10.6204852 L4.0673344,11.4476351 C3.58904177,11.7237774 2.97745137,11.5599023 2.70130899,11.0816097 L1.04505899,8.21290051 C0.768916618,7.73460788 0.932791773,7.12301748 1.4110844,6.8468751 L6.12009753,4.1281251 C6.14061376,4.11628005 6.16137525,4.10524462 6.182345,4.09500888 Z"
-                                                      fill="#000000" opacity="0.3"></path>
-                                                <path d="M9.85156673,3.2226499 L9.26236944,4.10644584 C9.11517039,4.32724441 9.1661011,4.62457583 9.37839459,4.78379594 L11,6 L10.0353553,12.7525126 C10.0130986,12.9083095 10.0654932,13.0654932 10.1767767,13.1767767 L11.6464466,14.6464466 C11.8417088,14.8417088 12.1582912,14.8417088 12.3535534,14.6464466 L13.8232233,13.1767767 C13.9345068,13.0654932 13.9869014,12.9083095 13.9646447,12.7525126 L13,6 L14.6216054,4.78379594 C14.8338989,4.62457583 14.8848296,4.32724441 14.7376306,4.10644584 L14.1484333,3.2226499 C14.0557004,3.08355057 13.8995847,3 13.7324081,3 L10.2675919,3 C10.1004153,3 9.94429962,3.08355057 9.85156673,3.2226499 Z"
-                                                      fill="#000000"></path>
-                                            </g>
-                                        </svg><!--end::Svg Icon-->
-                                        مد و پوشاک
-                                        <i class="fa fa-angle-left float-end"></i>
-                                    </a>
-
-                                    <!--                                Navbar Items Child:start-->
-                                    <ul class="first-child-parent p-3">
-                                        <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
-                                            مد و پوشاک
-                                        </li>
-                                        <li class="py-3"><a href="javascript:void(0)"
-                                                            class="cyan-500 fs-6 backToProductCategories"><i
-                                                class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
-                                        <li class="border-bottom-gray-150 px-2 py-3"><a href=""
-                                                                                        class="fs-6 fw-bold d-block"
-                                                                                        title="">
-                                            زیر منوی یک<i class="fa fa-angle-left float-end"></i></a></li>
-                                        <li class="border-bottom-gray-150 px-2 py-3"><a href=""
-                                                                                        class="fs-6 fw-bold d-block"
-                                                                                        title="">
-                                            زیر منوی دو<i class="fa fa-angle-left float-end"></i></a></li>
-                                    </ul>
-                                    <!--                                Navbar Items Child:end-->
-
-                                </li>
-                                <li class="border-bottom-gray-150 px-2 py-3">
-                                    <a href="" class="fs-6 fw-bold d-block showSubMenu">
-                                        <!--begin::Svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24"></rect>
-                                                <path d="M18.4246212,12.6464466 L21.2530483,9.81801948 C21.4483105,9.62275734 21.764893,9.62275734 21.9601551,9.81801948 L22.6672619,10.5251263 C22.862524,10.7203884 22.862524,11.0369709 22.6672619,11.232233 L19.8388348,14.0606602 C19.6435726,14.2559223 19.3269901,14.2559223 19.131728,14.0606602 L18.4246212,13.3535534 C18.2293591,13.1582912 18.2293591,12.8417088 18.4246212,12.6464466 Z M3.22182541,17.9497475 L13.1213203,8.05025253 C13.5118446,7.65972824 14.1450096,7.65972824 14.5355339,8.05025253 L15.9497475,9.46446609 C16.3402718,9.85499039 16.3402718,10.4881554 15.9497475,10.8786797 L6.05025253,20.7781746 C5.65972824,21.1686989 5.02656326,21.1686989 4.63603897,20.7781746 L3.22182541,19.363961 C2.83130112,18.9734367 2.83130112,18.3402718 3.22182541,17.9497475 Z"
-                                                      fill="#000000" opacity="0.3"></path>
-                                                <path d="M12.3890873,1.28248558 L12.3890873,1.28248558 C15.150511,1.28248558 17.3890873,3.52106183 17.3890873,6.28248558 L17.3890873,10.7824856 C17.3890873,11.058628 17.1652297,11.2824856 16.8890873,11.2824856 L12.8890873,11.2824856 C12.6129449,11.2824856 12.3890873,11.058628 12.3890873,10.7824856 L12.3890873,1.28248558 Z"
-                                                      fill="#000000"
-                                                      transform="translate(14.889087, 6.282486) rotate(-45.000000) translate(-14.889087, -6.282486) "></path>
-                                            </g>
-                                        </svg><!--end::Svg Icon-->
-                                        ابزار و تجهیزات
-                                        <i class="fa fa-angle-left float-end"></i>
-                                    </a>
-
-                                    <!--                                Navbar Items Child:start-->
-                                    <ul class="first-child-parent p-3">
-                                        <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
-                                            ابزار و تجهیزات
-                                        </li>
-                                        <li class="py-3"><a href="javascript:void(0)"
-                                                            class="cyan-500 fs-6 backToProductCategories"><i
-                                                class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
-                                        <li class="border-bottom-gray-150 px-2 py-3"><a href=""
-                                                                                        class="fs-6 fw-bold d-block"
-                                                                                        title="">
-                                            زیر منوی یک<i class="fa fa-angle-left float-end"></i></a></li>
-                                        <li class="border-bottom-gray-150 px-2 py-3"><a href=""
-                                                                                        class="fs-6 fw-bold d-block"
-                                                                                        title="">
-                                            زیر منوی دو<i class="fa fa-angle-left float-end"></i></a></li>
-                                    </ul>
-                                    <!--                                Navbar Items Child:end-->
-
-                                </li>
-                                <li class="border-bottom-gray-150 px-2 py-3">
-                                    <a href="" class="fs-6 fw-bold d-block showSubMenu">
-                                        <!--begin::Svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24"></rect>
-                                                <path d="M3.98842709,3.05999994 L11.0594949,10.1310678 L8.23106778,12.9594949 L3.98842709,8.71685419 C2.42632992,7.15475703 2.42632992,4.62209711 3.98842709,3.05999994 Z"
-                                                      fill="#000000"></path>
-                                                <path d="M17.7539614,3.90710683 L14.8885998,7.40921548 C14.7088587,7.62889898 14.7248259,7.94903916 14.9255342,8.14974752 C15.1262426,8.35045587 15.4463828,8.36642306 15.6660663,8.18668201 L19.1681749,5.32132039 L19.8752817,6.02842717 L17.0099201,9.53053582 C16.830179,9.75021933 16.8461462,10.0703595 17.0468546,10.2710679 C17.2475629,10.4717762 17.5677031,10.4877434 17.7873866,10.3080024 L21.2894953,7.44264073 L21.9966021,8.14974752 L18.8146215,11.331728 C17.4477865,12.6985631 15.2317091,12.6985631 13.8648741,11.331728 C12.4980391,9.96489301 12.4980391,7.74881558 13.8648741,6.38198056 L17.0468546,3.20000005 L17.7539614,3.90710683 Z"
-                                                      fill="#000000"></path>
-                                                <path d="M11.0753788,13.9246212 C11.4715437,14.3207861 11.4876245,14.9579589 11.1119478,15.3736034 L6.14184561,20.8724683 C5.61370242,21.4567999 4.71186338,21.5023497 4.12753173,20.9742065 C4.10973311,20.9581194 4.09234327,20.9415857 4.0753788,20.9246212 C3.51843234,20.3676747 3.51843234,19.4646861 4.0753788,18.9077397 C4.09234327,18.8907752 4.10973311,18.8742415 4.12753173,18.8581544 L9.62639662,13.8880522 C10.0420411,13.5123755 10.6792139,13.5284563 11.0753788,13.9246212 Z"
-                                                      fill="#000000" opacity="0.3"></path>
-                                                <path d="M13.0754022,13.9246212 C13.4715671,13.5284563 14.1087399,13.5123755 14.5243844,13.8880522 L20.0232493,18.8581544 C20.0410479,18.8742415 20.0584377,18.8907752 20.0754022,18.9077397 C20.6323487,19.4646861 20.6323487,20.3676747 20.0754022,20.9246212 C20.0584377,20.9415857 20.0410479,20.9581194 20.0232493,20.9742065 C19.4389176,21.5023497 18.5370786,21.4567999 18.0089354,20.8724683 L13.0388332,15.3736034 C12.6631565,14.9579589 12.6792373,14.3207861 13.0754022,13.9246212 Z"
-                                                      fill="#000000" opacity="0.3"></path>
-                                            </g>
-                                        </svg><!--end::Svg Icon-->
-                                        خانه و آشپزخانه
-                                        <i class="fa fa-angle-left float-end"></i>
-                                    </a>
-
-                                    <!--                                Navbar Items Child:start-->
-                                    <ul class="first-child-parent p-3">
-                                        <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
-                                            خانه و آشپزخانه
-                                        </li>
-                                        <li class="py-3"><a href="javascript:void(0)"
-                                                            class="cyan-500 fs-6 backToProductCategories"><i
-                                                class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
-                                        <li class="border-bottom-gray-150 px-2 py-3"><a href=""
-                                                                                        class="fs-6 fw-bold d-block"
-                                                                                        title="">
-                                            زیر منوی یک<i class="fa fa-angle-left float-end"></i></a></li>
-                                        <li class="border-bottom-gray-150 px-2 py-3"><a href=""
-                                                                                        class="fs-6 fw-bold d-block"
-                                                                                        title="">
-                                            زیر منوی دو<i class="fa fa-angle-left float-end"></i></a></li>
-                                    </ul>
-                                    <!--                                Navbar Items Child:end-->
-
-                                </li>
-                                <li class="border-bottom-gray-150 px-2 py-3">
-                                    <a href="" class="fs-6 fw-bold d-block">
-                                        <!--begin::Svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                             xmlns:xlink="http://www.w3.org/1999/xlink"
-                                             width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24"></rect>
-                                                <path d="M14,7 C13.6666667,10.3333333 12.6666667,12.1167764 11,12.3503292 C11,12.3503292 12.5,6.5 10.5,3.5 C10.5,3.5 10.287918,6.71444735 8.14498739,10.5717225 C7.14049032,12.3798172 6,13.5986793 6,16 C6,19.428689 9.51143904,21.2006583 12.0057195,21.2006583 C14.5,21.2006583 18,20.0006172 18,15.8004732 C18,14.0733981 16.6666667,11.1399071 14,7 Z"
-                                                      fill="#000000"></path>
-                                            </g>
-                                        </svg><!--end::Svg Icon-->
-                                        پر فروش ترین ها
-                                        <i class="fa fa-angle-left float-end"></i>
-                                    </a>
+                                    <!--Navbar Items Child:end-->
 
                                 </li>
                             </ul>
                         </div>
-                        <!--                    Navbar Items Mobile Body:end-->
+                        <!--Navbar Items Mobile Body:end-->
 
                     </div>
                     <!--Navbar Items:end-->
@@ -623,40 +346,23 @@
 
                 <!--Top Mobile Navbar Middle:start-->
                 <div class="top-mobile-navbar-middle d-flex justify-content-between align-items-center">
-                    <!--            Logo:start-->
+                    <!--Logo:start-->
                     <a href="index.html" class="navbar-brand pb-2" title="">
                         <img src="{{asset('user-assets/img/logo.png')}}" alt="لوگوی برگ شاپ">
                     </a>
-                    <!--            Logo:end-->
+                    <!--Logo:end-->
                 </div>
                 <!--Top Mobile Navbar Middle:end-->
 
-                <!--Top Mobile Navbar Left:start-->
-                <div class="top-mobile-navbar-left">
-                    <a href="faq.html" title="">
-                        <!--begin::Svg Icon-->
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                             height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24"/>
-                                <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
-                                <path d="M12,16 C12.5522847,16 13,16.4477153 13,17 C13,17.5522847 12.5522847,18 12,18 C11.4477153,18 11,17.5522847 11,17 C11,16.4477153 11.4477153,16 12,16 Z M10.591,14.868 L10.591,13.209 L11.851,13.209 C13.447,13.209 14.602,11.991 14.602,10.395 C14.602,8.799 13.447,7.581 11.851,7.581 C10.234,7.581 9.121,8.799 9.121,10.395 L7.336,10.395 C7.336,7.875 9.31,5.922 11.851,5.922 C14.392,5.922 16.387,7.875 16.387,10.395 C16.387,12.915 14.392,14.868 11.851,14.868 L10.591,14.868 Z"
-                                      fill="#000000"/>
-                            </g>
-                        </svg><!--end::Svg Icon-->
-                    </a>
-                </div>
-                <!--Top Mobile Navbar Left:end-->
             </div>
-            <!--        Container:end-->
+            <!--Container:end-->
         </div>
         <!--Top Mobile Navbar In Mobile:end-->
     </div>
     <!--Top Navbar::end-->
 
     <!--Main Navbar::start-->
-    <nav class="main-navbar navbar navbar-expand-lg navbar-light bg-light custom-box-shadow-s-1-bottom py-1 w-100"
-         id="mainNavbar">
+    <nav class="main-navbar navbar navbar-expand-lg navbar-light bg-light custom-box-shadow-s-1-bottom py-1 w-100" id="mainNavbar">
         <!--Container:start-->
         <div class="container d-flex justify-content-between align-items-center">
             <!--Navbar Right:start-->
@@ -667,891 +373,95 @@
                     <li class="nav-item d-flex justify-content-between align-items-center position-relative">
                         <a class="mx-2 py-2" href="categories.html" title="">
                             <!--begin::Svg Icon-->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px"
-                                 height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <rect fill="#000000" x="4" y="4" width="7" height="7" rx="1.5"/>
-                                    <path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                </g>
-                            </svg><!--end::Svg Icon-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-shop-window" viewBox="0 0 16 16">
+                                <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5"/>
+                            </svg>
+                            <!--end::Svg Icon-->
                             دسته بندی کالاها
                         </a>
-
                         <!--Navbar Child Wrapper:start-->
                         <ul class="position-absolute nav-item-submenu bg-white custom-box-shadow-s-2">
-                            <!--Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child">
-                                <a href="single-product.html" class="fw-bold" title="">
-                                    <!--begin::Svg Icon-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"/>
-                                            <path d="M8,2.5 C7.30964406,2.5 6.75,3.05964406 6.75,3.75 L6.75,20.25 C6.75,20.9403559 7.30964406,21.5 8,21.5 L16,21.5 C16.6903559,21.5 17.25,20.9403559 17.25,20.25 L17.25,3.75 C17.25,3.05964406 16.6903559,2.5 16,2.5 L8,2.5 Z"
-                                                  fill="#000000" opacity="0.3"/>
-                                            <path d="M8,2.5 C7.30964406,2.5 6.75,3.05964406 6.75,3.75 L6.75,20.25 C6.75,20.9403559 7.30964406,21.5 8,21.5 L16,21.5 C16.6903559,21.5 17.25,20.9403559 17.25,20.25 L17.25,3.75 C17.25,3.05964406 16.6903559,2.5 16,2.5 L8,2.5 Z M8,1 L16,1 C17.5187831,1 18.75,2.23121694 18.75,3.75 L18.75,20.25 C18.75,21.7687831 17.5187831,23 16,23 L8,23 C6.48121694,23 5.25,21.7687831 5.25,20.25 L5.25,3.75 C5.25,2.23121694 6.48121694,1 8,1 Z M9.5,1.75 L14.5,1.75 C14.7761424,1.75 15,1.97385763 15,2.25 L15,3.25 C15,3.52614237 14.7761424,3.75 14.5,3.75 L9.5,3.75 C9.22385763,3.75 9,3.52614237 9,3.25 L9,2.25 C9,1.97385763 9.22385763,1.75 9.5,1.75 Z"
-                                                  fill="#000000" fill-rule="nonzero"/>
-                                        </g>
-                                    </svg>
-                                    <!--end::Svg Icon-->
-                                    موبایل
-                                    <i class="fa fa-angle-left float-end"></i>
-                                </a>
-                                <!--                        Navbar Item Sub Child Wrapper:start-->
-                                <ul class="position-absolute top-0 bg-white custom-box-shadow-s-2">
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی اپل
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی سامسونگ
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی ایسوس
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هانر
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هاوایی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی شیائومی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی نوکیا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی لنوو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی مایکروسافت
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی اس جی بی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی موتورلا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی تسکو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی گرین
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-                                </ul>
-                                <!--                        Navbar Item Sub Child Wrapper:end-->
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child">
-                                <a href="single-product.html" class="fw-bold" title="">
-                                    <!--begin::Svg Icon-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"/>
-                                            <path d="M11,20 L11,17 C11,16.4477153 11.4477153,16 12,16 C12.5522847,16 13,16.4477153 13,17 L13,20 L15.5,20 C15.7761424,20 16,20.2238576 16,20.5 C16,20.7761424 15.7761424,21 15.5,21 L8.5,21 C8.22385763,21 8,20.7761424 8,20.5 C8,20.2238576 8.22385763,20 8.5,20 L11,20 Z"
-                                                  fill="#000000" opacity="0.3"/>
-                                            <path d="M3,5 L21,5 C21.5522847,5 22,5.44771525 22,6 L22,16 C22,16.5522847 21.5522847,17 21,17 L3,17 C2.44771525,17 2,16.5522847 2,16 L2,6 C2,5.44771525 2.44771525,5 3,5 Z M4.5,8 C4.22385763,8 4,8.22385763 4,8.5 C4,8.77614237 4.22385763,9 4.5,9 L13.5,9 C13.7761424,9 14,8.77614237 14,8.5 C14,8.22385763 13.7761424,8 13.5,8 L4.5,8 Z M4.5,10 C4.22385763,10 4,10.2238576 4,10.5 C4,10.7761424 4.22385763,11 4.5,11 L7.5,11 C7.77614237,11 8,10.7761424 8,10.5 C8,10.2238576 7.77614237,10 7.5,10 L4.5,10 Z"
-                                                  fill="#000000"/>
-                                        </g>
-                                    </svg><!--end::Svg Icon-->
-                                    کالای دیجیتال
-                                    <i class="fa fa-angle-left float-end"></i>
-                                </a>
-                                <!--                        Navbar Item Sub Child Wrapper:start-->
-                                <ul class="position-absolute top-0 bg-white custom-box-shadow-s-2">
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی سامسونگ
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی ایسوس
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هانر
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هاوایی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی شیائومی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی نوکیا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی لنوو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی مایکروسافت
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی اس جی بی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی موتورلا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی تسکو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی گرین
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-                                </ul>
-                                <!--                        Navbar Item Sub Child Wrapper:end-->
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child">
-                                <a href="single-product.html" class="fw-bold" title="">
-                                    <!--begin::Svg Icon-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"></rect>
-                                            <path d="M6.182345,4.09500888 C6.73256296,3.42637697 7.56648864,3 8.5,3 L15.5,3 C16.4330994,3 17.266701,3.42600075 17.8169264,4.09412386 C17.8385143,4.10460774 17.8598828,4.11593789 17.8809917,4.1281251 L22.5900048,6.8468751 C23.0682974,7.12301748 23.2321726,7.73460788 22.9560302,8.21290051 L21.2997802,11.0816097 C21.0236378,11.5599023 20.4120474,11.7237774 19.9337548,11.4476351 L18.5,10.6198563 L18.5,19 C18.5,19.5522847 18.0522847,20 17.5,20 L6.5,20 C5.94771525,20 5.5,19.5522847 5.5,19 L5.5,10.6204852 L4.0673344,11.4476351 C3.58904177,11.7237774 2.97745137,11.5599023 2.70130899,11.0816097 L1.04505899,8.21290051 C0.768916618,7.73460788 0.932791773,7.12301748 1.4110844,6.8468751 L6.12009753,4.1281251 C6.14061376,4.11628005 6.16137525,4.10524462 6.182345,4.09500888 Z"
-                                                  fill="#000000" opacity="0.3"></path>
-                                            <path d="M9.85156673,3.2226499 L9.26236944,4.10644584 C9.11517039,4.32724441 9.1661011,4.62457583 9.37839459,4.78379594 L11,6 L10.0353553,12.7525126 C10.0130986,12.9083095 10.0654932,13.0654932 10.1767767,13.1767767 L11.6464466,14.6464466 C11.8417088,14.8417088 12.1582912,14.8417088 12.3535534,14.6464466 L13.8232233,13.1767767 C13.9345068,13.0654932 13.9869014,12.9083095 13.9646447,12.7525126 L13,6 L14.6216054,4.78379594 C14.8338989,4.62457583 14.8848296,4.32724441 14.7376306,4.10644584 L14.1484333,3.2226499 C14.0557004,3.08355057 13.8995847,3 13.7324081,3 L10.2675919,3 C10.1004153,3 9.94429962,3.08355057 9.85156673,3.2226499 Z"
-                                                  fill="#000000"></path>
-                                        </g>
-                                    </svg>
-                                    <!--end::Svg Icon-->
-                                    مد و پوشاک
-                                    <i class="fa fa-angle-left float-end"></i>
-                                </a>
-                                <!--                        Navbar Item Sub Child Wrapper:start-->
-                                <ul class="position-absolute top-0 bg-white custom-box-shadow-s-2">
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی ایسوس
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هانر
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هاوایی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی شیائومی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی نوکیا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی لنوو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی مایکروسافت
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی اس جی بی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی موتورلا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی تسکو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی گرین
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-                                </ul>
-                                <!--                        Navbar Item Sub Child Wrapper:end-->
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child">
-                                <a href="single-product.html" class="fw-bold" title="">
-                                    <!--begin::Svg Icon-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"></rect>
-                                            <rect fill="#000000" opacity="0.3" x="5" y="20" width="14" height="2"
-                                                  rx="1"></rect>
-                                            <path d="M5,12.8739825 C3.27477279,12.4299397 2,10.8638394 2,9 C2,6.790861 3.790861,5 6,5 C6.11332888,5 6.22555698,5.00471299 6.33649899,5.01395368 C7.15621908,2.67628292 9.38235111,1 12,1 C14.6176489,1 16.8437809,2.67628292 17.663501,5.01395368 C17.774443,5.00471299 17.8866711,5 18,5 C20.209139,5 22,6.790861 22,9 C22,10.8638394 20.7252272,12.4299397 19,12.8739825 L19,17 C19,17.5522847 18.5522847,18 18,18 L6,18 C5.44771525,18 5,17.5522847 5,17 L5,12.8739825 Z"
-                                                  fill="#000000"></path>
-                                        </g>
-                                    </svg>
-                                    <!--end::Svg Icon-->
-                                    خانه و آشپرخانه
-                                    <i class="fa fa-angle-left float-end"></i>
-                                </a>
-                                <!--                        Navbar Item Sub Child Wrapper:start-->
-                                <ul class="position-absolute top-0 bg-white custom-box-shadow-s-2">
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هانر
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هاوایی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی شیائومی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی نوکیا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی لنوو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی مایکروسافت
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی اس جی بی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی موتورلا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی تسکو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی گرین
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-                                </ul>
-                                <!--                        Navbar Item Sub Child Wrapper:end-->
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child">
-                                <a href="single-product.html" class="fw-bold" title="">
-                                    <!--begin::Svg Icon-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"/>
-                                            <path d="M13.6855025,18.7082217 C15.9113859,17.8189707 18.682885,17.2495635 22,17 C22,16.9325178 22,13.1012863 22,5.50630526 L21.9999762,5.50630526 C21.9999762,5.23017604 21.7761292,5.00632908 21.5,5.00632908 C21.4957817,5.00632908 21.4915635,5.00638247 21.4873465,5.00648922 C18.658231,5.07811173 15.8291155,5.74261533 13,7 C13,7.04449645 13,10.79246 13,18.2438906 L12.9999854,18.2438906 C12.9999854,18.520041 13.2238496,18.7439052 13.5,18.7439052 C13.5635398,18.7439052 13.6264972,18.7317946 13.6855025,18.7082217 Z"
-                                                  fill="#000000"/>
-                                            <path d="M10.3144829,18.7082217 C8.08859955,17.8189707 5.31710038,17.2495635 1.99998542,17 C1.99998542,16.9325178 1.99998542,13.1012863 1.99998542,5.50630526 L2.00000925,5.50630526 C2.00000925,5.23017604 2.22385621,5.00632908 2.49998542,5.00632908 C2.50420375,5.00632908 2.5084219,5.00638247 2.51263888,5.00648922 C5.34175439,5.07811173 8.17086991,5.74261533 10.9999854,7 C10.9999854,7.04449645 10.9999854,10.79246 10.9999854,18.2438906 L11,18.2438906 C11,18.520041 10.7761358,18.7439052 10.4999854,18.7439052 C10.4364457,18.7439052 10.3734882,18.7317946 10.3144829,18.7082217 Z"
-                                                  fill="#000000" opacity="0.3"/>
-                                        </g>
-                                    </svg><!--end::Svg Icon-->
-                                    کتاب و لوازم تحریر
-                                    <i class="fa fa-angle-left float-end"></i>
-                                </a>
-                                <!--                        Navbar Item Sub Child Wrapper:start-->
-                                <ul class="position-absolute top-0 bg-white custom-box-shadow-s-2">
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی هاوایی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی شیائومی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی نوکیا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی لنوو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی مایکروسافت
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی اس جی بی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی موتورلا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی تسکو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی گرین
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-                                </ul>
-                                <!--                        Navbar Item Sub Child Wrapper:end-->
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child">
-                                <a href="single-product.html" class="fw-bold" title="">
-                                    <!--begin::Svg Icon-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <polygon points="0 0 24 0 24 24 0 24"/>
-                                            <path d="M1.4152146,4.84010415 C11.1782334,10.3362599 14.7076452,16.4493804 12.0034499,23.1794656 C5.02500006,22.0396582 1.4955883,15.9265377 1.4152146,4.84010415 Z"
-                                                  fill="#000000" opacity="0.3"/>
-                                            <path d="M22.5950046,4.84010415 C12.8319858,10.3362599 9.30257403,16.4493804 12.0067693,23.1794656 C18.9852192,22.0396582 22.5146309,15.9265377 22.5950046,4.84010415 Z"
-                                                  fill="#000000" opacity="0.3"/>
-                                            <path d="M12.0002081,2 C6.29326368,11.6413199 6.29326368,18.7001435 12.0002081,23.1764706 C17.4738192,18.7001435 17.4738192,11.6413199 12.0002081,2 Z"
-                                                  fill="#000000" opacity="0.3"/>
-                                        </g>
-                                    </svg><!--end::Svg Icon-->
-                                    زیبایی و سلامت
-                                    <i class="fa fa-angle-left float-end"></i>
-                                </a>
-                                <!--                        Navbar Item Sub Child Wrapper:start-->
-                                <ul class="position-absolute top-0 bg-white custom-box-shadow-s-2">
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی شیائومی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی نوکیا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی لنوو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی مایکروسافت
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی اس جی بی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی موتورلا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی تسکو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی گرین
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-                                </ul>
-                                <!--                        Navbar Item Sub Child Wrapper:end-->
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child">
-                                <a href="single-product.html" class="fw-bold" title="">
-                                    <!--begin::Svg Icon-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24"/>
-                                            <path d="M6.2,9.73333333 L8.7,6.4 C8.88885438,6.14819416 9.1852427,6 9.5,6 L14.5,6 C14.8147573,6 15.1111456,6.14819416 15.3,6.4 L17.8,9.73333333 C17.9298221,9.9064295 18,10.1169631 18,10.3333333 L18,21 C18,22.1045695 17.1045695,23 16,23 L8,23 C6.8954305,23 6,22.1045695 6,21 L6,10.3333333 C6,10.1169631 6.07017787,9.9064295 6.2,9.73333333 Z M9,12 C8.44771525,12 8,12.4477153 8,13 L8,20 C8,20.5522847 8.44771525,21 9,21 L10,21 C10.5522847,21 11,20.5522847 11,20 L11,13 C11,12.4477153 10.5522847,12 10,12 L9,12 Z"
-                                                  fill="#000000"/>
-                                            <rect fill="#000000" opacity="0.3" x="9" y="1" width="6" height="3" rx="1"/>
-                                        </g>
-                                    </svg><!--end::Svg Icon-->
-                                    کالاهای سوپر مارکتی
-                                    <i class="fa fa-angle-left float-end"></i>
-                                </a>
-                                <!--                        Navbar Item Sub Child Wrapper:start-->
-                                <ul class="position-absolute top-0 bg-white custom-box-shadow-s-2">
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی نوکیا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی لنوو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی مایکروسافت
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی اس جی بی
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی موتورلا
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی تسکو
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-
-                                    <!--                        Navbar Item Sub Child:start-->
-                                    <li>
-                                        <a href="single-product.html" title="">
-                                            گوشی گرین
-                                        </a>
-                                    </li>
-                                    <!--                        Navbar Item Sub Child:end-->
-                                </ul>
-                                <!--                        Navbar Item Sub Child Wrapper:end-->
-                            </li>
-                            <!--                        Navbar Item Child:end-->
+                            @foreach ($parent_categories as $parent_category)
+                                <!--Navbar Item Child:start-->
+                                <li class="nav-item-submenu-child">
+                                    <a href="single-product.html" class="fw-bold" title="">
+                                        <!--begin::Svg Icon-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"/>
+                                                <path d="M8,2.5 C7.30964406,2.5 6.75,3.05964406 6.75,3.75 L6.75,20.25 C6.75,20.9403559 7.30964406,21.5 8,21.5 L16,21.5 C16.6903559,21.5 17.25,20.9403559 17.25,20.25 L17.25,3.75 C17.25,3.05964406 16.6903559,2.5 16,2.5 L8,2.5 Z"
+                                                    fill="#000000" opacity="0.3"/>
+                                                <path d="M8,2.5 C7.30964406,2.5 6.75,3.05964406 6.75,3.75 L6.75,20.25 C6.75,20.9403559 7.30964406,21.5 8,21.5 L16,21.5 C16.6903559,21.5 17.25,20.9403559 17.25,20.25 L17.25,3.75 C17.25,3.05964406 16.6903559,2.5 16,2.5 L8,2.5 Z M8,1 L16,1 C17.5187831,1 18.75,2.23121694 18.75,3.75 L18.75,20.25 C18.75,21.7687831 17.5187831,23 16,23 L8,23 C6.48121694,23 5.25,21.7687831 5.25,20.25 L5.25,3.75 C5.25,2.23121694 6.48121694,1 8,1 Z M9.5,1.75 L14.5,1.75 C14.7761424,1.75 15,1.97385763 15,2.25 L15,3.25 C15,3.52614237 14.7761424,3.75 14.5,3.75 L9.5,3.75 C9.22385763,3.75 9,3.52614237 9,3.25 L9,2.25 C9,1.97385763 9.22385763,1.75 9.5,1.75 Z"
+                                                    fill="#000000" fill-rule="nonzero"/>
+                                            </g>
+                                        </svg>
+                                        <!--end::Svg Icon-->
+                                        {{$parent_category->title}}
+                                        <i class="fa fa-angle-left float-end"></i>
+                                    </a>
+                                    @php
+                                        $found = false;
+                                    @endphp
+                                    <!--Navbar Item Sub Child Wrapper:start-->
+                                    <ul class="position-absolute top-0 bg-white custom-box-shadow-s-2">
+                                        @foreach ($categories as $category)
+                                            @if ($category->parent_id == $parent_category->id)
+                                                <!--Navbar Item Sub Child:start-->
+                                                <li>
+                                                    <a href="" title="">
+                                                        {{$category->title}}
+                                                    </a>
+                                                </li>
+                                                <!--Navbar Item Sub Child:end-->
+                                                @php
+                                                    $found = true;
+                                                @endphp
+                                            @endif
+                                        @endforeach
+                                        @if (!$found)
+                                        <li>
+                                            <a href="javascript:;" title="">
+                                                زیر مجوعه ندارد.
+                                            </a>
+                                        </li>
+                                        @endif
+                                    </ul>
+                                    <!--Navbar Item Sub Child Wrapper:end-->
+                                </li>
+                                <!--Navbar Item Child:end-->
+                            @endforeach
                         </ul>
-                        <!--                    Navbar Child Wrapper:end-->
-                        <!--            Navbar Item:start-->
+                        <!--Navbar Child Wrapper:end-->
+                        <!--Navbar Item:start-->
                         <span class="horizontal-line mx-1 me-2"></span>
-                        <!--            Navbar Item:end-->
+                        <!--Navbar Item:end-->
                     </li>
                     <!--Navbar Item:end-->
-
-
                     <!--Navbar Item:start-->
                     <li class="nav-item d-flex justify-content-between align-items-center me-2 position-relative">
 
                         <a class="mx-2 py-2" href="category.html" title="">
                             <!--begin::Svg Icon-->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px"
-                                 height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M6.182345,4.09500888 C6.73256296,3.42637697 7.56648864,3 8.5,3 L15.5,3 C16.4330994,3 17.266701,3.42600075 17.8169264,4.09412386 C17.8385143,4.10460774 17.8598828,4.11593789 17.8809917,4.1281251 L22.5900048,6.8468751 C23.0682974,7.12301748 23.2321726,7.73460788 22.9560302,8.21290051 L21.2997802,11.0816097 C21.0236378,11.5599023 20.4120474,11.7237774 19.9337548,11.4476351 L18.5,10.6198563 L18.5,19 C18.5,19.5522847 18.0522847,20 17.5,20 L6.5,20 C5.94771525,20 5.5,19.5522847 5.5,19 L5.5,10.6204852 L4.0673344,11.4476351 C3.58904177,11.7237774 2.97745137,11.5599023 2.70130899,11.0816097 L1.04505899,8.21290051 C0.768916618,7.73460788 0.932791773,7.12301748 1.4110844,6.8468751 L6.12009753,4.1281251 C6.14061376,4.11628005 6.16137525,4.10524462 6.182345,4.09500888 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                    <path d="M9.85156673,3.2226499 L9.26236944,4.10644584 C9.11517039,4.32724441 9.1661011,4.62457583 9.37839459,4.78379594 L11,6 L10.0353553,12.7525126 C10.0130986,12.9083095 10.0654932,13.0654932 10.1767767,13.1767767 L11.6464466,14.6464466 C11.8417088,14.8417088 12.1582912,14.8417088 12.3535534,14.6464466 L13.8232233,13.1767767 C13.9345068,13.0654932 13.9869014,12.9083095 13.9646447,12.7525126 L13,6 L14.6216054,4.78379594 C14.8338989,4.62457583 14.8848296,4.32724441 14.7376306,4.10644584 L14.1484333,3.2226499 C14.0557004,3.08355057 13.8995847,3 13.7324081,3 L10.2675919,3 C10.1004153,3 9.94429962,3.08355057 9.85156673,3.2226499 Z"
-                                          fill="#000000"/>
-                                </g>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-postage" viewBox="0 0 16 16">
+                                <path d="M4.75 3a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h6.5a.75.75 0 0 0 .75-.75v-8.5a.75.75 0 0 0-.75-.75zM11 12H5V4h6z"/>
+                                <path d="M3.5 1a1 1 0 0 0 1-1h1a1 1 0 0 0 2 0h1a1 1 0 0 0 2 0h1a1 1 0 1 0 2 0H15v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1h-1.5a1 1 0 1 0-2 0h-1a1 1 0 1 0-2 0h-1a1 1 0 1 0-2 0h-1a1 1 0 1 0-2 0H1v-1a1 1 0 1 0 0-2v-1a1 1 0 1 0 0-2V9a1 1 0 1 0 0-2V6a1 1 0 0 0 0-2V3a1 1 0 0 0 0-2V0h1.5a1 1 0 0 0 1 1M3 3v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1"/>
                             </svg>
                             <!--end::Svg Icon-->
-                            مد و پوشاک
+                            برندها
                         </a>
-                        <!--                    Navbar Child Wrapper:start-->
+                        <!--Navbar Child Wrapper:start-->
                         <ul class="position-absolute bg-white custom-box-shadow-s-2 nav-item-submenu">
-                            <!--                        Navbar Item Child:start-->
-
-                            <li class="nav-item-submenu-child"><a href="single-product.html" title="">زیر منوی 1</a>
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child"><a href="single-product.html" title="">زیر منوی 2</a>
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child"><a href="single-product.html" title="">زیر منوی 3</a>
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child"><a href="single-product.html" title="">زیر منوی 4</a>
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child"><a href="single-product.html" title="">زیر منوی 5</a>
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child"><a href="single-product.html" title="">زیر منوی 6</a>
-                            </li>
-                            <!--                        Navbar Item Child:end-->
+                            @foreach ($brands as $brand)
+                                <!--Navbar Item Child:start-->
+                                <li class="nav-item-submenu-child"><a href="single-product.html" title="">{{$brand->title}}</a>
+                                </li>
+                                <!--Navbar Item Child:end-->
+                            @endforeach
                         </ul>
-                        <!--                    Navbar Child Wrapper:end-->
+                        <!--Navbar Child Wrapper:end-->
                     </li>
-                    <!--            Navbar Item:end-->
-
-                    <!--            Navbar Item:start-->
-                    <li class="nav-item d-flex justify-content-between align-items-center me-2 position-relative">
-
-                        <a class="mx-2 py-2" href="category.html" title="">
-                            <!--begin::Svg Icon-->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px"
-                                 height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M18.4246212,12.6464466 L21.2530483,9.81801948 C21.4483105,9.62275734 21.764893,9.62275734 21.9601551,9.81801948 L22.6672619,10.5251263 C22.862524,10.7203884 22.862524,11.0369709 22.6672619,11.232233 L19.8388348,14.0606602 C19.6435726,14.2559223 19.3269901,14.2559223 19.131728,14.0606602 L18.4246212,13.3535534 C18.2293591,13.1582912 18.2293591,12.8417088 18.4246212,12.6464466 Z M3.22182541,17.9497475 L13.1213203,8.05025253 C13.5118446,7.65972824 14.1450096,7.65972824 14.5355339,8.05025253 L15.9497475,9.46446609 C16.3402718,9.85499039 16.3402718,10.4881554 15.9497475,10.8786797 L6.05025253,20.7781746 C5.65972824,21.1686989 5.02656326,21.1686989 4.63603897,20.7781746 L3.22182541,19.363961 C2.83130112,18.9734367 2.83130112,18.3402718 3.22182541,17.9497475 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                    <path d="M12.3890873,1.28248558 L12.3890873,1.28248558 C15.150511,1.28248558 17.3890873,3.52106183 17.3890873,6.28248558 L17.3890873,10.7824856 C17.3890873,11.058628 17.1652297,11.2824856 16.8890873,11.2824856 L12.8890873,11.2824856 C12.6129449,11.2824856 12.3890873,11.058628 12.3890873,10.7824856 L12.3890873,1.28248558 Z"
-                                          fill="#000000"
-                                          transform="translate(14.889087, 6.282486) rotate(-45.000000) translate(-14.889087, -6.282486) "/>
-                                </g>
-                            </svg><!--end::Svg Icon-->
-                            ابزار و تجهیزات
-                        </a>
-                        <!--                    Navbar Child Wrapper:start-->
-                        <ul class="position-absolute bg-white custom-box-shadow-s-2 nav-item-submenu">
-                            <!--                        Navbar Item Child:start-->
-
-                            <li class="nav-item-submenu-child"><a href="single-product.html" title="">زیر منوی 1</a>
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                            <!--                        Navbar Item Child:start-->
-                            <li class="nav-item-submenu-child"><a href="single-product.html" title="">زیر منوی 2</a>
-                            </li>
-                            <!--                        Navbar Item Child:end-->
-
-                        </ul>
-                        <!--                    Navbar Child Wrapper:end-->
-
-                    </li>
-                    <!--            Navbar Item:end-->
-
-                    <!--            Navbar Item:start-->
-                    <li class="nav-item d-flex justify-content-between align-items-center me-2 ">
-
-                        <a class="mx-2 py-2" href="category.html" title="">
-                            <!--begin::Svg Icon-->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px"
-                                 height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <rect fill="#000000" opacity="0.3" x="5" y="20" width="14" height="2" rx="1"/>
-                                    <path d="M5,12.8739825 C3.27477279,12.4299397 2,10.8638394 2,9 C2,6.790861 3.790861,5 6,5 C6.11332888,5 6.22555698,5.00471299 6.33649899,5.01395368 C7.15621908,2.67628292 9.38235111,1 12,1 C14.6176489,1 16.8437809,2.67628292 17.663501,5.01395368 C17.774443,5.00471299 17.8866711,5 18,5 C20.209139,5 22,6.790861 22,9 C22,10.8638394 20.7252272,12.4299397 19,12.8739825 L19,17 C19,17.5522847 18.5522847,18 18,18 L6,18 C5.44771525,18 5,17.5522847 5,17 L5,12.8739825 Z"
-                                          fill="#000000"/>
-                                </g>
-                            </svg>
-                            <!--end::Svg Icon-->
-                            خانه و آشپرخانه
-                        </a>
-
-                    </li>
-                    <!--            Navbar Item:end-->
-
-                    <!--            Navbar Item:start-->
-                    <li class="nav-item d-flex justify-content-between align-items-center me-2">
-
-                        <a class="mx-2 py-2" href="best-seller.html" title="">
-                            <!--begin::Svg Icon-->
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px"
-                                 height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <path d="M14,7 C13.6666667,10.3333333 12.6666667,12.1167764 11,12.3503292 C11,12.3503292 12.5,6.5 10.5,3.5 C10.5,3.5 10.287918,6.71444735 8.14498739,10.5717225 C7.14049032,12.3798172 6,13.5986793 6,16 C6,19.428689 9.51143904,21.2006583 12.0057195,21.2006583 C14.5,21.2006583 18,20.0006172 18,15.8004732 C18,14.0733981 16.6666667,11.1399071 14,7 Z"
-                                          fill="#000000"/>
-                                </g>
-                            </svg><!--end::Svg Icon-->
-                            پر فروش ترین ها</a>
-
-                    </li>
-                    <!--            Navbar Item:end-->
+                    <!--Navbar Item:end-->
                 </ul>
                 <!--Navbar Wrapper:end-->
             </div>
@@ -1562,7 +472,7 @@
                 <!--Navbar Item:start-->
                 <!--Navbar Item:end-->
             </div>
-            <!--        Navbar Left:end-->
+            <!--Navbar Left:end-->
         </div>
         <!--Container:end-->
 
@@ -1574,8 +484,7 @@
                 <div class="main-mobile-navbar-right">
                     <!--Search Form:start-->
                     <form action="search.html" class="position-relative">
-                        <input class="form-control border-0 fs-6 fw-normal bg-gray-150 border-radius-xl py-2"
-                               type="search" placeholder="جستجو">
+                        <input class="form-control border-0 fs-6 fw-normal bg-gray-150 border-radius-xl py-2" type="search" placeholder="جستجو">
                         <button class="btn position-absolute" type="submit">
                             <i class="fab fa-sistrix text-light-gray fw-md fs-5"></i>
                         </button>
@@ -1587,7 +496,7 @@
                 <!--Main Mobile Navbar Left:start-->
                 <div class="main-mobile-navbar-left">
                     <!--Login and Register:start-->
-                    <a href="login.html" class="btn text-dark-blue border-radius-xl" title="">
+                    <a href="#" class="btn text-dark-blue border-radius-xl" title="">
                         <!--begin::Svg Icon -->
                         <svg class="rotate-3d me-1" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -1611,8 +520,7 @@
                     <!--Login and Register:end-->
 
                     <!--Shopping Cart Button:start-->
-                    <a href="empty-cart.html" class="btn shopping-cart-btn p-2 border-radius-xl position-relative"
-                       title="">
+                    <a href="#" class="btn shopping-cart-btn p-2 border-radius-xl position-relative" title="">
                         <!--begin::Svg Icon-->
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                              height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1636,6 +544,7 @@
         
     </nav>
     <!--Main Navbar::end-->
+
 </div>
 <!--Navbar:end-->
 

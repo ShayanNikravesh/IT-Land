@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +22,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $categories = Category::whereNotNull('parent_id')->get();
+        $parent_categories = Category::whereNull('parent_id')->get();
+        $brands = Brand::all();
+
+        view()->share([
+            'categories' => $categories,
+            'parent_categories' => $parent_categories,
+            'brands' => $brands,
+        ]);
+
     }
 }
