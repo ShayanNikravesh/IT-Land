@@ -1,9 +1,4 @@
 "use strict";
-window.addEventListener('load', function () {
-    //Loader Scripts
-    document.querySelector('.loader').style.display = 'none';
-})
-
 
 //Overlay Scripts
 let overlayElem = document.querySelector('.overlay')

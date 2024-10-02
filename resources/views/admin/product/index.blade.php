@@ -65,7 +65,13 @@
                                     <td>{{$product->english_title}}</td>
 									<td>{{$product->brand->title}}</td>
 									<td>{{$product->category->title}}</td>
-									<td>-------------</td>
+									<td>
+										@if ($product->tracking_code)
+											{{$product->tracking_code}}
+											@else
+											-----------------
+										@endif
+									</td>
 									<td><span id="{{$product->id}}">{{FetchStatus($product->status)}}</span></td>
 									<td>
 										<div class="d-flex">
