@@ -45,9 +45,11 @@ $('div#upload_product_photo').dropzone({
     acceptedFiles: "image/*",
     params: {
         product_id: $('#input_product_id').val(),
-            _token: $('meta[name="csrf-token"]').attr('content') // اضافه کردن CSRF token
-        },        
+        _token: $('meta[name="csrf-token"]').attr('content') // اضافه کردن CSRF token
+    },        
     accept: function(file, done) {
+        // var product_id = $('#input_product_id').val(); // مقداردهی product_id
+        // $('#' + product_id).load(document.URL + ' #' + product_id);
         done();
     },
     error: function (file, res) {
