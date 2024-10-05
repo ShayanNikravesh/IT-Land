@@ -270,7 +270,7 @@
                                         <li class="py-3"><a href="javascript:void(0)" class="cyan-500 fs-6 backToProductCategories"><i class="fa fa-arrow-right me-2"></i>بازگشت</a></li>
                                         @foreach ($parent_categories as $parent_category)
                                             <li class="border-bottom-gray-150 px-2 py-3">
-                                                <a href="" class="fs-6 fw-bold d-block showSubMenu2" title="">
+                                                <a href="javascript:;" class="fs-6 fw-bold d-block showSubMenu2" title="">
                                                     {{$parent_category->title}}
                                                     <i class="fa fa-angle-left float-end"></i>
                                                 </a>
@@ -285,7 +285,7 @@
                                                     @foreach ($categories as $category)
                                                         @if ($category->parent_id == $parent_category->id)
                                                             <li class="border-bottom-gray-150 px-2 py-3">
-                                                                <a href="" title="">
+                                                                <a href="{{route('Category.show',$category->id)}}" title="">
                                                                     {{$category->title}}
                                                                 </a>
                                                             </li>
@@ -326,7 +326,7 @@
                                         <li class="py-3"><a href="javascript:void(0)"class="cyan-500 fs-6 backToProductCategories"><iclass="fa fa-arrow-right me-2"></i>بازگشت</a></li>
                                         @foreach ($brands as $brand)
                                             <li class="border-bottom-gray-150 px-2 py-3">
-                                                <a href="" class="fs-6 fw-bold d-block" title="">
+                                                <a href="{{route('Brand.show',$brand->id)}}" class="fs-6 fw-bold d-block" title="">
                                                     {{$brand->title}}
                                                 </a>
                                             </li>
@@ -384,7 +384,7 @@
                             @foreach ($parent_categories as $parent_category)
                                 <!--Navbar Item Child:start-->
                                 <li class="nav-item-submenu-child">
-                                    <a href="single-product.html" class="fw-bold" title="">
+                                    <a href="javascript:;" class="fw-bold" title="">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                             width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -409,7 +409,7 @@
                                             @if ($category->parent_id == $parent_category->id)
                                                 <!--Navbar Item Sub Child:start-->
                                                 <li>
-                                                    <a href="" title="">
+                                                    <a href="{{route('Category.show',$category->id)}}" title="">
                                                         {{$category->title}}
                                                     </a>
                                                 </li>
@@ -454,7 +454,8 @@
                         <ul class="position-absolute bg-white custom-box-shadow-s-2 nav-item-submenu">
                             @foreach ($brands as $brand)
                                 <!--Navbar Item Child:start-->
-                                <li class="nav-item-submenu-child"><a href="single-product.html" title="">{{$brand->title}}</a>
+                                <li class="nav-item-submenu-child">
+                                    <a href="{{route('Brand.show',$brand->id)}}" title="">{{$brand->title}}</a>
                                 </li>
                                 <!--Navbar Item Child:end-->
                             @endforeach

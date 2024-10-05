@@ -32,16 +32,16 @@
 <!--Carousel::end-->
 
 <!--Main:start-->
-<main class="container mt-5">
+<main class="container mt-5 category">
 
     <!--Porduct Discounted:start-->
-    <div class="best-suggestions border-radius-2xl py-1">
+    <div class="best-suggestions border-radius-2xl py-1 bg-purple">
         <!-- Slider:start -->
         <div class="swiper bestSuggestionsSlider">
             <div class="swiper-wrapper p-2">
                 <div class="swiper-slide text-center d-flex flex-column justify-content-between align-items-center">
                     <img src="{{asset('user-assets/img/Amazings.png')}}" alt="" class="amazing-img">
-                    <img src="{{asset('user-assets/img/box.png')}}" alt="" class="box-img d-block">
+                    <img src="{{asset('user-assets/img/category-best-1.png')}}" alt="" class="box-img d-block">
                     <a href="#" class="text-white d-block mt-3" title="">مشاهده همه <iclass="fa fa-angle-left align-baseline ms-1"></i></a>
                 </div>
                 <div class="swiper-slide border-radius-1-tr-br">

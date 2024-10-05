@@ -33,3 +33,7 @@ function generateRandomDigit ($length = 8):int
 
     return $codeRandom;
 }
+
+function priceFormatter($price) {
+    return number_format($price) . ' تومان';
+}
