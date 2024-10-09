@@ -13,9 +13,13 @@ Route::get('/', function () {
     return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos'));
 });
 
+//category
 Route::resource('Category',CategoryController::class);
 
+//product
 Route::resource('Product',ProductController::class);
+Route::post('color_price',[ProductController::class,'getPriceByColor'])->name('color_price');
 
+//brand
 Route::resource('Brand',BrandController::class);
 

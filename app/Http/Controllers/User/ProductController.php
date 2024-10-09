@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -36,7 +37,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        dd('hi');
+        $product = Product::with('colors','category','brand','ram','memory')->findorFail($id);
+        return view('user.product.single-product',compact('product'));
     }
 
     /**
@@ -62,4 +64,25 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function getPriceByColor(Request $request)
+    {
+        $color_id = $request->input('color_id');
+        $product_id = $request->input('product_id');
+
+        // فرض کنید که محصول با ID مشخص شده را پیدا می‌کنید
+        $product = Product::findorFail($product_id);
+
+        // قیمت رنگ مورد نظر را برمی‌گردانید
+        if ($product) {
+            $color = $product->colors()->where('color_id', $color_id)->first();
+            if($color){
+                $color_name = $color->name;
+                $price = $color->pivot->price;
+                $price_discounted = $color->pivot->price_discounted;
+                return response()->json(['price' => $price,'price_discounted' => $price_discounted,'color_name'=> $color_name]);
+            }
+        }
+    }
+
 }

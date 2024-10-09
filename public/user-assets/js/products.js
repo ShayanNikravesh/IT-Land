@@ -55,3 +55,38 @@ $(document).ready(function () {
 
 })
 
+
+document.querySelectorAll('.color-radio').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const colorId = this.value; // ID رنگ انتخاب شده
+        const productId = document.getElementById('product-id').value; // ID محصول
+        const url = route('color_price');
+
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            body: JSON.stringify({color_id: colorId , product_id: productId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.price) {
+                document.getElementById('selectedColor').innerText =  data.color_name;
+                document.getElementById('price').innerText =  `${data.price.toLocaleString('fa-IR')} تومان`;
+                if (data.price_discounted) {
+                    document.getElementById('price_discounted').innerText = `${data.price_discounted.toLocaleString('fa-IR')} تومان`;
+                }else {
+                    document.getElementById('price_discounted').innerText = 'بدون تخفیف';
+                }
+            } else {
+                console.error(data.error);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+});
+
+

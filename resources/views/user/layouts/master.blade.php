@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>IT Land</title>
 
     <!--Bootstrap 5 RTL-->
@@ -22,6 +23,7 @@
 
 <!--Body::start-->
 <body>
+@routes
 
 <!--Navbar:start-->
 <div class="custom-navbar" id="customNavbar">
@@ -38,7 +40,7 @@
             <!--Top Navbar Right:start-->
             <div class="top-nav-right d-flex justify-content-between align-items-center">
                 <!--Logo:start-->
-                <a href="index.html" class="navbar-brand" title="">
+                <a href="" class="navbar-brand" title="">
                     <img src="{{asset('user-assets/img/it land.jpg')}}" style="width: 4rem" alt="لوگوی برگ شاپ">
                 </a>
                 <!--Logo:end-->
@@ -533,7 +535,7 @@
                                       fill="#000000"/>
                             </g>
                         </svg><!--end::Svg Icon-->
-                        <span class="badge bg-danger position-absolute shop-cart-badge border border-white border-2 border-radius-xl">4</span>
+                        <span class="badge bg-primary position-absolute shop-cart-badge border border-white border-2 border-radius-xl">4</span>
                     </a>
                     <!--Shopping Cart Button:end-->
                 </div>
@@ -862,6 +864,15 @@
 <!--Index JS:start Only for this page-->
 <script src="{{asset('user-assets/js/index.js')}}"></script>
 <!--Index JS:end Only for this page-->
+
+<!--Jquery::start (!Only For product Page!)-->
+<script src="{{asset('user-assets/js/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
+
+<script src="{{asset('user-assets/js/products.js')}}"></script>
+
+<script src="{{asset('user-assets/js/vendors/xzoom/xzoom.min.js')}}"></script>
+<!--XZoom::end-->
+
 </body>
 <!--Body::end-->
 
