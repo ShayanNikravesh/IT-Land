@@ -62,7 +62,6 @@ document.querySelectorAll('.color-radio').forEach(radio => {
         const productId = document.getElementById('product-id').value; // ID محصول
         const url = route('color_price');
 
-
         fetch(url, {
             method: 'POST',
             headers: {
@@ -88,5 +87,50 @@ document.querySelectorAll('.color-radio').forEach(radio => {
         .catch(error => console.error('Error:', error));
     });
 });
+
+$(document).ready(function() {
+    $('#mainSearchInput').on('input', function() {
+        let query = $(this).val();
+
+        if (query.length > 0) {
+            $.ajax({
+                url: route('search'),
+                method: "GET",
+                data: { search: query },
+                success: function(data) {
+                    $('.search-results').empty(); // پاک کردن نتایج قبلی
+                    $('.search-results').append('<span class="py-2 px-3 d-block fs-7">نتایج جست و جو :</span>');
+
+                    if (data.length > 0) {
+                        $.each(data, function(index, product) {
+                            let productUrl = route('Product.show',product.id)
+                            $('.search-results').append(
+                                `<div class="search-result-item position-relative border-bottom p-3">
+                                    <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
+                                    <div class="d-inline-block ms-2">
+                                        <span class="d-inline-block fw-bold ms-1">${product.title}</span>
+                                        <span class="d-inline-block fw-bold ms-1">${product.english_title}</span>
+                                    </div>
+                                    <a href="${productUrl}" class="stretched-link"></a>
+                                </div>`
+                            );
+                        });
+                    } else {
+                        $('.search-results').append('<div class="p-3">نتیجه‌ای یافت نشد.</div>');
+                    }
+
+                    // نمایش نتایج
+                    $('.search-results').show();
+                }
+            });
+        } else {
+            $('.search-results').empty(); // اگر ورودی خالی است، نتایج را پاک کنید
+            $('.search-results').hide(); // پنهان کردن نتایج
+        }
+    });
+});
+
+
+
 
 

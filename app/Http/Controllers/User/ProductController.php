@@ -85,4 +85,19 @@ class ProductController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        
+        $Products = Product::where('title', 'LIKE', "%{$search}%")->orWhere('description', 'LIKE', "%{$search}%")->orWhere('english_title', 'LIKE', "%{$search}%")->get();
+
+        $products = Product::with(['colors','category','brand','ram','memory'])->with(['photos'=>function($query){$query->Limit(1);}])->where('title', 'LIKE', "%{$search}%")->orWhere('description', 'LIKE', "%{$search}%")->orWhere('english_title', 'LIKE', "%{$search}%")->paginate(10);
+
+        if ($request->ajax()) {
+            return response()->json($Products);
+        }
+    
+        return view('user.product.search-products', compact('products'));
+    }
+
 }

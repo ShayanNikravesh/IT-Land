@@ -229,7 +229,7 @@
                                     <div class="price py-2 d-flex justify-content-between align-items-center">
                                         <p class="gray-600 fs-7">
                                             قیمت :
-                                        </p>
+                                        </p>    
                                         <div>
                                             <span class="fw-bold pe-1 fs-4" id="price"></span>
                                         </div>

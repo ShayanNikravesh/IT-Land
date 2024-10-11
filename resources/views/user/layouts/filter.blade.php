@@ -17,11 +17,14 @@
                  aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     <ul>
-                        <li><a href="">کالای دیجیتال</a>
-                            <label>
-                                <input type="checkbox" class="form-check-input">
-                            </label>
-                        </li>
+                        @foreach ($categories as $category)
+                            <li>
+                                <a href="">{{$category->title}}</a>
+                                <label>
+                                    <input type="checkbox" class="form-check-input">
+                                </label>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -39,11 +42,14 @@
                  aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     <ul>
-                        <li><a href="">کالای دیجیتال</a>
-                            <label>
-                                <input type="checkbox" class="form-check-input">
-                            </label>
-                        </li>
+                        @foreach ($brands as $brand)
+                            <li>
+                                <a href="">{{$brand->title}}</a>
+                                <label>
+                                    <input type="checkbox" class="form-check-input">
+                                </label>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

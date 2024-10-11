@@ -47,16 +47,15 @@
 
                 <!--Search Form:start-->
                 <div class="main-search position-relative">
-                    <form action="search.html" class="position-relative">
-                        <input class="form-control border-0 border-radius-xl bg-gray-150 fs-7"
-                               type="search" placeholder="جستجو" id="mainSearchInput" autocomplete="off">
+                    <form action="{{route('search')}}" method="GET" class="position-relative" id="searchForm">
+                        <input class="form-control border-0 border-radius-xl bg-gray-150 fs-7" name="search" type="search" placeholder="جستجو" id="mainSearchInput" autocomplete="off">
                         <button class="btn position-absolute" type="submit">
                             <i class="fab fa-sistrix fw-md fs-5 gray-500"></i>
                         </button>
                     </form>
-                    <div class="search-results custom-box-shadow-s-2">
+                    <div class="search-results custom-box-shadow-s-2" style="display: none;">
                         <span class="py-2 px-3 d-block fs-7">نتایج جست و جو :</span>
-                        <!--Search Item:start-->
+                        {{-- <!--Search Item:start-->
                         <div class="search-result-item position-relative border-bottom p-3">
                             <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
                             <div class="d-inline-block ms-2">
@@ -67,7 +66,7 @@
                             <a href="search.html" class="stretched-link"></a>
                             <!--Search Link:end-->
                         </div>
-                        <!--Search Item:end-->
+                        <!--Search Item:end--> --}}
                     </div>
                 </div>
                 <!--Search Form:end-->
