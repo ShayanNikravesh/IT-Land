@@ -131,13 +131,15 @@ class ProductController extends Controller
             });
         }
 
-        // if ($request->has('min_price') && is_numeric($request->min_price)) {
-        //     $query->where('price', '>=', $request->min_price);
-        // }
-        
-        // if ($request->has('max_price') && is_numeric($request->max_price)) {
-        //     $query->where('price', '<=', $request->max_price);
-        // }
+        if ($request->available == 1) {
+            // $query->where('stock', '>', 0); // فرض می‌کنیم که فیلد stock تعداد موجودی کالا را نشان می‌دهد
+            $query->where(function ($q) use ($request) {
+                $q->where('stock', '>',0)
+                  ->orWhereHas('colors', function ($q) use ($request) {
+                      $q->where('stock', '>', 0);
+                  });
+            });
+        }
 
         $products = $query->with(['photos'=>function($query){$query->Limit(1);}])->paginate(10)->appends($request->except('page'));
 
