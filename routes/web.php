@@ -20,6 +20,7 @@ Route::resource('Category',CategoryController::class);
 Route::resource('Product',ProductController::class);
 Route::post('color_price',[ProductController::class,'getPriceByColor'])->name('color_price');
 Route::get('search',[ProductController::class,'search'])->name('search');
+Route::get('filter',[ProductController::class,'filter'])->name('filter');
 
 //brand
 Route::resource('Brand',BrandController::class);

@@ -100,4 +100,48 @@ class ProductController extends Controller
         return view('user.product.search-products', compact('products'));
     }
 
+    public function filter(Request $request)
+    {
+
+        $query = Product::query();
+
+        if ($request->has('category')) {
+            $query->where('category_id', $request->category);
+        }
+    
+        if ($request->has('brand')) {
+            $query->where('brand_id', $request->brand);
+        }
+       
+        if ($request->has('min_price') && is_numeric($request->min_price)) {
+            $query->where(function ($q) use ($request) {
+                $q->where('price', '>=', $request->min_price)
+                  ->orWhereHas('colors', function ($q) use ($request) {
+                      $q->where('price', '>=', $request->min_price);
+                  });
+            });
+        }
+    
+        if ($request->has('max_price') && is_numeric($request->max_price)) {
+            $query->where(function ($q) use ($request) {
+                $q->where('price', '<=', $request->max_price)
+                  ->orWhereHas('colors', function ($q) use ($request) {
+                      $q->where('price', '<=', $request->max_price);
+                  });
+            });
+        }
+
+        // if ($request->has('min_price') && is_numeric($request->min_price)) {
+        //     $query->where('price', '>=', $request->min_price);
+        // }
+        
+        // if ($request->has('max_price') && is_numeric($request->max_price)) {
+        //     $query->where('price', '<=', $request->max_price);
+        // }
+
+        $products = $query->with(['photos'=>function($query){$query->Limit(1);}])->paginate(10)->appends($request->except('page'));
+
+        return view('user.product.filter-products', compact('products'));
+    }
+
 }

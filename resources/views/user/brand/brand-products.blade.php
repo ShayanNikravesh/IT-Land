@@ -64,6 +64,7 @@
                                 <div class="product-item-title">
                                     <h3 class="fs-7 fw-bold">{{$product->title}}</h3>
                                 </div>
+                                <h3 class="gray-400 en-title d-block pb-1 fs-7">{{$product->english_title}}</h3>
                                 <!--Product Item Desc:end-->
 
                                 @if ($product->has_color == 0)
