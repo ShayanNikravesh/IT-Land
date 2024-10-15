@@ -36,143 +36,93 @@
                     <h3 class="card-title">جزئیات محصول</h3>
                 </div>
                 <!--begin::Form-->
-                <form class="form" method="post" action="" id="kt_form">
                     <div class="card-body">
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label>عنوان:</label>
-                                <span class="bg-secondary">{{$product->title}}</span>
-                                <input type="text" name="title" class="form-control" placeholder="عنوان را وارد کنید...">
+                                <span class="">{{$product->title}}</span>
                             </div>
                             <div class="col-lg-6">
                                 <label>عنوان انگلیسی:</label>
-                                <input type="text" name="english_title" class="form-control" placeholder="عنوان انگلیسی را وارد کنید...">
+                                <span class="">{{$product->english_title}}</span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label class="text-right">دسته بندی :</label>
-                                <select name="category" class="form-control text-right selectpicker">
-                                    <option value="">انتخاب کنید....</option>
-                                    
-                                </select>
+                                <span class="">{{$product->category->title}}</span>
                             </div>
                             <div class="col-lg-6">
                                 <label class="text-right">برند :</label>
-                                <select name="brand" class="form-control text-right selectpicker">
-                                    <option value="">انتخاب کنید....</option>
-                                    
-                                </select>
+                                <span class="">{{$product->brand->title}}</span>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label class="text-right">حافظه :</label>
-                                <select name="memory" class="form-control text-right selectpicker">
-                                    <option value="">انتخاب کنید....</option>
-                                    
-                                </select>
-                            </div>
-                            <div class="col-lg-6">
-                                <label class="text-right">رم :</label>
-                                <select name="ram" class="form-control text-right selectpicker">
-                                    <option value="">انتخاب کنید....</option>
-                                   
-                                </select>
-                            </div>
+                            @if ($product->memory || $product->ram)
+                                <div class="col-lg-6">
+                                    <label class="text-right">حافظه :</label>
+                                    <span class="">{{$product->memory->size}}</span>
+                                    <span class="">{{$product->memory->name}}</span>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="text-right">رم :</label>
+                                    <span class="">{{$product->ram->size}}</span>
+                                    <span class="">{{$product->ram->name}}</span>
+                                </div>
+                            @endif
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-12">
                                 <label class="text-right"> مشخصات و توضیحات :</label>
-                                <textarea class="summernote" name="description" style="display: none;"></textarea>
+                                {!!$product->description!!}
                             </div>
                             <div class="col-lg-12">
                                 <label class="text-right">نقد و بررسی :</label>
-                                <textarea class="summernote" name="review" style="display: none;"></textarea>
+                                {!!$product->review!!}
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label class="text-right">وضعیت:</label>
-                                <select name="status" class="form-control text-right selectpicker">
-                                    <option value="active">فعال</option>
-                                    <option value="inactive">غیرفعال</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-6">
-                                <label>تنوع رنگ :</label>
-                                <div class="radio-inline">
-                                    <label class="radio">
-                                        <input type="radio" name="has_color" value="1"/>
-                                        <span></span>
-                                        دارد
-                                    </label>
-                                    <label class="radio">
-                                        <input type="radio" name="has_color" value="0"/>
-                                        <span></span>
-                                        ندارد
-                                    </label>
-                                </div>
-                                <span class="form-text text-muted">لطفا انتخاب کنید.</span>
-                            </div>
-                        </div>
-                        {{-- Color-variants-section Start --}}
-                        <div id="no-color-section" style="display: none">
-                            <div class="form-group row">
-                                <div class="col-lg-6">
-                                    <label>قیمت:</label>
-                                    <input type="number" name="price" class="form-control" placeholder="قیمت را وارد کنید...">
-                                </div>
-                                <div class="col-lg-6">
-                                    <label>قیمت با تخفیف:</label>
-                                    <input type="number" name="price_discounted" class="form-control" placeholder="قیمت با تخفیف را وارد کنید...">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-6">
-                                    <label>موجودی:</label>
-                                    <input type="number" name="stock" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div id="color-variants-section" style="display:none">
-                            <div id="container">
+                        @if ($product->has_color == 1)
+                            @foreach ($product->colors as $color)
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label class="text-right">رنگ :</label>
-                                        <select name="color[]" class="form-control text-right selectpicker">
-                                            <option value="0">انتخاب کنید....</option>
-                                            
-                                        </select>
+                                        <span class="">{{$color->name}}</span>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>موجودی :</label>
-                                        <input type="number" name="color_stock[]" class="form-control">
+                                        <span class="">{{$color->pivot->stock}}</span>                                    
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>قیمت:</label>
-                                        <input type="number" name="color_price[]" class="form-control" placeholder="قیمت را وارد کنید...">
+                                        <span class="">{{$color->pivot->price}}</span>                                    
                                     </div>
                                     <div class="col-lg-6">
                                         <label>قیمت با تخفیف:</label>
-                                        <input type="number" name="color_price_discounted[]" class="form-control" placeholder="قیمت با تخفیف را وارد کنید...">
+                                        <span class="">{{$color->pivot->price_discounted}}</span>                                    
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-lg-6">
-                                    <button type="button" id="add-color-variant" class="btn btn-primary mr-2">اضافه کردن رنگ جدید</button>
+                            @endforeach
+                        @else
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>قیمت:</label>
+                                        <span class="">{{priceFormatter($product->price)}}</span>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>قیمت با تخفیف:</label>
+                                        <span class="">{{priceFormatter($product->price_discounted)}}</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        {{-- Color-variants-section End --}}
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>موجودی:</label>
+                                        <span class="">{{$product->stock}}</span>                                   
+                                    </div>
+                                </div>
+                        @endif
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-success mr-2">ثبت</button>
-                    </div>
-                </form>
                 <!--end::Form-->
             </div>
         </div>
@@ -181,45 +131,4 @@
     <!--end::Entry-->
 </div>
 
-{{-- js codes Start --}}
-<script>
-
-    document.querySelectorAll('input[name="has_color"]').forEach((elem) => {
-        elem.addEventListener("change", function(event) {
-            const colorSection = document.getElementById("color-variants-section");
-            const noColorSection = document.getElementById("no-color-section");
-
-            if (event.target.value === "1") {
-                colorSection.style.display = "block";
-                noColorSection.style.display = "none"; // مخفی کردن بخش دیگر
-            } else {
-                colorSection.style.display = "none"; // مخفی کردن این بخش
-                noColorSection.style.display = "block"; // نمایش بخش دیگر
-            }
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const addButton = document.getElementById('add-color-variant');
-        const originalContainer = document.getElementById('container');
-        const colorVariantsSection = document.getElementById('color-variants-section');
-
-        addButton.addEventListener('click', function() {
-            // کپی کردن container
-            const newContainer = originalContainer.cloneNode(true);
-            
-            // نمایش کپی جدید
-            newContainer.style.display = 'block'; 
-            
-            // اضافه کردن newContainer قبل از دکمه
-            colorVariantsSection.insertBefore(newContainer, addButton.parentNode.parentNode);
-        });
-    });
-
-
-</script>
-
-
-
-</script>
 @endsection
