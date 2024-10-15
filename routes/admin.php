@@ -17,11 +17,11 @@ Route::get('index', function () {
 
 //category
 Route::resource('category', CategoryController::class);
-Route::post('ChangeStatus/{id}',[CategoryController::class,'ChangeStatus'])->name('change_Status_category');
-
+Route::post('category/ChangeStatus/{id}', [CategoryController::class, 'ChangeStatus'])->name('change_Status_category');
+   
 //brand
 Route::resource('brand',BrandController::class);
-Route::post('ChangeStatus/{id}',[BrandController::class,'ChangeStatus'])->name('change_Status_brand');
+Route::post('brand/ChangeStatus/{id}',[BrandController::class,'ChangeStatus'])->name('change_Status_brand');
 
 //banner
 Route::resource('banner',BannerController::class);
@@ -40,9 +40,9 @@ Route::resource('ram',RamController::class);
 
 //product
 Route::resource('product',ProductController::class);
-Route::post('changeStatus/{id}/{status}',[ProductController::class,'changeStatus'])->name('change_Status_product');
+Route::post('product/changeStatus/{id}/{status}',[ProductController::class,'changeStatus'])->name('change_Status_product');
 
 //article
 Route::resource('article',ArticleController::class);
 Route::post('storePhoto',[ArticleController::class,'storePhoto'])->name('store_article_photo');
-Route::post('changeStatus/{id}',[ArticleController::class,'changeStatus'])->name('change_Status_article');
+Route::post('article/changeStatus/{id}',[ArticleController::class,'changeStatus'])->name('change_Status_article');
