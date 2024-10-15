@@ -42,9 +42,9 @@
                 <div class="swiper-slide text-center d-flex flex-column justify-content-between align-items-center">
                     <img src="{{asset('user-assets/img/Amazings.png')}}" alt="" class="amazing-img">
                     <img src="{{asset('user-assets/img/category-best-1.png')}}" alt="" class="box-img d-block">
-                    <a href="#" class="text-white d-block mt-3" title="">مشاهده همه <iclass="fa fa-angle-left align-baseline ms-1"></i></a>
+                    <a href="{{route('Product.index')}}" class="text-white d-block mt-3" title="">مشاهده همه <iclass="fa fa-angle-left align-baseline ms-1"></i></a>
                 </div>
-                <div class="swiper-slide border-radius-1-tr-br">
+                {{-- <div class="swiper-slide border-radius-1-tr-br">
                     <img src="{{asset('user-assets/img/coat-1.jpg')}}" class="img-fluid" alt="">
                     <div class="product-details d-flex justify-content-between align-items-center mt-4">
                         <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold d">25 %</span>
@@ -52,84 +52,24 @@
                     </div>
                     <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
                     <a href="#" class="stretched-link" title=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('user-assets/img/coat-2.jpg')}}" class="img-fluid" alt="">
-                    <div class="product-details d-flex justify-content-between align-items-center mt-4">
-                        <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">25 %</span>
-                        <span class="discounted_price fw-bold fs-5">269000 <span>تومان</span></span>
+                </div> --}}
+                @foreach ($products as $product)
+                    <div class="swiper-slide">
+                        @foreach ($product->photos as $photo)
+                            <img src="{{asset($photos->src)}}" class="img-fluid" alt="">
+                        @endforeach
+                        <div class="product-details d-flex justify-content-between align-items-center mt-4">
+                            <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">{{getpercent($product)}}%</span>
+                            <span class="discounted_price fw-bold fs-5">{{priceFormatter($product->price_discounted)}}</span>
+                        </div>
+                        <del class="d-block real_price float-end gray-500 pe-4">{{priceFormatter($product->price)}}</del>
+                        <a href="{{route('Product.show',$product->id)}}" class="stretched-link" title=""></a>
                     </div>
-                    <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
-                    <a href="#" class="stretched-link" title=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('user-assets/img/coat-3.jpg')}}" class="img-fluid" alt="">
-                    <div class="product-details d-flex justify-content-between align-items-center mt-4">
-                        <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">25 %</span>
-                        <span class="discounted_price fw-bold fs-5">269000 <span>تومان</span></span>
-                    </div>
-                    <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
-                    <a href="#" class="stretched-link" title=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('user-assets/img/coat-4.jpg')}}" class="img-fluid" alt="">
-                    <div class="product-details d-flex justify-content-between align-items-center mt-4">
-                        <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">25 %</span>
-                        <span class="discounted_price fw-bold fs-5">269000 <span>تومان</span></span>
-                    </div>
-                    <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
-                    <a href="#" class="stretched-link" title=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('user-assets/img/coat-5.jpg')}}" class="img-fluid" alt="">
-                    <div class="product-details d-flex justify-content-between align-items-center mt-4">
-                        <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">25 %</span>
-                        <span class="discounted_price fw-bold fs-5">269000 <span>تومان</span></span>
-                    </div>
-                    <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
-                    <a href="#" class="stretched-link" title=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('user-assets/img/coat-6.jpg')}}" class="img-fluid" alt="">
-                    <div class="product-details d-flex justify-content-between align-items-center mt-4">
-                        <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">25 %</span>
-                        <span class="discounted_price fw-bold fs-5">269000 <span>تومان</span></span>
-                    </div>
-                    <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
-                    <a href="#" class="stretched-link" title=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('user-assets/img/coat-7.jpg')}}" class="img-fluid" alt="">
-                    <div class="product-details d-flex justify-content-between align-items-center mt-4">
-                        <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">25 %</span>
-                        <span class="discounted_price fw-bold fs-5">269000 <span>تومان</span></span>
-                    </div>
-                    <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
-                    <a href="#" class="stretched-link" title=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('user-assets/img/coat-8.jpg')}}" class="img-fluid" alt="">
-                    <div class="product-details d-flex justify-content-between align-items-center mt-4">
-                        <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">25 %</span>
-                        <span class="discounted_price fw-bold fs-5">269000 <span>تومان</span></span>
-                    </div>
-                    <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
-                    <a href="#" class="stretched-link" title=""></a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{asset('user-assets/img/coat-9.jpg')}}" class="img-fluid" alt="">
-                    <div class="product-details d-flex justify-content-between align-items-center mt-4">
-                        <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">25 %</span>
-                        <span class="discounted_price fw-bold fs-5">269000 <span>تومان</span></span>
-                    </div>
-                    <del class="d-block real_price float-end gray-500 pe-4">290,000</del>
-                    <a href="#" class="stretched-link" title=""></a>
-                </div>
+                @endforeach
                 <div class="swiper-slide border-radius-1-tl-bl text-center">
                     <i class="fa fa-angle-left border-gray-300 text-info"></i>
-                    <a href="#" class="stretched-link d-block text-black-50" title="">مشاهده همه</a>
+                    <a href="{{route('Product.index')}}" class="stretched-link d-block text-black-50" title="">مشاهده همه</a>
                 </div>
-
             </div>
             <div class="swiper-button-next bg-light border-radius-circle border-gray-400"></div>
             <div class="swiper-button-prev bg-light border-radius-circle border-gray-400"></div>

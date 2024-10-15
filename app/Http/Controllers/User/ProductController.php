@@ -13,7 +13,17 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        // dd('hi');
+        $products = Product::with(['photos'=>function($query){$query->Limit(1);}])->
+        where(function ($q){
+            $q->where('price_discounted','>',0)
+              ->orWhereHas('colors', function ($q){
+                  $q->where('price_discounted','>',0);
+              });
+        })
+        ->paginate(10);
+        // $products = Product::where('price_discounted','>',0)->with(['photos'=>function($query){$query->Limit(1);}])->paginate(10);
+        return view('user.product.discounted-products',compact('products'));
     }
 
     /**

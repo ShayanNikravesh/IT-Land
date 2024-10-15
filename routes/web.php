@@ -4,13 +4,15 @@ use App\Http\Controllers\User\BrandController;
 use App\Http\Controllers\User\CategoryController;
 use App\Http\Controllers\User\ProductController;
 use App\Models\Banner;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $carousel_photos = Banner::with('photos')->findOrFail(1);
     $small_banner_photos = Banner::with('photos')->findOrFail(2);
     $medium_banner_photos = Banner::with('photos')->findOrFail(3);
-    return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos'));
+    $products = Product::where('price_discounted','>',0)->with(['photos'=>function($query){$query->Limit(1);}])->take(6)->get();
+    return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos','products'));
 });
 
 //category

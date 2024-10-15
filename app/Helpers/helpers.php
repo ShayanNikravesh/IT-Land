@@ -37,3 +37,10 @@ function generateRandomDigit ($length = 8):int
 function priceFormatter($price) {
     return number_format($price) . ' تومان';
 }
+
+function getpercent($value){
+    if ($value['price']==0 || $value['price_discounted']==0){
+        return false;
+    }
+    return round( (($value['price']-$value['price_discounted']) / $value['price_discounted']) * 100 );
+}
