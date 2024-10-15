@@ -15,6 +15,9 @@ class MemoryController extends Controller
     public function index()
     {
         $memories = Memory::all();
+        $title = 'حذف حافظه!';
+        $text = "آیا از حذف این حافظه اطمینان دارید؟";
+        confirmDelete($title, $text);
         return view('admin.memory.index',compact('memories'));
     }
 
@@ -91,6 +94,20 @@ class MemoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+        $memory = Memory::with('products')->findOrFail($id);
+
+        if(count($memory->products) == 0){
+            $memory = Memory::findOrFail($id);
+            $memory->forceDelete();
+
+            Alert::success('عملیات موفق','حافظه حذف شد.');
+            return redirect()->back();
+
+        }else
+        {
+            Alert::warning('اخطار','برای این حافظه محصول ثبت شده است.');
+            return redirect()->back();
+        }
     }
 }

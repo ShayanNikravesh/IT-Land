@@ -53,7 +53,7 @@
                                         </div>
                                         <label>حجم :</label>
                                         <div class="col-3">
-                                            <input class="form-control form-control-solid" type="text" name="size"/>
+                                            <input class="form-control form-control-solid" type="number" name="size"/>
                                         </div>
                                     </div>
                                 </div>

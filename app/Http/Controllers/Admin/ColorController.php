@@ -15,6 +15,9 @@ class ColorController extends Controller
     public function index()
     {
         $colors = Color::all();
+        $title = 'حذف رنگ!';
+        $text = "آیا از حذف این رم اطمینان دارید؟";
+        confirmDelete($title, $text);
         return view('admin.color.index',compact('colors'));
     }
 
@@ -91,6 +94,20 @@ class ColorController extends Controller
      */
     public function destroy(string $id)
     {
-        dd('hi');
+
+        $color = Color::with('products')->findOrFail($id);
+
+        if(count($color->products) == 0){
+            $color = Color::findOrFail($id);
+            $color->forceDelete();
+
+            Alert::success('عملیات موفق','رنگ حذف شد.');
+            return redirect()->back();
+
+        }else
+        {
+            Alert::warning('اخطار','برای این رنگ محصول ثبت شده است.');
+            return redirect()->back();
+        }
     }
 }

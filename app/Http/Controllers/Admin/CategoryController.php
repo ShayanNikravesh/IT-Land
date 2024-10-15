@@ -103,7 +103,27 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        dd('hi');
+        $child = Category::where('parent_id',$id)->get();
+        $category = Category::with('products')->findOrFail($id);
+
+        if(count($child) == 0)
+        {
+            if(count($category->products) == 0){
+                $category = Category::findOrFail($id);
+                $category->forceDelete();
+
+                Alert::success('عملیات موفق','دسته حذف شد.');
+                return redirect()->back();
+
+            }else
+            {
+                Alert::warning('اخطار','در این دسته محصول ثبت شده است.');
+                return redirect()->back();
+            }
+        }
+
+        Alert::warning('اخطار','دسته دارای زیرمجموعه است.');
+        return redirect()->back();
     }
 
     public function ChangeStatus(string $id)

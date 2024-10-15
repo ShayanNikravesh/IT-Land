@@ -15,6 +15,9 @@ class RamController extends Controller
     public function index()
     {
         $rams = Ram::all();
+        $title = 'حذف رم!';
+        $text = "آیا از حذف این رم اطمینان دارید؟";
+        confirmDelete($title, $text);
         return view('admin.ram.index',compact('rams'));
     }
 
@@ -91,6 +94,20 @@ class RamController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
+        $ram = Ram::with('products')->findOrFail($id);
+
+        if(count($ram->products) == 0){
+            $ram = Ram::findOrFail($id);
+            $ram->forceDelete();
+
+            Alert::success('عملیات موفق','رم حذف شد.');
+            return redirect()->back();
+
+        }else
+        {
+            Alert::warning('اخطار','برای این رم محصول ثبت شده است.');
+            return redirect()->back();
+        }
     }
 }

@@ -15,7 +15,9 @@ class BrandController extends Controller
     public function index()
     {
         $brands = Brand::all();
-
+        $title = 'حذف برند!';
+        $text = "آیا از حذف این برند اطمینان دارید؟";
+        confirmDelete($title, $text);
         return view('admin.brand.index',compact('brands'));
     }
 
@@ -94,7 +96,21 @@ class BrandController extends Controller
      */
     public function destroy(string $id)
     {
-        dd('hi');
+        $brand = Brand::with('products')->findOrFail($id);
+
+        if(count($brand->products) == 0){
+            $brand = Brand::findOrFail($id);
+            $brand->forceDelete();
+
+            Alert::success('عملیات موفق','برند حذف شد.');
+            return redirect()->back();
+
+        }else
+        {
+            Alert::warning('اخطار','برای این برند محصول ثبت شده است.');
+            return redirect()->back();
+        }
+
     }
 
     public function ChangeStatus(string $id)
