@@ -1,4 +1,7 @@
 <?php
+
+use App\Models\Manager;
+
 function FetchStatus ($status){
     switch ($status) {
         case 'active':
@@ -9,6 +12,8 @@ function FetchStatus ($status){
             return 'ناموجود';
         case 'stop_selling':
             return 'توقف فروش';
+        case'banned':
+            return 'مسدود';    
         case 'success':
             return 'موفق';
         case 'failed':
@@ -20,7 +25,16 @@ function FetchStatus ($status){
         case '1':
             return 'مدیر';
         case '2':
-            return 'نویسنده';
+            return 'اپراتور';
+    }
+}
+
+function FetchLevel($level){
+    switch ($level){
+        case 'manager':
+            return 'مدیر';
+        case 'operator':
+            return 'اپراتور';    
     }
 }
 
@@ -43,4 +57,10 @@ function getpercent($value){
         return false;
     }
     return round( (($value['price']-$value['price_discounted']) / $value['price_discounted']) * 100 );
+}
+
+function getPhoto($id){
+    $manager = Manager::find($id);
+    $existing_photo = $manager->photos()->first();
+    return $existing_photo->src;
 }

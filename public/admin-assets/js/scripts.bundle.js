@@ -318,9 +318,9 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 }
 
 // Initialize KTApp class on document ready
-$(document).ready(function() {
-    KTApp.init(KTAppSettings);
-});
+// $(document).ready(function() {
+//     KTApp.init(KTAppSettings);
+// });
 
 // CSS3 Transitions only after page load(.page-loading class added to body tag and remove with JS on page load)
 window.onload = function() {
@@ -10914,7 +10914,7 @@ var KTLayoutQuickUser = function() {
             baseClass: 'offcanvas',
             placement: 'right',
             closeBy: 'kt_quick_user_close',
-            toggleBy: 'kt_quick_user_toggle'
+            toggleBy: ['kt_quick_user_toggle','kt_quick_user_mobile_toggle']
         });
 
         KTUtil.scrollInit(content, {
