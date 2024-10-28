@@ -3,19 +3,20 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class UserController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('user.user.user-dashboard');
+        $comments = Comment::with('product')->where('user_id',Auth::guard('web')->user()->id)->get();
+        return view('user.comment.index',compact('comments'));
     }
 
     /**
@@ -31,7 +32,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'product_id' => ['required'],
+            'comment' => ['required'],
+        ]);
+
+        $user_id = Auth::guard('web')->user()->id;
+
+        $comment = new Comment();
+        $comment->user_id = $user_id;
+        $comment->product_id = $request->product_id;
+        $comment->comment = $request->comment;
+        $comment->save();
+
+        Alert::success('عملیات موفق', 'نظر شما پس از تایید مدیریت ثبت خواهد شد.');
+
+        return redirect()->back();
     }
 
     /**
@@ -47,8 +63,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $user = User::findOrFail(Auth::guard('web')->user()->id);
-        return view('user.user.edit',compact('user'));
+        //
     }
 
     /**
@@ -56,19 +71,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request -> validate([
-            'national_code'=>['nullable','min:10','numeric'],
-        ]);
-
-        $user = User::find(auth('web')->id());
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->national_code = $request->national_code;
-        $user->save();
-
-        Alert::success('عملیات موفق.', 'اطلاعات ویرایش شد.');
-
-        return redirect()->route('User.index');
+        //
     }
 
     /**

@@ -383,63 +383,34 @@
                                 <div class="mt-2 customer-comment">
                                     <p class="fs-8">شما هم دیدگاه خود را ثبت کنید</p>
                                     <div class="d-grid gap-2 mt-3">
-                                        <a href="" class="btn btn-outline-primary fs-8" data-bs-toggle="modal"
-                                           data-bs-target="#insertCommentModal">ثبت دیدگاه</a>
+                                        <a href="" class="btn btn-outline-primary fs-8" data-bs-toggle="modal" data-bs-target="#insertCommentModal">ثبت دیدگاه</a>
                                         <!-- Modal -->
-                                        <div class="modal fade" id="insertCommentModal" tabindex="-1"
-                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="insertCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title">دیدگاه شما
-                                                            <span class="d-block fs-7">در مورد لپ تاپ 11 اینچی لنوو مدل IdeaPad 1 11ADA05</span>
+                                                            <span class="d-block fs-7">در مورد {{$product->title}}</span>
                                                         </h5>
-
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form>
+                                                        <form method="POST" action="{{route('Comment.store')}}">
+                                                            @csrf
                                                             <div class="row">
                                                                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                                     <div class="mb-3">
-                                                                        <label class="form-label">عنوان نظر :</label>
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">نکات مثبت :</label>
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                                                    <div class="mb-3">
-                                                                        <label class="form-label">نکات منفی :</label>
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                                    <div class="mb-3">
+                                                                        <input type="hidden" name="product_id" value="{{$product->id}}">
                                                                         <label class="form-label">متن نظر :</label>
-                                                                        <textarea type="text" class="form-control"></textarea>
+                                                                        <textarea type="text" name="comment" class="form-control"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="d-grid gap-2 border-top pt-2">
-                                                                <button class="btn custom-btn-danger" type="submit">ثبت
-                                                                </button>
+                                                            <div class="gap-2 border-top pt-2">
+                                                                <button class="btn custom-btn-danger" type="submit" >ثبت</button>
                                                             </div>
                                                         </form>
-                                                        <div class="row">
-                                                            <p class="fs-8 text-center my-2">
-                                                                ثبت دیدگاه به معنای پذیرش
-                                                                <a href="" class="text-info">قوانین</a>
-                                                                برگ شاپ میباشد.
-                                                            </p>
-                                                        </div>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -458,24 +429,28 @@
                             </p>
                         </div>
                         <!--Comments Order:end-->
-
-                        <!--Comments:start-->
-                        <div class="comment-box mb-3">
-                            <div class="comment-title">
-                                <!--Comment text:start-->
-                                <p class="fw-bold">
-                                    به قیمتش می ارزد
-                                </p>
-                                <!--Comment text:end-->
-                            </div>
-                            <div class="comment-details my-3 border-bottom-gray-150 pb-3">
-                                <span class="fs-8 gray-600">1 فروردین 1402</span>
-                                <i class="fa fa-circle fs-11 gray-400"></i>
-                                <span class="fs-8 gray-600">محمد صادق گلی</span>
-                            </div>
-                        </div>
-                        <!--Comments:end-->
-
+                        @if ($comments)
+                            @foreach ($comments as $comment)
+                                <!--Comments:start-->
+                                <div class="comment-box mb-3">
+                                    <div class="comment-title">
+                                        <!--Comment text:start-->
+                                        <p class="fw-bold">
+                                            {{$comment->comment}}
+                                        </p>
+                                        <!--Comment text:end-->
+                                    </div>
+                                    <div class="comment-details my-3 border-bottom-gray-150 pb-3">
+                                        <i class="fa fa-circle fs-11 gray-400"></i>
+                                        @if ($comment->user)
+                                            <span class="fs-8 gray-600">{{$comment->user->first_name.' '.$comment->user->last_name}}</span>
+                                        @endif
+                                        <span class="fs-8 gray-600"><?php echo verta($comment->created_at)->format('Y/m/d');?></span>
+                                    </div>
+                                </div>
+                                <!--Comments:end-->
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

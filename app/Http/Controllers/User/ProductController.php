@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // dd('hi');
         $products = Product::with(['photos'=>function($query){$query->Limit(1);}])->
         where(function ($q){
             $q->where('price_discounted','>',0)
@@ -48,7 +48,8 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $product = Product::with('colors','category','brand','ram','memory')->findorFail($id);
-        return view('user.product.single-product',compact('product'));
+        $comments = Comment::with('user')->where('product_id',$id)->get();
+        return view('user.product.single-product',compact('product','comments'));
     }
 
     /**

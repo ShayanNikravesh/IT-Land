@@ -3,6 +3,7 @@
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\BrandController;
 use App\Http\Controllers\User\CategoryController;
+use App\Http\Controllers\User\CommentController;
 use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\UserController;
 use App\Models\Banner;
@@ -39,4 +40,7 @@ Route::resource('Brand',BrandController::class);
 
 //User profile
 Route::resource('User',UserController::class);
+
+//comments
+Route::resource('Comment',CommentController::class);
 

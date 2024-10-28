@@ -123,7 +123,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item  py-2 fw-bold" href="#">
+                                <a class="dropdown-item  py-2 fw-bold" href="{{route('Comment.index')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -631,7 +631,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item  py-2 fw-bold" href="#">
+                                    <a class="dropdown-item  py-2 fw-bold" href="{{route('Comment.index')}}">
                                         <span class="pe-1">
                                             <!--begin::Svg Icon-->
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

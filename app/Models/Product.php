@@ -38,4 +38,9 @@ class Product extends Model
     {
         return $this->belongsTo(Ram::class); // اینجا نام مدل دسته را مشخص کنید
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
