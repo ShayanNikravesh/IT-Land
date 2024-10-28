@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\BrandController;
 use App\Http\Controllers\User\CategoryController;
 use App\Http\Controllers\User\ProductController;
+use App\Http\Controllers\User\UserController;
 use App\Models\Banner;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +17,14 @@ Route::get('/', function () {
     return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos','products'));
 });
 
+//login & register
+Route::get('login',function(){ return view('user.login'); })->name('login');
+Route::post('login',[AuthController::class,'login'])->name('user-login');
+Route::get('Confirm/{token}',[AuthController::class,'Confirm'])->name('Confirm');
+Route::post('Verify/{token}',[AuthController::class,'Verify'])->name('Verify');
+Route::get('logout',[AuthController::class,'logout'])->name('user-logout');
+// Route::get('/ReSendOtpCode/{token}',[\App\Http\Controllers\Auth\LoginRegisterUser\AuthUser::class,'ReSendOtpCode'])->name('ReSendOtpCode');
+
 //category
 Route::resource('Category',CategoryController::class);
 
@@ -26,4 +36,7 @@ Route::get('filter',[ProductController::class,'filter'])->name('filter');
 
 //brand
 Route::resource('Brand',BrandController::class);
+
+//User profile
+Route::resource('User',UserController::class);
 

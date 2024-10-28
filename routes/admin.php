@@ -23,7 +23,7 @@ Route::get('login-form',function(){
 })->name('login-form')->middleware(RedirectAdmin::class);
 
 //login
-Route::post('login',[AuthController::class,'login'])->name('admin-login');
+Route::post('admin-login',[AuthController::class,'login'])->name('admin-login');
 
 Route::middleware([AdminAuth::class])->group(function () {
     
@@ -69,7 +69,7 @@ Route::middleware([AdminAuth::class])->group(function () {
     Route::post('article/changeStatus/{id}',[ArticleController::class,'changeStatus'])->name('change_Status_article');
 
     //logout
-    Route::get('logout', [AuthController::class, 'logout'])->name('admin-logout');
+    Route::get('admin-logout', [AuthController::class, 'logout'])->name('admin-logout');
 
 });
 

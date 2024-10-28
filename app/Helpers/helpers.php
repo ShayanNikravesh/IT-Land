@@ -62,5 +62,10 @@ function getpercent($value){
 function getPhoto($id){
     $manager = Manager::find($id);
     $existing_photo = $manager->photos()->first();
-    return $existing_photo->src;
+    if(!empty($existing_photo->src)){
+        return $existing_photo->src;
+    }else{
+        return 'admin-assets/media/users/blank.png';
+    }
+    
 }

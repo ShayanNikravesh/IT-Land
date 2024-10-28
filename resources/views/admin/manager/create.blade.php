@@ -67,7 +67,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <label><span class="text-danger">*</span>موبایل :</label>
-                                <input type="number" class="form-control" name="mobile" placeholder="موبایل را وارد کنید."/>
+                                <input type="text" class="form-control" name="mobile" placeholder="موبایل را وارد کنید."/>
                             </div>
                           </div>
                           <div class="form-group row">

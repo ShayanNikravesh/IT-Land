@@ -56,22 +56,20 @@
                                         <div class="form-group row">
                                             <label class="col-form-label col-3 text-lg-right text-left">عکس</label>
                                             <div class="col-9">
-                                                @foreach ($manager->photos as $photo)
-                                                    <div class="image-input image-input-empty image-input-outline" id="kt_user_edit_avatar" style="background-image: url('{{asset($photo->src)}}')">
-                                                        <div class="image-input-wrapper"></div>
-                                                        <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
-                                                            <i class="fa fa-pen icon-sm text-muted"></i>
-                                                            <input type="file" name="profile_photo" accept=".png, .jpg, .jpeg"/>
-                                                            <input type="hidden" name="profile_avatar_remove"/>
-                                                        </label>
-                                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="برداشتن عکس">
-                                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                        </span>
-                                                        <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
-                                                            <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                        </span>
-                                                    </div>
-                                                @endforeach
+                                                <div class="image-input image-input-empty image-input-outline" id="kt_user_edit_avatar" style="background-image: url('{{asset(getPhoto($manager->id))}}')">
+                                                    <div class="image-input-wrapper"></div>
+                                                    <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
+                                                        <i class="fa fa-pen icon-sm text-muted"></i>
+                                                        <input type="file" name="profile_photo" accept=".png, .jpg, .jpeg"/>
+                                                        <input type="hidden" name="profile_avatar_remove"/>
+                                                    </label>
+                                                    <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="برداشتن عکس">
+                                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                    </span>
+                                                    <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="remove" data-toggle="tooltip" title="Remove avatar">
+                                                        <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <!--end::Group-->

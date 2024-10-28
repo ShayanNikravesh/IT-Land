@@ -75,7 +75,7 @@ class ManagerController extends Controller
      */
     public function edit(string $id)
     {
-        $manager = Manager::with('photos')->findOrFail(Auth::guard('admin')->user()->id);
+        $manager = Manager::findOrFail(Auth::guard('admin')->user()->id);
         return view('admin.manager.edit',compact('manager'));
     }
 
@@ -89,7 +89,7 @@ class ManagerController extends Controller
         $request -> validate([
             'first_name' => ['required'],
             'last_name' => ['required'],
-            'mobile' => ['required'],
+            'mobile' => ['required','numeric'],
             'email'=>'exclude_if:email,' . auth('admin')->user()->email . '|string|email|max:255|unique:managers,email,' . auth('admin')->id(),
             'password'=>['nullable','min:6','confirmed'],
         ]);
