@@ -87,6 +87,6 @@ class AuthController extends Controller
     {
         Auth::guard('web')->logout();
         Alert::success('عملیات موفق.', 'از سایت خارج شدید.');
-        return redirect()->back();
+        return redirect('/');
     }
 }

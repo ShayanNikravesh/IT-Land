@@ -48,7 +48,7 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $product = Product::with('colors','category','brand','ram','memory')->findorFail($id);
-        $comments = Comment::with('user')->where('product_id',$id)->get();
+        $comments = Comment::with('user')->where('product_id',$id)->where('status','active')->get();
         return view('user.product.single-product',compact('product','comments'));
     }
 

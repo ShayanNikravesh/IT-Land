@@ -22,9 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $categories = Category::whereNotNull('parent_id')->get();
-        $parent_categories = Category::whereNull('parent_id')->get();
-        $brands = Brand::all();
+        $categories = Category::whereNotNull('parent_id')->where('status','active')->get();
+        $parent_categories = Category::whereNull('parent_id')->where('status','active')->get();
+        $brands = Brand::where('status','active')->get();
 
         view()->share([
             'categories' => $categories,

@@ -155,8 +155,12 @@
                             <!--Product Details Right:start-->
                             <div class="product-details-right">
                                 <div class="product-attr">
-                                    <span class="separator px-2"><i class="fa fa-circle gray-300"></i></span>
-                                    <p class="d-inline text-dark fs-7">198 دیدگاه</p>
+                                    @if (count($comments) > 0)
+                                        <span class="separator px-2"><i class="fa fa-circle gray-300"></i></span>
+                                        <p class="d-inline text-dark fs-7">
+                                            {{count($comments)}} دیدگاه
+                                        </p>
+                                    @endif
                                 </div>
                                 @if ($product->has_color == 1)
                                     <div class="product-attr">
@@ -373,7 +377,7 @@
 
             <!--Product Comments:start-->
             <div class="tab-pane fade" id="comments">
-                <h2 class="fs-5">امتیازات و نظرات کاربران</h2>
+                <h2 class="fs-5">نظرات کاربران</h2>
                 <div class="row mt-4">
                     <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
                         <div class="product-score">
@@ -381,40 +385,45 @@
                             <div class="stars">
                                 <!--Product Insert New Comment:start-->
                                 <div class="mt-2 customer-comment">
-                                    <p class="fs-8">شما هم دیدگاه خود را ثبت کنید</p>
-                                    <div class="d-grid gap-2 mt-3">
-                                        <a href="" class="btn btn-outline-primary fs-8" data-bs-toggle="modal" data-bs-target="#insertCommentModal">ثبت دیدگاه</a>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="insertCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">دیدگاه شما
-                                                            <span class="d-block fs-7">در مورد {{$product->title}}</span>
-                                                        </h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form method="POST" action="{{route('Comment.store')}}">
-                                                            @csrf
-                                                            <div class="row">
-                                                                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                                    <div class="mb-3">
-                                                                        <input type="hidden" name="product_id" value="{{$product->id}}">
-                                                                        <label class="form-label">متن نظر :</label>
-                                                                        <textarea type="text" name="comment" class="form-control"></textarea>
+                                    @if (Auth::guard('web')->check())
+                                        <p class="fs-8">شما هم دیدگاه خود را ثبت کنید.</p>
+                                        <div class="d-grid gap-2 mt-3">
+                                            <a href="" class="btn btn-outline-primary fs-8" data-bs-toggle="modal" data-bs-target="#insertCommentModal">ثبت دیدگاه</a>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="insertCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">دیدگاه شما
+                                                                <span class="d-block fs-7">در مورد {{$product->title}}</span>
+                                                            </h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form method="POST" action="{{route('Comment.store')}}">
+                                                                @csrf
+                                                                <div class="row">
+                                                                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                                                        <div class="mb-3">
+                                                                            <input type="hidden" name="product_id" value="{{$product->id}}">
+                                                                            <label class="form-label">متن نظر :</label>
+                                                                            <textarea type="text" name="comment" class="form-control"></textarea>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="gap-2 border-top pt-2">
-                                                                <button class="btn custom-btn-danger" type="submit" >ثبت</button>
-                                                            </div>
-                                                        </form>
+                                                                <div class="gap-2 border-top pt-2">
+                                                                    <button class="btn custom-btn-danger" type="submit" >ثبت</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @else
+                                        <p class="fs-8 text-danger">برای ثبت دیدگاه ابتدا وارد سایت شوید.</p>
+                                    @endif
+                                    
                                 </div>
                                 <!--Product Insert New Comment:end-->
                             </div>
@@ -424,9 +433,15 @@
                     <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9">
                         <!--Comments Order:start-->
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <p class="count-of-comments fw-bold">
-                                190 دیدگاه
-                            </p>
+                            @if (count($comments) > 0)
+                                <p class="count-of-comments fw-bold">
+                                    {{count($comments)}} دیدگاه
+                                </p>
+                            @else
+                                <p class="count-of-comments fw-bold">
+                                     دیدگاهی وجود ندارد.
+                                </p>
+                            @endif
                         </div>
                         <!--Comments Order:end-->
                         @if ($comments)
@@ -442,8 +457,10 @@
                                     </div>
                                     <div class="comment-details my-3 border-bottom-gray-150 pb-3">
                                         <i class="fa fa-circle fs-11 gray-400"></i>
-                                        @if ($comment->user)
+                                        @if ($comment->user->first_name)
                                             <span class="fs-8 gray-600">{{$comment->user->first_name.' '.$comment->user->last_name}}</span>
+                                            @else
+                                            <span class="fs-8 gray-600">{{$comment->user->id}}کاربر</span>
                                         @endif
                                         <span class="fs-8 gray-600"><?php echo verta($comment->created_at)->format('Y/m/d');?></span>
                                     </div>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\ManagerController;
 use App\Http\Controllers\Admin\MemoryController;
 use App\Http\Controllers\Admin\PhotoController;
@@ -58,6 +59,10 @@ Route::middleware([AdminAuth::class])->group(function () {
 
     //ram
     Route::resource('ram',RamController::class);
+
+    //comment
+    Route::resource('comment',CommentController::class);
+    Route::post('comment/ChangeStatus/{id}',[CommentController::class,'ChangeStatus'])->name('change_Status_comment');
 
     //product
     Route::resource('product',ProductController::class);

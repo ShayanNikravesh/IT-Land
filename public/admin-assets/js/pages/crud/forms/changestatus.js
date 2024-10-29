@@ -111,3 +111,22 @@ function ChangeLevelManager(id){
     });
 
 }
+
+function ChangeStatusComment(id){
+
+    $.ajax({
+        url: route('change_Status_comment',id),
+        method: 'post',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (response) {
+            $('#' + id).load(document.URL + ' #' + id)
+            $('#div' + id).load(document.URL + ' #div' + id)
+        },
+        error: function (error) {
+            console.log(error)
+        },
+    });
+
+}
