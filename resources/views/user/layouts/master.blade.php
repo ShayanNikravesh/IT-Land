@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{asset('user-assets/css/vendors/swiper/swiper-bundle.min.css')}}">
     <!--Main Styles-->
     <link rel="stylesheet" href="{{asset('user-assets/css/style.css')}}">
+    <!--Single product-->
+    <link rel="stylesheet" href="{{asset('user-assets/css/vendors/xzoom/xzoom.min.css')}}">
 </head>
 <!--Head::end-->
 

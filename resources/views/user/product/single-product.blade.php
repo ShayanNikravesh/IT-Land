@@ -118,30 +118,23 @@
                     </div>
                 </div>
                 <!--Product Action:end-->
-
                 <!--Product Images:start-->
                 <div class="product-images">
-                    <img class="xzoom img-fluid" src="{{asset('user-assets/img/single-product-1.jpg')}}"xoriginal="{{asset('user-assets/img/single-product-1.jpg')}}"/>
-
+                    @foreach ($product->photos as $photo)
+                        @if ($photo->pivot->sort == 1)
+                            <img class="xzoom img-fluid" src="{{asset($photo->src)}}" xoriginal="{{asset($photo->src)}}"/>
+                        @endif
+                    @endforeach
                     <div class="xzoom-thumbs mt-2">
-                        <a href="assets/img/single-product-1.jpg">
-                            <img class="xzoom-gallery" src="{{asset('user-assets/img/single-product-1.jpg')}}" xpreview="{{asset('user-assets/img/single-product-1.jpg')}}">
-                        </a>
-                        <a href="assets/img/single-product-2.jpg">
-                            <img class="xzoom-gallery" src="{{asset('user-assets/img/single-product-2.jpg')}}">
-                        </a>
-                        <a href="assets/img/single-product-3.jpg">
-                            <img class="xzoom-gallery" src="{{asset('user-assets/img/single-product-3.jpg')}}">
-                        </a>
-                        <a href="assets/img/single-product-4.jpg">
-                            <img class="xzoom-gallery" src="{{asset('user-assets/img/single-product-4.jpg')}}">
-                        </a>
+                        @foreach ($product->photos as $photo)
+                            <a href="{{asset($photo->src)}}">
+                                <img class="xzoom-gallery" src="{{asset($photo->src)}}">
+                            </a>
+                        @endforeach
                     </div>
                 </div>
                 <!--Product Images:end-->
-
             </div>
-
             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
                 <!--Product Details:start-->
                 <div class="product-details">

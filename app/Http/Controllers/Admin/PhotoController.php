@@ -35,22 +35,21 @@ class PhotoController extends Controller
     {
 
         if($request->hasFile('product_photo','name')){
+
             $fileName = time().'_'.$request->product_photo->getClientOriginalName();
             $filePath = $request->product_photo->storeAs('products_photos',$fileName,'public');
             $suffix_photo = pathinfo($_FILES['product_photo']['name'], PATHINFO_EXTENSION);
+
             $photo = new Photo();
             $photo->name = $fileName;
             $photo->src = 'storage/'.$filePath;
             $photo->suffix = $suffix_photo;
-            $photo->save();
 
-            $sort = 1;
-            $lastProductPhoto = ProductPhoto::where('product_id', $request->product_id)->latest()->first();
-
-            if ($lastProductPhoto) {
-                $sort = $lastProductPhoto['sort'] + 1;
-            };
-
+            if($photo->save())
+            {
+                $sort = ProductPhoto::where('product_id', $request->product_id)->count() + 1;
+            }
+            
             $product = Product::find($request->product_id);
             $photo->product()->attach($product,['sort'=>$sort]);
             
@@ -94,7 +93,17 @@ class PhotoController extends Controller
     {
         $photo = Photo::findorFail($id);
         File::delete(public_path($photo->src));
+
+        $product_id = ProductPhoto::where('photo_id', $photo->id)->pluck('product_id')->first();
+        
         $photo->forceDelete();
+
+        $product_photos = ProductPhoto::where('product_id', $product_id)->orderBy('sort')->get();
+        foreach ($product_photos as $index => $product_photo) {
+            // به روز رسانی مقدار sort
+            $product_photo->sort = $index + 1; // شروع از 1
+            $product_photo->save();
+        }
 
         Alert::success('عملیات موفق','عکس حذف شد.');
         return redirect()->back();
