@@ -24,7 +24,7 @@ Route::post('login',[AuthController::class,'login'])->name('user-login');
 Route::get('Confirm/{token}',[AuthController::class,'Confirm'])->name('Confirm');
 Route::post('Verify/{token}',[AuthController::class,'Verify'])->name('Verify');
 Route::get('logout',[AuthController::class,'logout'])->name('user-logout');
-// Route::get('/ReSendOtpCode/{token}',[\App\Http\Controllers\Auth\LoginRegisterUser\AuthUser::class,'ReSendOtpCode'])->name('ReSendOtpCode');
+Route::get('ReSendOtpCode/{token}',[AuthController::class,'ReSendOtpCode'])->name('Resend_otp_code');
 
 //category
 Route::resource('Category',CategoryController::class);

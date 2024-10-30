@@ -42,7 +42,6 @@ class AuthController extends Controller
         
          //send sms
         session(['OtpMobile' => $request->mobile]);
-        // session()->put('Otp_Mobile',$request->mobile);
         return redirect(route('Confirm',$token));
 
     }
@@ -89,4 +88,29 @@ class AuthController extends Controller
         Alert::success('عملیات موفق.', 'از سایت خارج شدید.');
         return redirect('/');
     }
+ 
+    public function ReSendOtpCode($token){
+
+        $otp = Otp::where('token',$token)->where('mobile',session()->get('OtpMobile'))->first();
+        if (empty($otp)){
+            Alert::error('خطا', 'این صفحه منسوخ شده است.!');
+            return redirect()->back();
+        }
+
+        $code = rand(111111,999999);
+        $tokenNow = sha1(mt_rand());
+        $newOtp = new Otp();
+        $newOtp->token = $tokenNow;
+        $newOtp->user_id = $otp->user_id;
+        $newOtp->otp_code =$code;
+        $newOtp->mobile = $otp->mobile;
+        if ($newOtp->save()){
+            //send sms
+            return redirect(route('Confirm',$tokenNow));
+        }else{
+            Alert::error('خطا', 'خطای داخلی رخ داده است.!');
+            return redirect()->back();
+        }
+
+    }    
 }

@@ -25,6 +25,7 @@
 
 <!--Body::start-->
 <body>
+    
 @include('sweetalert::alert')
 @routes
 

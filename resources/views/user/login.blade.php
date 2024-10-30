@@ -20,6 +20,9 @@
 
 <!--Body::start-->
 <body>
+
+@include('sweetalert::alert')
+
 <div class="action-wrapper d-flex justify-content-center align-items-center h-100">
     <div class="form p-4 border border-radius-3xl border-gray-200">
         <img src="{{asset('user-assets/img/logo.png')}}" alt="" title="" class="mx-auto d-block">
@@ -30,16 +33,6 @@
                 <p class="fs-7">لطفا شماره موبایل خود را وارد کنید.</p>
             </div>
         </div>
-        @if ($errors->any())
-            <div>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li class="bg-danger rounded text-light">{{ $error }}</li>
-                        <br>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
         <form action="{{route('user-login')}}" method="POST">
             @csrf
             <input type="text" name="mobile" class="form-control border-radius-xl ltr">
