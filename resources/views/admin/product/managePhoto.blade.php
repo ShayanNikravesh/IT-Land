@@ -26,7 +26,7 @@
                 @csrf
                 <div class="card card-custom gutter-b">
                     <div class="card-header">
-                        <h3 class="card-title">آپلود تصاویر</h3>
+                        <h3 class="card-title">اندازه تصاویر ترجیحا 800 در 800 باشد.</h3>
                     </div>
                     <div class="card-body">
                         <input id="input_product_id" type="hidden" value="{{$product_id}}">

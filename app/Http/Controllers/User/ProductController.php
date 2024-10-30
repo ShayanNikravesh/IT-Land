@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with(['photos'=>function($query){$query->Limit(1);}])->
+        $products = Product::with(['photos' => function($query) {$query->orderBy('sort')->take(1);}])->
         where(function ($q){
             $q->where('price_discounted','>',0)
               ->orWhereHas('colors', function ($q){

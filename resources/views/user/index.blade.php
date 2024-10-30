@@ -56,7 +56,7 @@
                 @foreach ($products as $product)
                     <div class="swiper-slide">
                         @foreach ($product->photos as $photo)
-                            <img src="{{asset($photos->src)}}" class="img-fluid" alt="">
+                            <img src="{{asset($photo->src)}}" class="img-fluid" alt="">
                         @endforeach
                         <div class="product-details d-flex justify-content-between align-items-center mt-4">
                             <span class="discount-amount text-white px-2 border-radius-3xl fs-6 fw-bold">{{getpercent($product)}}%</span>
