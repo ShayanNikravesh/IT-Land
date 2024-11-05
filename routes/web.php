@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\BrandController;
+use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\CategoryController;
 use App\Http\Controllers\User\CommentController;
 use App\Http\Controllers\User\ProductController;
@@ -16,7 +17,7 @@ Route::get('/', function () {
     $medium_banner_photos = Banner::with('photos')->findOrFail(3);
     $products = Product::where('price_discounted','>',0)->with(['photos'=>function($query){$query->Limit(1);}])->take(6)->get();
     return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos','products'));
-});
+})->name('index');
 
 //login & register
 Route::get('login',function(){ return view('user.login'); })->name('login');
@@ -43,4 +44,11 @@ Route::resource('User',UserController::class);
 
 //comments
 Route::resource('Comment',CommentController::class);
+
+//cart
+Route::get('cart',[CartController::class,'cart'])->name('cart');
+Route::get('store/{product_id}/{color_id}',[CartController::class,'store'])->name('add_to_cart');
+Route::get('remove/{id}',[CartController::class,'remove'])->name('remove_from_cart');
+Route::get('clear',[CartController::class,'clear'])->name('cart_clear');
+Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('cart-Quantity');
 

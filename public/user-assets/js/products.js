@@ -61,6 +61,8 @@ document.querySelectorAll('.color-radio').forEach(radio => {
         const colorId = this.value; // ID رنگ انتخاب شده
         const productId = document.getElementById('product-id').value; // ID محصول
         const url = route('color_price');
+        const addToCartLink = document.getElementById('add_to_cart');
+        const div = document.getElementById('div');
 
         fetch(url, {
             method: 'POST',
@@ -80,6 +82,11 @@ document.querySelectorAll('.color-radio').forEach(radio => {
                 }else {
                     document.getElementById('price_discounted').innerText = 'بدون تخفیف';
                 }
+
+                div.style.display = "block";
+                const newUrl = route('add_to_cart',[ productId , colorId]);
+                addToCartLink.href = newUrl;
+
             } else {
                 console.error(data.error);
             }
@@ -130,6 +137,85 @@ $(document).ready(function() {
     });
 });
 
+function ProductQuantity(id,status) {
+    $.ajax({
+        url: route('cart-Quantity',[id,status]),
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success:function (re){
+            if (re.is_plus) {
+                $('#product_minus_' + id).load(document.URL + ' #product_minus_' + id);
+                $('#cart_quantity_' + id).load(document.URL + ' #cart_quantity_' + id);
+                // $('#AttributeCart').load(document.URL + ' #AttributeCart');
+                let timerInterval;
+                Swal.fire({
+                    title: "درحال انجام عملیات",
+                    html: "لطفا صبور باشید عملیات در حال انجام است.",
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            // timer.textContent = `${Swal.getTimerLeft()}`;
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                }).then((result) => {
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                    }
+                });
+            }
+            if (re.is_remove){
+                $('#cart_item_'+id).remove();
+                document.location.reload();
+            }
+            if (re.is_minus){ 
+                $('#product_minus_' + id).load(document.URL + ' #product_minus_' + id);
+                $('#cart_quantity_' + id).load(document.URL + ' #cart_quantity_' + id);
+                // $('#AttributeCart').load(document.URL + ' #AttributeCart'); 
+                let timerInterval;
+                Swal.fire({
+                    title: "درحال انجام عملیات",
+                    html: "لطفا صبور باشید عملیات در حال انجام است.",
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            // timer.textContent = `${Swal.getTimerLeft()}`;
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                }).then((result) => {
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                    }
+                });
+            }
+            if (re.status===400) {
+                swal.fire({
+                    title: "ناموفق!",
+                    text: "تعداد سفارش از تعداد محصول بیشتر است!",
+                    icon: "warning",
+                });
+            }
+        },
+        error: function (re){
+            swal.fire({
+                title: "خطا!",
+                text: "خطای داخلی رخ داده است",
+                icon: "warning",
+            });
+        }
+    })
+}
 
 
 

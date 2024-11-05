@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Brand;
 use App\Models\Category;
+use Darryldecode\Cart\Facades\CartFacade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
 
