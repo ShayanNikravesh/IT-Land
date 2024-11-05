@@ -59,18 +59,16 @@
                                     <div class="card-body cartParent">
                                         @foreach ($cart_products as $product)
                                             <!--Shopping Cart Item:start-->
-                                            <div class="shopping-cart-item py-3 border-bottom-gray-150" >
+                                            <div class="shopping-cart-item py-3 border-bottom-gray-150" id="cart_item_{{$product->id}}">
                                                 <div class="row">
                                                     <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3">
                                                         <!--Shopping Cart Item Right:start-->
                                                         <div class="shopping-cart-item-right me-3">
                                                             <img src="{{asset($product->attributes->photo)}}" alt="image" class="object-contain">
                                                             <div class="shop-item-edit-box d-flex justify-content-between align-items-center px-3 pt-2 pb-1 border-radius-xl">
-                                                                <span id="cart_item_{{$product->id}}">
-                                                                    <span onclick="ProductQuantity('{{$product->id}}','plus')"><i class="fas fa-plus"></i></span>
-                                                                    <span class="fs-5" id="cart_quantity_{{$product->id}}">{{$product->quantity}}</span>
-                                                                    <span onclick="ProductQuantity('{{$product->id}}','minus')" id="trash_quantity_{{$product->id}}" ><span id="product_minus_{{$product->id}}"><i class="far {{$product->quantity > 1 ? 'fas fa-minus' :'fa-trash-alt'}} "></i></span></span>
-                                                                </span>
+                                                                <span onclick="ProductQuantity('{{$product->id}}','plus')"><i class="fas fa-plus"></i></span>
+                                                                <span class="fs-5" id="cart_quantity_{{$product->id}}">{{$product->quantity}}</span>
+                                                                <span onclick="ProductQuantity('{{$product->id}}','minus')" id="trash_quantity_{{$product->id}}" ><span id="product_minus_{{$product->id}}"><i class="far {{$product->quantity > 1 ? 'fas fa-minus' :'fa-trash-alt'}} "></i></span></span>
                                                             </div>
                                                         </div>
                                                         <!--Shopping Cart Item Right:end-->
