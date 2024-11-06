@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\AddressController;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\BrandController;
 use App\Http\Controllers\User\CartController;
@@ -46,6 +47,11 @@ Route::resource('User',UserController::class);
 //comments
 Route::resource('Comment',CommentController::class);
 
+//address
+Route::resource('Address',AddressController::class);
+Route::post('getcities',[AddressController::class,'getcities'])->name('get-cities');
+Route::get('setDefault/{id}',[AddressController::class,'setDefault'])->name('set-default');
+
 //favorite
 Route::get('add/{id}',[FavoriteController::class,'add'])->name('add-to-favorite');
 Route::get('delete/{id}',[FavoriteController::class,'delete'])->name('delete-favorite');
@@ -57,4 +63,3 @@ Route::get('store/{product_id}/{color_id}',[CartController::class,'store'])->nam
 Route::get('remove/{id}',[CartController::class,'remove'])->name('remove_from_cart');
 Route::get('clear',[CartController::class,'clear'])->name('cart_clear');
 Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('cart-Quantity');
-

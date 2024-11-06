@@ -59,7 +59,7 @@
                                     <div class="form-group row">
                                         <label class="col-3">دسته والد</label>
                                         <div class="col-7">
-                                            <select class="form-control form-control-solid" type="text" name="parent_id">
+                                            <select class="form-control form-control-solid" name="parent_id">
                                                 <option value="">انتخاب کنید.</option>
                                                 @foreach ($ParentCategory as $category)
                                                     <option value="{{$category->id}}">{{$category->title}}</option>

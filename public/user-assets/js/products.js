@@ -217,6 +217,64 @@ function ProductQuantity(id,status) {
     })
 }
 
+$(document).ready(function() {
+    $('#province').change(function() {
+        const selected_option = $(this).find('option:selected').val()
+
+        $.ajax({
+            url: route('get-cities'),
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                province: selected_option,
+            },
+            success: function (response) {
+                const city_select = $(document).find('select[name=city]')
+                city_select.html("<option value='0'>-----</option>")
+                
+                response.forEach(function (item) {
+                    city_select.append(`<option value='${item.id}'>${item.name}</option>`)
+                })
+                // city_select.niceSelect('update');
+            },
+            error: function (error) {
+                console.log(error)
+            },
+        });
+    })
+})
+
+$(document).ready(function() {
+    $('#editprovince').change(function() {
+        const selected_option = $(this).find('option:selected').val()
+
+        $.ajax({
+            url: route('get-cities'),
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                province: selected_option,
+            },
+            success: function (response) {
+                const city_select = $(document).find('select[name=city]')
+                city_select.html("<option value='0'>-----</option>")
+                
+                response.forEach(function (item) {
+                    city_select.append(`<option value='${item.id}'>${item.name}</option>`)
+                })
+                // city_select.niceSelect('update');
+            },
+            error: function (error) {
+                console.log(error)
+            },
+        });
+    })
+})
+
 
 
 

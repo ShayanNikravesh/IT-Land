@@ -127,7 +127,6 @@ class ManagerController extends Controller
         if ($request->filled('password')) {
             $manager->password = Hash::make($request->password);
         }
-
         $manager->save();
 
         Alert::success('عملیات موفق.', 'اطلاعات ویرایش شد.');
