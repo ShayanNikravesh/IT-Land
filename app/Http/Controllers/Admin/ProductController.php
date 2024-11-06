@@ -113,7 +113,8 @@ class ProductController extends Controller
                 'price_discounted'=>['required'],
             ]);
 
-            $tracking_code = generateRandomDigit();
+            $code = rand(111111111,999999999);
+            $tracking_code = 'P-'.$code;
             
             $product = new Product();
             $product->title = $request->title; 
