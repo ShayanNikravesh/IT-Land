@@ -94,7 +94,7 @@
 										</span>
 									</td>
                                     @if (!empty($manager->last_login_at))
-                                        <td>{{$manager->last_login_at}}</td>
+                                        <td><?php echo verta($manager->last_login_at)->format('H:i:s Y/m/d');?></td>
                                         @else
                                         <td>هنوز وارد نشده است.</td>
                                     @endif

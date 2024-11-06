@@ -29,6 +29,10 @@ class AuthController extends Controller
         if(!empty($manager)){
             if($manager->status == 'active'){
                 if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
+                    //save time
+                    $manager = Manager::find(auth('admin')->id());
+                    $manager->last_login_at = now(); // یا CarbonCarbon::now();
+                    $manager->save();
                     Alert::success('عملیات موفق.', 'خوش آمدید.');
                     return redirect()->route('admin-index');
                 }
