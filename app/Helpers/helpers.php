@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Favorite;
 use App\Models\Manager;
+use Illuminate\Support\Facades\Auth;
 
 function FetchStatus ($status){
     switch ($status) {
@@ -68,4 +70,13 @@ function getPhoto($id){
         return 'admin-assets/media/users/blank.png';
     }
     
+}
+
+function isFavorite($product_id){
+    if(Auth::guard('web')->check()){
+        $user_id = Auth::guard('web')->user()->id;
+        return Favorite::where('user_id',$user_id)->where('product_id', $product_id)->exists();
+    }else{
+        return false;
+    }  
 }
