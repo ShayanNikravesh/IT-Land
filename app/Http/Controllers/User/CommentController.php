@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -39,15 +40,17 @@ class CommentController extends Controller
 
         $user_id = Auth::guard('web')->user()->id;
 
-        $comment = new Comment();
-        $comment->user_id = $user_id;
-        $comment->product_id = $request->product_id;
-        $comment->comment = $request->comment;
-        $comment->save();
+        $product = Product::findOrFail($request->product_id);
+        if($product){
+            $comment = new Comment();
+            $comment->user_id = $user_id;
+            $comment->product_id = $request->product_id;
+            $comment->comment = $request->comment;
+            $comment->save();
 
-        Alert::success('عملیات موفق', 'نظر شما پس از تایید مدیریت ثبت خواهد شد.');
-
-        return redirect()->back();
+            Alert::success('عملیات موفق', 'نظر شما پس از تایید مدیریت ثبت خواهد شد.');
+            return redirect()->back();
+        }
     }
 
     /**
