@@ -11,6 +11,7 @@ use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\UserController;
 use App\Models\Banner;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -63,3 +64,10 @@ Route::get('store/{product_id}/{color_id}',[CartController::class,'store'])->nam
 Route::get('remove/{id}',[CartController::class,'remove'])->name('remove_from_cart');
 Route::get('clear',[CartController::class,'clear'])->name('cart_clear');
 Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('cart-Quantity');
+
+Route::fallback(function(){
+    if (Auth::guard('admin')->check()) {
+        return view('admin.404');
+    } 
+    return view('user.404');
+});
