@@ -27,7 +27,7 @@
                             <div class="cart-header d-flex justify-content-between align-items-center my-4">
                                 <p class="fw-bold">
                                     سبد خرید شما
-                                    <span class="fs-8 gray-600 d-block text-start">{{count($cart_products)}} کالا</span>
+                                    <span class="fs-8 gray-600 d-block text-start">{{$totalQuantity}} کالا</span>
                                 </p>
                                 <div class="dropdown">
                                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -118,7 +118,7 @@
                                 <div class="all-price d-flex justify-content-between align-items-center mb-3 px-3 pt-2">
                                     <p class="fs-7 fw-bold">
                                         قیمت کالاها
-                                        <span>({{count($cart_products)}})</span>
+                                        <span>({{$totalQuantity}})</span>
                                     </p>
                                     <p class="fs-7 gray-600 fw-bold">
                                         {{priceFormatter($total)}}
@@ -143,7 +143,7 @@
                                         سود شما از خرید
                                     </p>
                                     <p class="fs-6 fw-bold text-danger">
-                                        100,000 تومان
+                                        0
                                     </p>
                                 </div>
                                 <!-- Purchase:end-->
@@ -151,11 +151,11 @@
                                 <!--Checkout Btn:start-->
                                 @if (Auth::guard('web')->check())
                                     <div class="d-grid gap-2 p-3">
-                                        <a href="" class="btn custom-btn-danger border-radius-xl">ثبت سفارش</a>
+                                        <a href="{{route('to-shipping')}}" class="btn custom-btn-danger border-radius-xl">ثبت سفارش</a>
                                     </div>
                                 @else
                                     <div class="d-grid gap-2 p-3">
-                                        <button class="btn bg-warning border-radius-xl">برای ثبت سفارش وارد سایت شوید.</button>
+                                        <a href="{{route('login')}}" class="btn custom-btn-warning border-radius-xl">ورود به سایت و ثبت سفارش</a>
                                     </div>
                                 @endif
                                 <!--Checkout Btn:end-->

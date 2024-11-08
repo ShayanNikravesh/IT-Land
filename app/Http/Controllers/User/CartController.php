@@ -15,7 +15,8 @@ class CartController extends Controller
     {
         $cart_products = CartFacade::getContent();
         $total = CartFacade::getSubTotal();
-        return view('user.cart.cart',compact('cart_products','total'));
+        $totalQuantity = CartFacade::getTotalQuantity();
+        return view('user.cart.cart',compact('cart_products','total','totalQuantity'));
     }
 
     public function store(string $product_id , string $color_id)
@@ -30,13 +31,8 @@ class CartController extends Controller
             $photo_src = $photo->src;
         }
 
-        
-
-        if(empty($photo_src)){
-        }
-
         if($color_id == 0){
-            $id = $product_id.'0';
+            $id = $product_id.'.'.'0';
             $price = $product->price;
             $price_discounted = $product->price_discounted;
         }else{
@@ -48,7 +44,6 @@ class CartController extends Controller
             }else{
 
                 Alert::error('خطا', 'خطایی رخ داده است.');
-
                 return redirect()->back();
             }
         }
@@ -74,6 +69,10 @@ class CartController extends Controller
             )
         ));
         
+        //amount_payable
+        // $price = !empty(session('amount_payable')) ? session('amount_payable') + $products->price_discounted : $products->price_discounted;
+        // session()->put('amount_payable',$price);
+
         Alert::success('عملیات موفق', 'محصول به سبد خرید اضافه شد.');
 
         return redirect()->back();

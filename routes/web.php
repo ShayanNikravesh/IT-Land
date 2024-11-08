@@ -7,6 +7,7 @@ use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\CategoryController;
 use App\Http\Controllers\User\CommentController;
 use App\Http\Controllers\User\FavoriteController;
+use App\Http\Controllers\user\PaymentController;
 use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\UserController;
 use App\Models\Banner;
@@ -64,6 +65,10 @@ Route::get('store/{product_id}/{color_id}',[CartController::class,'store'])->nam
 Route::get('remove/{id}',[CartController::class,'remove'])->name('remove_from_cart');
 Route::get('clear',[CartController::class,'clear'])->name('cart_clear');
 Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('cart-Quantity');
+
+//shiping & payment
+Route::get('shipping',[PaymentController::class,'shipping'])->name('to-shipping');
+
 
 Route::fallback(function(){
     if (Auth::guard('admin')->check()) {
