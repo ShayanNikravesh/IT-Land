@@ -23,7 +23,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Fonts-->
 		<!--end::Fonts-->
 		<!--begin::Page Custom Styles(used by this page)-->
-		<link href="{{asset('admin-assets/css/pages/login/classic/login-5.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{asset('admin-assets/css/pages/login/login-5.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Page Custom Styles-->
 		<!--begin::Global Theme Styles(used by all pages)-->
 		<link href="{{asset('admin-assets/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
