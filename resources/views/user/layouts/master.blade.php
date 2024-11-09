@@ -410,6 +410,17 @@
                                     <!--Navbar Items Child:end-->
 
                                 </li>
+                                <li class="border-bottom-gray-150 px-2 py-3">
+                                    <a href="{{route('blogs')}}" class="fs-6 fw-bold d-block">
+                                        <!--begin::Svg-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                                            <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
+                                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+                                        </svg>
+                                        <!--end::Svg Icon-->
+                                        مقاله ها
+                                    </a>
+                                </li>    
                             </ul>
                         </div>
                         <!--Navbar Items Mobile Body:end-->
@@ -536,6 +547,17 @@
                             @endforeach
                         </ul>
                         <!--Navbar Child Wrapper:end-->
+                    </li>
+                    <!--Navbar Item:end-->
+                    <!--Navbar Item:start-->
+                    <li class="nav-item d-flex justify-content-between align-items-center me-3">
+                        <!--begin::Svg Icon-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                            <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
+                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+                        </svg>
+                        <!--end::Svg Icon-->
+                        <a class="mx-2 py-2" href="{{route('blogs')}}">مقاله ها</a>
                     </li>
                     <!--Navbar Item:end-->
                 </ul>
@@ -702,7 +724,7 @@
                                       fill="#000000"/>
                             </g>
                         </svg><!--end::Svg Icon-->
-                        <span class="badge bg-primary position-absolute shop-cart-badge border border-white border-2 border-radius-xl">4</span>
+                        {{-- <span class="badge bg-primary position-absolute shop-cart-badge border border-white border-2 border-radius-xl">4</span> --}}
                     </a>
                     <!--Shopping Cart Button:end-->
                 </div>
@@ -739,39 +761,39 @@
                     <i class="fa fa-angle-up ps-2"></i>
                 </a>
             </div>
-            <!--            Footer Top Detail:end-->
+            <!--Footer Top Detail:end-->
 
-            <!--            Footer Top Attr:start-->
+            <!--Footer Top Attr:start-->
             <div class="footer-top-attr d-flex justify-content-between align-items-center my-5">
-                <!--                Top Right Item:start-->
+                <!--Top Right Item:start-->
                 <div class="top-right-item text-center">
                     <img src="{{asset('user-assets/img/express-delivery.svg')}}" alt="" title="">
                     <p class="mt-2 fs-8">امکان تحویل اکسپرس</p>
                 </div>
-                <!--                Top Right Item:end-->
+                <!--Top Right Item:end-->
 
-                <!--                Top Right Item:start-->
+                <!--Top Right Item:start-->
                 <div class="top-right-item text-center">
                     <img src="{{asset('user-assets/img/support.svg')}}" alt="" title="">
                     <p class="mt-2 fs-8">7 روز هفته، 24 ساعته</p>
                 </div>
-                <!--                Top Right Item:end-->
+                <!--Top Right Item:end-->
 
-                <!--                Top Right Item:start-->
+                <!--Top Right Item:start-->
                 <div class="top-right-item text-center">
                     <img src="{{asset('user-assets/img/days-return.svg')}}" alt="" title="">
                     <p class="mt-2 fs-8">هفت روز ضمانت بازگشت کالا</p>
                 </div>
-                <!--                Top Right Item:end-->
+                <!--Top Right Item:end-->
 
-                <!--                Top Right Item:start-->
+                <!--Top Right Item:start-->
                 <div class="top-right-item text-center">
                     <img src="{{asset('user-assets/img/original-products.svg')}}" alt="" title="">
                     <p class="mt-2 fs-8">ضمانت اصالت کالا</p>
                 </div>
-                <!--                Top Right Item:end-->
+                <!--Top Right Item:end-->
             </div>
-            <!--            Footer Top Attr:end-->
+            <!--Footer Top Attr:end-->
         </div>
         <div class="footer-main my-5">
             <div class="row">
@@ -853,7 +875,7 @@
 </footer>
 <!--Footer:End-->
 
-<!--Chat Widget:start-->
+{{-- <!--Chat Widget:start-->
 <div class="chat-widget border-radius-2xl custom-box-shadow-s-1">
     <!--Chat Widget Icon:start-->
     <a href="javascript:void(0)" class="openChatBoxBtn">
@@ -989,7 +1011,7 @@
     </div>
     <!--Chat Widget Box:end-->
 </div>
-<!--Chat Widget:end-->
+<!--Chat Widget:end--> --}}
 
 <!--Scroll To Top:start-->
 <div class="to-top border-radius-circle text-center">

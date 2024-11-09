@@ -78,3 +78,10 @@ Route::middleware([AdminAuth::class])->group(function () {
 
 });
 
+//404
+Route::fallback(function(){
+    if (Auth::guard('admin')->check()) {
+        return view('admin.404');
+    } 
+    return view('user.404');
+});

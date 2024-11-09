@@ -44,7 +44,6 @@ class ArticleController extends Controller
             'title' => ['required'],
             'english_title' => ['required'],
             'article' => ['required'],
-            'status'=>['required'],
         ]);
 
         $article = new Article();
@@ -53,7 +52,6 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->english_title = $request->english_title;
         $article->article = $request->article;
-        $article->status = $request->status;
         $article->save();
 
         Alert::success('عملیات موفق', 'مقاله ثبت شد.');
@@ -144,6 +142,14 @@ class ArticleController extends Controller
     {
 
         if($request->hasFile('article_photo','name')){
+
+            $article = Article::find($request->article_id);
+            $existing_photo = $article->photos()->first();
+            if($existing_photo){
+                File::delete(public_path($existing_photo->src));
+                $existing_photo->forceDelete();
+            }
+
             $fileName = time().'_'.$request->article_photo->getClientOriginalName();
             $filePath = $request->article_photo->storeAs('articles_photos',$fileName,'public');
             $suffix_photo = pathinfo($_FILES['article_photo']['name'], PATHINFO_EXTENSION);
@@ -153,7 +159,7 @@ class ArticleController extends Controller
             $photo->suffix = $suffix_photo;
             $photo->save();
 
-            $article = Article::find($request->article_id);
+            
             $photo->article()->attach($article);
         }
     }

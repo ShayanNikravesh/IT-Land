@@ -65,16 +65,6 @@
                                 <textarea class="summernote" name="article" style="display: none;"></textarea>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-lg-3">
-                                <label class="text-right">وضعیت:</label>
-                                <select name="status" class="form-control text-right selectpicker">
-                                    <option value="">انتخاب کنید</option>
-                                    <option value="active">فعال</option>
-                                    <option value="inactive">غیرفعال</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-success mr-2">ثبت</button>

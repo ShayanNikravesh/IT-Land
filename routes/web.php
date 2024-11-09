@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\User\AddressController;
+use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\BrandController;
 use App\Http\Controllers\User\CartController;
@@ -46,8 +47,12 @@ Route::resource('Brand',BrandController::class);
 //User profile
 Route::resource('User',UserController::class);
 
-//comments
+//comment
 Route::resource('Comment',CommentController::class);
+
+//article
+Route::get('blogs',[ArticleController::class,'blogs'])->name('blogs');
+Route::get('blog/{id}',[ArticleController::class,'blog'])->name('blog');
 
 //address
 Route::resource('Address',AddressController::class);
@@ -69,7 +74,7 @@ Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('
 //shiping & payment
 Route::get('shipping',[PaymentController::class,'shipping'])->name('to-shipping');
 
-
+//404
 Route::fallback(function(){
     if (Auth::guard('admin')->check()) {
         return view('admin.404');
