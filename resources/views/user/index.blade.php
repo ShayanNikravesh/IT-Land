@@ -94,100 +94,7 @@
     </div>
     <!--Small Banners:end-->
 
-    <!--Categories:start-->
-    <section class="categories mt-5">
-        <h2 class="text-center fs-4">دسته بندی ها</h2>
-        <div class="row mt-5">
-            <div class="col-sm-12 col-md-12 col-lg-10 col-xl-10 offset-sm-0 offset-md-0 offset-lg-2 offset-xl-2 mb-3">
-                <!--Row:start-->
-                <div class="row">
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-1.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">خانه و آشپرخانه</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-2.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">اسباب بازی</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-3.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">شخصی</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-4.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">ورزش</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-5.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">ورزش</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <div class="clearfix"></div>
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-6.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">خانه و آشپرخانه</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-7.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">اسباب بازی</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-8.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">شخصی</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-9.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">ورزش</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                    <!--                Category Item:start-->
-                    <div class="col-4 col-lg-2 col-xl-2 mb-4">
-                        <a href="" title="">
-                            <img src="{{asset('user-assets/img/category-10.jpg')}}" alt="" class="img-fluid img-opacity">
-                            <strong class="text-center d-block fs-7">ورزش</strong>
-                        </a>
-                    </div>
-                    <!--                Category Item:end-->
-                </div>
-                <!--Row:end-->
-            </div>
-        </div>
-    </section>
-    <!--Categories:end-->
+ 
 
     <!--Med Banners:start-->
     <div class="banners my-5">
@@ -214,30 +121,10 @@
         <!--Slider:start-->
         <div class="swiper brandsSlider">
             <div class="swiper-wrapper">
-
                 <!--Brands Item:start-->
                 <div class="swiper-slide position-relative">
                     <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
-                            <img src="{{asset('user-assets/img/brand-1.png')}}" alt="" title="" class="img-fluid p-3">
-                        </a>
-                    </div>
-                </div>
-                <!--Brands Item:end-->
-
-                <!--Brands Item:start-->
-                <div class="swiper-slide position-relative">
-                    <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
-                            <img src="{{asset('user-assets/img/brand-2.png')}}" alt="" title="" class="img-fluid p-3">
-                        </a>
-                    </div>
-                </div>
-                <!--Brands Item:end-->
-                <!--Brands Item:start-->
-                <div class="swiper-slide position-relative">
-                    <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
+                        <a href="javascript:;" title="" class="stretched-link">
                             <img src="{{asset('user-assets/img/brand-3.png')}}" alt="" title="" class="img-fluid p-3">
                         </a>
                     </div>
@@ -246,7 +133,7 @@
                 <!--Brands Item:start-->
                 <div class="swiper-slide position-relative">
                     <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
+                        <a href="javascript:;" title="" class="stretched-link">
                             <img src="{{asset('user-assets/img/brand-4.png')}}" alt="" title="" class="img-fluid p-3">
                         </a>
                     </div>
@@ -255,8 +142,8 @@
                 <!--Brands Item:start-->
                 <div class="swiper-slide position-relative">
                     <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
-                            <img src="{{asset('user-assets/img/brand-8.png')}}" alt="" title="" class="img-fluid p-3">
+                        <a href="javascript:;" title="" class="stretched-link">
+                            <img src="{{asset('user-assets/img/brand-9.jpg')}}" alt="" title="" class="img-fluid p-3">
                         </a>
                     </div>
                 </div>
@@ -264,64 +151,26 @@
                 <!--Brands Item:start-->
                 <div class="swiper-slide position-relative">
                     <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
-                            <img src="{{asset('user-assets/img/brand-7.jpg')}}" alt="" title="" class="img-fluid p-3">
-                        </a>
-                    </div>
-                </div>
-                <!--            Brands Item:end-->
-                <!--            Brands Item:start-->
-                <div class="swiper-slide position-relative">
-                    <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
-                            <img src="{{asset('user-assets/img/brand-8.png')}}" alt="" title="" class="img-fluid p-3">
-                        </a>
-                    </div>
-                </div>
-                <!--            Brands Item:end-->
-                <!--            Brands Item:start-->
-                <div class="swiper-slide position-relative">
-                    <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
-                            <img src="{{asset('user-assets/img/brand-9.jpg')}}" alt="" title="" class="img-fluid p-3">
-                        </a>
-                    </div>
-                </div>
-                <!--            Brands Item:end-->
-                <!--            Brands Item:start-->
-                <div class="swiper-slide position-relative">
-                    <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
+                        <a href="javascript:;" title="" class="stretched-link">
                             <img src="{{asset('user-assets/img/brand-10.png')}}" alt="" title="" class="img-fluid p-3">
                         </a>
                     </div>
                 </div>
-                <!--            Brands Item:end-->
-                <!--            Brands Item:start-->
+                <!--Brands Item:end-->
+                <!--Brands Item:start-->
                 <div class="swiper-slide position-relative">
                     <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
-                            <img src="{{asset('user-assets/img/brand-11.png')}}" alt="" title="" class="img-fluid p-3">
-                        </a>
-                    </div>
-                </div>
-                <!--            Brands Item:end-->
-
-                <!--            Brands Item:start-->
-                <div class="swiper-slide position-relative">
-                    <div class="brands-item d-flex justify-content-center align-items-center">
-                        <a href="" title="" class="stretched-link">
+                        <a href="javascript:;" title="" class="stretched-link">
                             <img src="{{asset('user-assets/img/brand-13.png')}}" alt="" title="" class="img-fluid p-3">
                         </a>
                     </div>
                 </div>
-                <!--            Brands Item:end-->
-
+                <!--Brands Item:end-->
             </div>
             <div class="swiper-button-next bg-light border-radius-circle"></div>
             <div class="swiper-button-prev bg-light border-radius-circle"></div>
         </div>
-        <!--            Slider:end-->
+        <!--Slider:end-->
     </section>
     <!--Best Brands:end-->
 
