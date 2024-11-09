@@ -11,6 +11,8 @@ use App\Http\Controllers\User\FavoriteController;
 use App\Http\Controllers\user\PaymentController;
 use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Middleware\RedirectUser;
+use App\Http\Middleware\UserAuth;
 use App\Models\Banner;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
@@ -27,13 +29,14 @@ Route::get('/', function () {
 //about us
 Route::get('about-us',function(){ return view('user.about-us'); })->name('about-us');
 
-//login & register
-Route::get('login',function(){ return view('user.login'); })->name('login');
-Route::post('login',[AuthController::class,'login'])->name('user-login');
-Route::get('Confirm/{token}',[AuthController::class,'Confirm'])->name('Confirm');
-Route::post('Verify/{token}',[AuthController::class,'Verify'])->name('Verify');
-Route::get('logout',[AuthController::class,'logout'])->name('user-logout');
-Route::get('ReSendOtpCode/{token}',[AuthController::class,'ReSendOtpCode'])->name('Resend_otp_code');
+Route::middleware([RedirectUser::class])->group(function () {
+    //login & register
+    Route::get('login',function(){ return view('user.login'); })->name('login');
+    Route::post('login',[AuthController::class,'login'])->name('user-login');
+    Route::get('Confirm/{token}',[AuthController::class,'Confirm'])->name('Confirm');
+    Route::post('Verify/{token}',[AuthController::class,'Verify'])->name('Verify');
+    Route::get('ReSendOtpCode/{token}',[AuthController::class,'ReSendOtpCode'])->name('Resend_otp_code');
+});
 
 //category
 Route::resource('Category',CategoryController::class);
@@ -47,25 +50,9 @@ Route::get('filter',[ProductController::class,'filter'])->name('filter');
 //brand
 Route::resource('Brand',BrandController::class);
 
-//User profile
-Route::resource('User',UserController::class);
-
-//comment
-Route::resource('Comment',CommentController::class);
-
 //article
 Route::get('blogs',[ArticleController::class,'blogs'])->name('blogs');
 Route::get('blog/{id}',[ArticleController::class,'blog'])->name('blog');
-
-//address
-Route::resource('Address',AddressController::class);
-Route::post('getcities',[AddressController::class,'getcities'])->name('get-cities');
-Route::get('setDefault/{id}',[AddressController::class,'setDefault'])->name('set-default');
-
-//favorite
-Route::get('add/{id}',[FavoriteController::class,'add'])->name('add-to-favorite');
-Route::get('delete/{id}',[FavoriteController::class,'delete'])->name('delete-favorite');
-Route::get('favorites',[FavoriteController::class,'favorites'])->name('show-favorites');
 
 //cart
 Route::get('cart',[CartController::class,'cart'])->name('cart');
@@ -74,9 +61,33 @@ Route::get('remove/{id}',[CartController::class,'remove'])->name('remove_from_ca
 Route::get('clear',[CartController::class,'clear'])->name('cart_clear');
 Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('cart-Quantity');
 
-//shiping & payment
-Route::get('shipping',[PaymentController::class,'shipping'])->name('to-shipping');
-Route::get('payment',[PaymentController::class,'payment'])->name('payment');
+//UserAuth
+Route::middleware([UserAuth::class])->group(function () {
+
+    //User profile
+    Route::resource('User',UserController::class);
+
+    //comment
+    Route::resource('Comment',CommentController::class);
+
+    //address
+    Route::resource('Address',AddressController::class);
+    Route::post('getcities',[AddressController::class,'getcities'])->name('get-cities');
+    Route::get('setDefault/{id}',[AddressController::class,'setDefault'])->name('set-default');
+
+    //favorite
+    Route::get('add/{id}',[FavoriteController::class,'add'])->name('add-to-favorite');
+    Route::get('delete/{id}',[FavoriteController::class,'delete'])->name('delete-favorite');
+    Route::get('favorites',[FavoriteController::class,'favorites'])->name('show-favorites');
+
+    //shiping & payment
+    Route::get('shipping',[PaymentController::class,'shipping'])->name('to-shipping');
+    Route::get('payment',[PaymentController::class,'payment'])->name('payment');
+
+    //logout
+    Route::get('logout',[AuthController::class,'logout'])->name('user-logout');
+
+});
 
 //404
 Route::fallback(function(){

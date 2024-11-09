@@ -33,6 +33,7 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
+
         $request -> validate([
             'product_id' => ['required'],
             'comment' => ['required'],
