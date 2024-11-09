@@ -33,11 +33,11 @@
 
             <!--Payment Timeline:start-->
             <div class="payment-timeline d-flex justify-content-center align-items-baseline my-3">
-                <a href="cart.html" class="text-danger basket mx-3">
+                <a href="{{route('cart')}}" class="text-danger basket mx-3">
                     <i class="fa fa-shopping-cart rotate-3d"></i>
                     سبد خرید
                 </a>
-                <a href="shipping.html"
+                <a href="{{route('to-shipping')}}"
                    class="text-danger mx-3 shipping d-flex justify-content-between align-items-center">
                     <p class="fs-5">
                         <i class="fa fa-truck rotate-3d"></i>
@@ -156,7 +156,7 @@
                             </div> 
                         @else
                             <div class="d-grid gap-2 p-3">
-                                <a href="" class="btn custom-btn-danger border-radius-xl">رفتن به مرحله بعد</a>
+                                <a href="{{route('payment')}}" class="btn custom-btn-danger border-radius-xl">رفتن به مرحله بعد</a>
                             </div>  
                         @endif
                         <!--Checkout Btn:end-->

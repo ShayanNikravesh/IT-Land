@@ -76,6 +76,7 @@ Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('
 
 //shiping & payment
 Route::get('shipping',[PaymentController::class,'shipping'])->name('to-shipping');
+Route::get('payment',[PaymentController::class,'payment'])->name('payment');
 
 //404
 Route::fallback(function(){
