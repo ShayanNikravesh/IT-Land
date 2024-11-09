@@ -24,6 +24,9 @@ Route::get('/', function () {
     return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos','products'));
 })->name('index');
 
+//about us
+Route::get('about-us',function(){ return view('user.about-us'); })->name('about-us');
+
 //login & register
 Route::get('login',function(){ return view('user.login'); })->name('login');
 Route::post('login',[AuthController::class,'login'])->name('user-login');

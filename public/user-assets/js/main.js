@@ -55,88 +55,84 @@ decreaseCountBtn.forEach(function (decreaseBtn) {
 
 
 //Widget Scripts
-let openChatBoxBtnElem = document.querySelector('.openChatBoxBtn')
-let chatWidgetBoxElem = document.querySelector('.chat-widget-box')
-let closeChatWidgetBoxBtnElem = document.querySelector('.closeChatWidgetBoxBtn')
-let WriteMsgInputElem = document.querySelector('.WriteMsgInput')
-let chatBodyWrapperElem = document.querySelector('.ChatBodyWrapper')
-let sendChatToCardBodyBtnElem = document.querySelector('.sendChatToCardBodyBtn')
-let chatInfoBox = document.querySelector('.chat-info')
-let chatSendFileElem = document.querySelector('.chatSendFile')
-let sendFileToChatWrapperElem = document.querySelector('.send-file-to-chat-box')
-let fileInputGetterElem = document.querySelector('#fileInputGetter')
-let selectFileNameElem = document.querySelector('#fileName')
-let sendFileBtnElem = document.querySelector('#sendFileBtn')
-let closeSendFileBoxBtn = document.querySelector('#closeSendFileBoxBtn')
+// let openChatBoxBtnElem = document.querySelector('.openChatBoxBtn')
+// let chatWidgetBoxElem = document.querySelector('.chat-widget-box')
+// let closeChatWidgetBoxBtnElem = document.querySelector('.closeChatWidgetBoxBtn')
+// let WriteMsgInputElem = document.querySelector('.WriteMsgInput')
+// let chatBodyWrapperElem = document.querySelector('.ChatBodyWrapper')
+// let sendChatToCardBodyBtnElem = document.querySelector('.sendChatToCardBodyBtn')
+// let chatInfoBox = document.querySelector('.chat-info')
+// let chatSendFileElem = document.querySelector('.chatSendFile')
+// let sendFileToChatWrapperElem = document.querySelector('.send-file-to-chat-box')
+// let selectFileNameElem = document.querySelector('#fileName')
+// let sendFileBtnElem = document.querySelector('#sendFileBtn')
 
-closeSendFileBoxBtn.addEventListener('click', function(){
-    sendFileToChatWrapperElem.classList.add('d-none')
-})
 
-fileInputGetterElem.addEventListener('change', function(e){
-    selectFileNameElem.innerHTML = fileInputGetterElem.files[0].name
-    selectFileNameElem.lang = 'en';
-    sendFileBtnElem.classList.remove('d-none')
-})
 
-openChatBoxBtnElem.addEventListener('click', function () {
-    chatWidgetBoxElem.classList.add('showElem');
-})
+// fileInputGetterElem.addEventListener('change', function(e){
+//     selectFileNameElem.innerHTML = fileInputGetterElem.files[0].name
+//     selectFileNameElem.lang = 'en';
+//     sendFileBtnElem.classList.remove('d-none')
+// })
 
-closeChatWidgetBoxBtnElem.addEventListener('click', function () {
-    chatWidgetBoxElem.classList.remove('showElem');
-})
+// openChatBoxBtnElem.addEventListener('click', function () {
+//     chatWidgetBoxElem.classList.add('showElem');
+// })
 
-WriteMsgInputElem.addEventListener('keyup', function (e) {
-    if(WriteMsgInputElem.value){
-        if (e.which === 13) {
-            messageGenerator();
-            chatInfoBox.classList.add('hidden');
-        }
-    }
-})
-sendChatToCardBodyBtnElem.addEventListener('click', function () {
-    if(WriteMsgInputElem.value){
-        messageGenerator();
-        chatInfoBox.classList.add('hidden');
-    }
-})
+// closeChatWidgetBoxBtnElem.addEventListener('click', function () {
+//     chatWidgetBoxElem.classList.remove('showElem');
+// })
 
-chatSendFileElem.addEventListener('click', function () {
-    sendFileToChatWrapperElem.classList.remove('d-none')
-})
+// WriteMsgInputElem.addEventListener('keyup', function (e) {
+//     if(WriteMsgInputElem.value){
+//         if (e.which === 13) {
+//             messageGenerator();
+//             chatInfoBox.classList.add('hidden');
+//         }
+//     }
+// })
+// sendChatToCardBodyBtnElem.addEventListener('click', function () {
+//     if(WriteMsgInputElem.value){
+//         messageGenerator();
+//         chatInfoBox.classList.add('hidden');
+//     }
+// })
 
-function messageGenerator() {
-    let chatWrapper = document.createElement('div');
-    chatWrapper.className = 'chat-widget-msg mb-4 customer-msg float-start'
+// chatSendFileElem.addEventListener('click', function () {
+//     sendFileToChatWrapperElem.classList.remove('d-none')
+// })
 
-    let chatText = document.createElement('p');
-    chatText.className = 'py-2 px-3 border-radius-3-1-br';
-    chatText.innerText = WriteMsgInputElem.value;
+// function messageGenerator() {
+//     let chatWrapper = document.createElement('div');
+//     chatWrapper.className = 'chat-widget-msg mb-4 customer-msg float-start'
 
-    let breakRowElem = document.createElement('div');
-    breakRowElem.className = 'clearfix'
+//     let chatText = document.createElement('p');
+//     chatText.className = 'py-2 px-3 border-radius-3-1-br';
+//     chatText.innerText = WriteMsgInputElem.value;
 
-    chatWrapper.appendChild(chatText);
+//     let breakRowElem = document.createElement('div');
+//     breakRowElem.className = 'clearfix'
 
-    let chatResponseWrapper = document.createElement('div');
-    chatResponseWrapper.className = 'chat-widget-msg mb-4 operator-msg float-end'
+//     chatWrapper.appendChild(chatText);
 
-    let chatResponseText = document.createElement('p');
-    chatResponseText.className = 'py-2 px-3 border-radius-3-1-bl'
-    chatResponseText.innerText = "پاسخ آزمایشی از سرور"
+//     let chatResponseWrapper = document.createElement('div');
+//     chatResponseWrapper.className = 'chat-widget-msg mb-4 operator-msg float-end'
 
-    let breakRowResponseElem = document.createElement('div');
-    breakRowResponseElem.className = 'clearfix'
-    breakRowElem.className = 'clearfix'
+//     let chatResponseText = document.createElement('p');
+//     chatResponseText.className = 'py-2 px-3 border-radius-3-1-bl'
+//     chatResponseText.innerText = "پاسخ آزمایشی از سرور"
 
-    chatResponseWrapper.appendChild(chatResponseText);
+//     let breakRowResponseElem = document.createElement('div');
+//     breakRowResponseElem.className = 'clearfix'
+//     breakRowElem.className = 'clearfix'
 
-    chatBodyWrapperElem.append(chatWrapper, breakRowElem);
-    chatBodyWrapperElem.append(chatResponseWrapper, breakRowResponseElem);
+//     chatResponseWrapper.appendChild(chatResponseText);
 
-    WriteMsgInputElem.value = '';
-}
+//     chatBodyWrapperElem.append(chatWrapper, breakRowElem);
+//     chatBodyWrapperElem.append(chatResponseWrapper, breakRowResponseElem);
+
+//     WriteMsgInputElem.value = '';
+// }
 
 //Navbar In Mobile Scripts
 let navbarOpenBtnElem = document.querySelector('.openNavbarBtn');
