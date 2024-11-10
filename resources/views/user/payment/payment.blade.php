@@ -120,7 +120,7 @@
                                 جمع سبد خرید
                             </p>
                             <p class="fs-7 gray-600 fw-bold">
-                                {{priceFormatter($total)}}
+                                {{priceFormatter(session()->get('amount_payable'))}}
                             </p>
                         </div>
                         <!--All Prices Discounted:end-->
@@ -131,7 +131,7 @@
                                 سود شما از خرید
                             </p>
                             <p class="fs-6 fw-bold text-danger">
-                                0
+                                {{priceFormatter(Profit())}}
                             </p>
                         </div>
                         <!--Purchase:end-->

@@ -148,7 +148,7 @@ function ProductQuantity(id,status) {
             if (re.is_plus) {
                 $('#product_minus_' + id).load(document.URL + ' #product_minus_' + id);
                 $('#cart_quantity_' + id).load(document.URL + ' #cart_quantity_' + id);
-                // $('#AttributeCart').load(document.URL + ' #AttributeCart');
+                $('#cart_attribute').load(document.URL + ' #cart_attribute');
                 let timerInterval;
                 Swal.fire({
                     title: "درحال انجام عملیات",
@@ -177,7 +177,7 @@ function ProductQuantity(id,status) {
             if (re.is_minus){ 
                 $('#product_minus_' + id).load(document.URL + ' #product_minus_' + id);
                 $('#cart_quantity_' + id).load(document.URL + ' #cart_quantity_' + id);
-                // $('#AttributeCart').load(document.URL + ' #AttributeCart'); 
+                $('#cart_attribute').load(document.URL + ' #cart_attribute'); 
                 let timerInterval;
                 Swal.fire({
                     title: "درحال انجام عملیات",

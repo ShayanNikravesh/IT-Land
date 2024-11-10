@@ -2,6 +2,7 @@
 
 use App\Models\Favorite;
 use App\Models\Manager;
+use Darryldecode\Cart\Facades\CartFacade;
 use Illuminate\Support\Facades\Auth;
 
 function FetchStatus ($status){
@@ -79,4 +80,11 @@ function isFavorite($product_id){
     }else{
         return false;
     }  
+}
+
+function Profit(){
+    $total = CartFacade::getSubTotal();
+    $amount_payable = session()->get('amount_payable');
+    $profit = $total - $amount_payable;
+    return $profit;
 }

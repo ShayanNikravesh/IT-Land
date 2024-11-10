@@ -113,7 +113,7 @@
 
                         <!--Products Prices:start-->
                         <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3 mt-3">
-                            <div class="cart-cal border border-radius-xl overflow-hidden">
+                            <div class="cart-cal border border-radius-xl overflow-hidden" id="cart_attribute">
                                 <!--All Prices:start-->
                                 <div class="all-price d-flex justify-content-between align-items-center mb-3 px-3 pt-2">
                                     <p class="fs-7 fw-bold">
@@ -132,7 +132,7 @@
                                         جمع سبد خرید :
                                     </p>
                                     <p class="fs-7 gray-600 fw-bold">
-                                        {{priceFormatter($total)}}
+                                        {{priceFormatter(session()->get('amount_payable'))}}
                                     </p>
                                 </div>
                                 <!--All Prices Discounted:end-->
@@ -143,7 +143,7 @@
                                         سود شما از خرید
                                     </p>
                                     <p class="fs-6 fw-bold text-danger">
-                                        0
+                                       {{priceFormatter(Profit())}}
                                     </p>
                                 </div>
                                 <!-- Purchase:end-->
