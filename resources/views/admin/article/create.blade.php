@@ -39,6 +39,11 @@
                 <form class="form" method="post" action="{{route('article.store')}}" id="kt_form">
                     @csrf
                     <div class="card-body">
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger text-center">{{$error}}</div>
+                            @endforeach
+                        @endif
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label>نام :</label>

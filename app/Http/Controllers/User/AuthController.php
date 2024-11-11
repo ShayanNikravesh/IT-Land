@@ -19,7 +19,7 @@ class AuthController extends Controller
             'mobile' => ['required','regex:/^(\+98|98|0)9\d{9}$/'],
         ],[
             'mobile.required'=>'لطفا شماره موبایل را وارد کنید.',
-            'mobile.regex'=>'لطفا شماره را درست وارد کنید.'
+            'mobile.regex'=>'لطفا شماره موبایل را درست وارد کنید.'
         ]);
 
         $user_id = User::where('mobile',$request->mobile)->value('id');

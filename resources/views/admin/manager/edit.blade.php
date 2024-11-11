@@ -70,6 +70,11 @@
                                                         <i class="ki ki-bold-close icon-xs text-muted"></i>
                                                     </span>
                                                 </div>
+                                                @if ($errors->any())
+                                                    @foreach ($errors->all() as $error)
+                                                        <div class="alert alert-danger text-center">{{$error}}</div>
+                                                    @endforeach
+                                                @endif
                                             </div>
                                         </div>
                                         <!--end::Group-->

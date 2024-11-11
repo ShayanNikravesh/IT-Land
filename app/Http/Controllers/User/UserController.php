@@ -56,6 +56,8 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        Alert::error('عملیات ناموفق');
+        
         $request -> validate([
             'national_code'=>['nullable','min:10','numeric'],
         ]);

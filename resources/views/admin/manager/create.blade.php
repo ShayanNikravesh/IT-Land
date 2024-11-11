@@ -38,63 +38,63 @@
                         <h3 class="card-label">مشخصات مدیر</h3>
                     </div>
                 </div>
-                {{-- @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                        <div class="alert alert-danger">{{$error}}</div>
-                    @endforeach
-                @endif --}}
                 <div class="card-body">
                     <!--begin::Form-->
                     <div class="card card-custom">
                         <!--begin::Form-->
                         <form method="POST" action="{{route('manager.store')}}">
                             @csrf
-                         <div class="card-body">
-                          <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label><span class="text-danger">*</span>نام :</label>
-                                <input type="text" class="form-control" name="first_name" placeholder="نام مدیر را وارد کنید."/>
+                            <div class="card-body">
+                                @if ($errors->any())
+                                    @foreach ($errors->all() as $error)
+                                        <div class="alert alert-danger text-center">{{$error}}</div>
+                                    @endforeach
+                                @endif
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label><span class="text-danger">*</span>نام :</label>
+                                        <input type="text" class="form-control" name="first_name" placeholder="نام مدیر را وارد کنید."/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label><span class="text-danger">*</span>نام خانوادگی :</label>
+                                        <input type="text" class="form-control" name="last_name" placeholder="نام خانوادگی مدیر را وارد کنید."/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label><span class="text-danger">*</span>ایمیل :</label>
+                                        <input type="email" class="form-control" name="email" placeholder="ایمیل را وارد کنید."/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label><span class="text-danger">*</span>موبایل :</label>
+                                        <input type="text" class="form-control" name="mobile" placeholder="موبایل را وارد کنید."/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label><span class="text-danger">*</span>رمز :</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="رمز را وارد کنید."/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label><span class="text-danger">*</span>تکرار رمز :</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" placeholder="تکرار رمز را وارد کنید."/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label for="exampleSelect1"><span class="text-danger">*</span>سطح : </label>
+                                        <select class="form-control form-control-solid" id="exampleSelect1" name="level">
+                                            <option value="">انتخاب کنید.</option>
+                                            <option value="1">مدیر</option>
+                                            <option value="2">اپراتور</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-6">
-                                <label><span class="text-danger">*</span>نام خانوادگی :</label>
-                                <input type="text" class="form-control" name="last_name" placeholder="نام خانوادگی مدیر را وارد کنید."/>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                                <button type="reset" class="btn btn-secondary">پاک کردن</button>
                             </div>
-                          </div>
-                          <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label><span class="text-danger">*</span>ایمیل :</label>
-                                <input type="email" class="form-control" name="email" placeholder="ایمیل را وارد کنید."/>
-                            </div>
-                            <div class="col-lg-6">
-                                <label><span class="text-danger">*</span>موبایل :</label>
-                                <input type="text" class="form-control" name="mobile" placeholder="موبایل را وارد کنید."/>
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label><span class="text-danger">*</span>رمز :</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="رمز را وارد کنید."/>
-                            </div>
-							<div class="col-lg-6">
-                                <label><span class="text-danger">*</span>تکرار رمز :</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" placeholder="تکرار رمز را وارد کنید."/>
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="exampleSelect1"><span class="text-danger">*</span>سطح : </label>
-                                <select class="form-control form-control-solid" id="exampleSelect1" name="level">
-                                    <option value="">انتخاب کنید.</option>
-                                    <option value="1">مدیر</option>
-                                    <option value="2">اپراتور</option>
-                                </select>
-                            </div>
-                          </div>
-                         </div>
-                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
-                            <button type="reset" class="btn btn-secondary">پاک کردن</button>
-                         </div>
                         </form>
                         <!--end::Form-->
                        </div>

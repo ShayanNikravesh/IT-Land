@@ -42,23 +42,37 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        Alert::error('عملیات ناموفق');
+
+        $request->validate([
+            'title' => ['required'],
+            'english_title' => ['required'],
+            'category'=>['required'],
+            'brand'=>['required'],
+            'description'=>['required'],
+            'review'=>['required'],
+            'status'=>['required'],
+            'has_color'=>['required'],
+        ]);        
+
         if($request->has_color == 1){
             
-            Alert::alert('عملیات ناموفق', 'Message', 'error');
+            Alert::error('عملیات ناموفق');
 
             $product = $request->validate([
-                'title' => ['required'],
-                'english_title' => ['required'],
-                'category'=>['required'],
-                'brand'=>['required'],
-                'description'=>['required'],
-                'review'=>['required'],
-                'status'=>['required'],
-                'has_color'=>['required'],
-                'color'=>['required'],
-                'color_stock'=>['required'],
-                'color_price'=>['required'],
-                'color_price_discounted'=>['required'],
+                // 'title' => ['required'],
+                // 'english_title' => ['required'],
+                // 'category'=>['required'],
+                // 'brand'=>['required'],
+                // 'description'=>['required'],
+                // 'review'=>['required'],
+                // 'status'=>['required'],
+                // 'has_color'=>['required'],
+                'color.*'=>['required'],
+                'color_stock.*'=>['required'],
+                'color_price.*'=>['required'],
+                'color_price_discounted.*'=>['required'],
             ]);
 
             // $tracking_code = strtoupper(bin2hex(random_bytes(10 / 2)));
@@ -96,18 +110,17 @@ class ProductController extends Controller
 
         }else{
             
-            Alert::alert('عملیات ناموفق', 'Message', 'error');
+            Alert::error('عملیات ناموفق');
 
             $product = $request->validate([
-                'title' => ['required'],
-                'english_title' => ['required'],
-                'category'=>['required'],
-                'brand'=>['required'],
-                // 'tracking_code' => ['required','numeric','unique:products,tracking_code'],
-                'description'=>['required'],
-                'review'=>['required'],
-                'status'=>['required'],
-                'has_color'=>['required'],
+                // 'title' => ['required'],
+                // 'english_title' => ['required'],
+                // 'category'=>['required'],
+                // 'brand'=>['required'],
+                // 'description'=>['required'],
+                // 'review'=>['required'],
+                // 'status'=>['required'],
+                // 'has_color'=>['required'],
                 'stock'=>['required'],
                 'price'=>['required'],
                 'price_discounted'=>['required'],
@@ -165,21 +178,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Alert::alert('عملیات ناموفق', 'Message', 'error');
+        Alert::error('عملیات ناموفق');
 
         $product = Product::findOrFail($id);
 
         if($product->has_color == 1){
+
+            // dd($request);
 
             $request->validate([
                 'title' => ['required'],
                 'english_title' => ['required'],
                 'description'=>['required'],
                 'review'=>['required'],
-                'color'=>['required'],
-                'color_stock'=>['required'],
-                'color_price'=>['required'],
-                'color_price_discounted'=>['required'],
+                'color.*'=>['required'],
+                'color_stock.*'=>['required','numeric'],
+                'color_price.*'=>['required','numeric'],
+                'color_price_discounted.*'=>['required','numeric'],
             ]);
 
             $product->title = $request->title; 
@@ -203,14 +218,16 @@ class ProductController extends Controller
             }
 
             $product->colors()->sync($pivotData);
+            
+            // dd($request);
 
-            if ($request->new_color == 1) {
+            if ($request->has_new_color == 1) {
 
                 $request->validate([
-                    'new_color'=>['required'],
-                    'new_color_stock'=>['required'],
-                    'new_color_price'=>['required'],
-                    'new_color_price_discounted'=>['required'],
+                    'new_color.*'=>['required'],
+                    'new_color_stock.*'=>['required','numeric'],
+                    'new_color_price.*'=>['required','numeric'],
+                    'new_color_price_discounted.*'=>['required','numeric'],
                 ]);
     
                 $new_stocks = $request->new_color_stock;

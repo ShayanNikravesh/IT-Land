@@ -41,6 +41,7 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::error('عملیات ناموفق');
 
         if(Auth::guard('web')->check()){
             $user_id = Auth::guard('web')->user()->id;
@@ -90,6 +91,8 @@ class AddressController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        Alert::error('عملیات ناموفق');
+        
         if(Auth::guard('web')->check()){
             $user_id = Auth::guard('web')->user()->id;
         }

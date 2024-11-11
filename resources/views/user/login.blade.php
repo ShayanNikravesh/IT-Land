@@ -33,6 +33,11 @@
                 <p class="fs-7">لطفا شماره موبایل خود را وارد کنید.</p>
             </div>
         </div>
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger text-center">{{$error}}</div>
+            @endforeach
+        @endif
         <form action="{{route('user-login')}}" method="POST">
             @csrf
             <input type="text" name="mobile" class="form-control border-radius-xl ltr">

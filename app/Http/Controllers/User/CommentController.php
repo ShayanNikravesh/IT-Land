@@ -33,6 +33,7 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::error('عملیات ناموفق');
 
         $request -> validate([
             'product_id' => ['required'],

@@ -35,7 +35,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
 
-        Alert::alert('عملیات ناموفق', 'Message', 'error');
+        Alert::error('عملیات ناموفق');
 
         $Category = $request -> validate([
             'title' => ['required'],
@@ -75,6 +75,8 @@ class BrandController extends Controller
     public function update(Request $request, string $id)
     {
         
+        Alert::error('عملیات ناموفق');
+
         $brand = Brand::findOrFail($id);
 
         $request -> validate([

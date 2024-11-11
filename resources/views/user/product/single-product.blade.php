@@ -403,6 +403,11 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
+                                                            @if ($errors->any())
+                                                                @foreach ($errors->all() as $error)
+                                                                    <div class="alert alert-danger text-center">{{$error}}</div>
+                                                                @endforeach
+                                                            @endif
                                                             <form method="POST" action="{{route('Comment.store')}}">
                                                                 @csrf
                                                                 <div class="row">

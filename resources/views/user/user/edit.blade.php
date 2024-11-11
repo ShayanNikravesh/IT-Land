@@ -27,6 +27,11 @@
 
                             <!--User Panel Profile Content:start-->
                             <div class="user-panel-profile-content p-3">
+                                @if ($errors->any())
+                                    @foreach ($errors->all() as $error)
+                                        <div class="alert alert-danger text-center">{{$error}}</div>
+                                    @endforeach
+                                @endif
                                 <form class="row g-3" method="POST" action="{{route('User.update',Auth::guard('web')->user()->id)}}">
                                     @csrf
                                     @method('PUT')

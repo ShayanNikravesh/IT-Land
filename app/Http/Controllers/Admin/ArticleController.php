@@ -36,7 +36,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        Alert::alert('عملیات ناموفق', 'Message', 'error');
+        Alert::error('عملیات ناموفق');
 
         $request->validate([
             'first_name' => ['required'],
@@ -92,7 +92,7 @@ class ArticleController extends Controller
     public function update(Request $request, string $id)
     {
 
-        Alert::alert('عملیات ناموفق', 'Message', 'error');
+        Alert::error('عملیات ناموفق');
 
         $article = Article::findOrFail($id);
 

@@ -40,6 +40,11 @@
                     @csrf
                     @method('PUT')
                     <div class="card-body">
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $error)
+                                <div class="alert alert-danger text-center">{{$error}}</div>
+                            @endforeach
+                        @endif
                         <div class="form-group row">
                             <div class="col-lg-6">
                                 <label>عنوان:</label>
@@ -92,12 +97,12 @@
                                 <label>رنگ جدید :</label>
                                 <div class="radio-inline">
                                     <label class="radio">
-                                        <input type="radio" name="new_color" value="1"/>
+                                        <input type="radio" name="has_new_color" value="1"/>
                                         <span></span>
                                         بله
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="new_color" value="0"/>
+                                        <input type="radio" name="has_new_color" value="0"/>
                                         <span></span>
                                         خیر
                                     </label>
@@ -121,7 +126,7 @@
                                             <label>موجودی :</label>
                                             <input type="number" name="new_color_stock[]" class="form-control">
                                         </div>
-                                    </div>
+                                    </div> 
                                     <div class="form-group row">
                                         <div class="col-lg-6">
                                             <label>قیمت:</label>
@@ -174,7 +179,7 @@
 {{-- js codes Start --}}
 <script>
 
-document.querySelectorAll('input[name="new_color"]').forEach((elem) => {
+document.querySelectorAll('input[name="has_new_color"]').forEach((elem) => {
     elem.addEventListener("change", function(event) {
         const colorSection = document.getElementById("color_variants_section");
 

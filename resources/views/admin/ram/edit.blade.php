@@ -39,6 +39,11 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger text-center">{{$error}}</div>
+                        @endforeach
+                    @endif
                     <!--begin::Form-->
                     <form class="form" method="POST" action="{{route('ram.update',$ram)}}" id="kt_form">
                         @csrf

@@ -36,7 +36,7 @@ class ManagerController extends Controller
     public function store(Request $request)
     {
 
-        Alert::error();
+        Alert::error('عملیات ناموفق');
 
         $request -> validate([
             'first_name' => ['required'],
@@ -84,8 +84,10 @@ class ManagerController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        Alert::error('عملیات ناموفق');
+        
         $manager = Manager::findOrfail(auth('admin')->id());
-
+        
         $request -> validate([
             'first_name' => ['required'],
             'last_name' => ['required'],

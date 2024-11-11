@@ -25,8 +25,7 @@
 
 <!--Body::start-->
 <body>
-    
-@include('sweetalert::alert')
+
 @routes
 
 <!--Navbar:start-->
@@ -1083,7 +1082,9 @@
 <script src="{{asset('user-assets/js/vendors/xzoom/xzoom.min.js')}}"></script>
 <!--XZoom::end-->
 {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-<script src="{{asset('user-assets/js/vendors/sweetalert/jsdeliver.js')}}"></script>
+{{-- <script src="{{asset('user-assets/js/vendors/sweetalert/jsdeliver.js')}}"></script> --}}
+
+@include('sweetalert::alert')
 
 </body>
 <!--Body::end-->

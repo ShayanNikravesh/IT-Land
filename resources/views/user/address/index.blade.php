@@ -42,7 +42,7 @@
                                                     <div>
                                                         <ul>
                                                             @foreach ($errors->all() as $error)
-                                                                <li class="bg-danger rounded">{{ $error }}</li>
+                                                                <li class="bg-danger rounded text-white text-center">{{ $error }}</li>
                                                                 <br>
                                                             @endforeach
                                                         </ul>
@@ -162,7 +162,7 @@
                                                                             <div>
                                                                                 <ul>
                                                                                     @foreach ($errors->all() as $error)
-                                                                                        <li class="bg-danger rounded">{{ $error }}</li>
+                                                                                        <li class="bg-danger rounded text-white text-center">{{ $error }}</li>
                                                                                         <br>
                                                                                     @endforeach
                                                                                 </ul>
