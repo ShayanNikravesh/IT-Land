@@ -22,16 +22,6 @@
                 <div class="products">
                     <!--Product Ordering:start-->
                     <div class="d-flex justify-content-between align-items-center border-bottom-gray-300 pb-2 product-ordering">
-                        <div>
-                            <p class="d-inline fs-7">
-                                <i class="fa fa-sort-amount-down pe-1"></i>
-                                مرتب سازی:
-                            </p>
-                            <a href="" class="fs-8 gray-600 mx-1">جدیدترین</a>
-                            <a href="" class="fs-8 gray-600 mx-1">قدیمی ترین</a>
-                            <a href="" class="fs-8 gray-600 mx-1">ارزان ترین</a>
-                            <a href="" class="fs-8 gray-600 mx-1">گران ترین</a>
-                        </div>
                         <p class="count-of-comments">
                             تعداد کالا : {{count($category_products->products)}}
                         </p>
