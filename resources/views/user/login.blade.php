@@ -25,7 +25,7 @@
 
 <div class="action-wrapper d-flex justify-content-center align-items-center h-100">
     <div class="form p-4 border border-radius-3xl border-gray-200">
-        <img src="{{asset('user-assets/img/logo.png')}}" alt="" title="" class="mx-auto d-block">
+        <img src="{{asset('user-assets/img/Logo/logo.png')}}" alt="" title="" class="mx-auto d-block w-50">
         <div class="form-info text-right my-3">
             <h1 class="fw-bold fs-5">ورود | ثبت نام</h1>
             <div class="form-info-text my-4 gray-600">

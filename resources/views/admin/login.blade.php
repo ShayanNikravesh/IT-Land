@@ -49,7 +49,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div class="login-form text-center text-white p-7 position-relative overflow-hidden">
 						<!--begin::Login Header-->
 						<div class="d-flex flex-center mb-15">
-							<img src="{{asset('admin-assets/media/logos/logo-letter-13.png')}}" class="max-h-75px" alt="" />
+							<img src="{{asset('admin-assets/media/logos/logo-light.png')}}" class="max-h-75px" alt="" />
 						</div>
 						<!--end::Login Header-->
 						<!--begin::Login Sign in form-->
