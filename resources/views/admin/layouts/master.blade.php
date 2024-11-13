@@ -45,15 +45,14 @@ License: You must have a valid license purchased only from themeforest(the above
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
-	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+	<body id="kt_body" class="header-fixed header-mobile-fixed footer-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 		<!--begin::Main-->
-			
 			@routes
 		<!--begin::Header Mobile-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
 			<a href="{{route('admin-index')}}">
-				<img alt="Logo" src="{{asset('admin-assets/media/logos/logo-light.png')}}" />
+				<img alt="Logo" src="{{asset('admin-assets/media/logos/logo-letter.png')}}" />
 			</a>
 			<!--end::Logo-->
 			<!--begin::Toolbar-->
@@ -82,6 +81,8 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!--end::Toolbar-->
 		</div>
 		<!--end::Header Mobile-->
+
+		<!--begin::Main-->
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Page-->
 			<div class="d-flex flex-row flex-column-fluid page">
@@ -123,7 +124,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<!--begin::Copyright-->
 							<div class="text-dark order-2 order-md-1">
 								<span class="text-muted font-weight-bold mr-2">2024</span>
-								<a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Shayan Nikravesh</a>
+								<a href="" target="_blank" class="text-dark-75 text-hover-primary">Shayan Nikravesh</a>
 							</div>
 							<!--end::Copyright-->
 							<!--begin::Nav-->

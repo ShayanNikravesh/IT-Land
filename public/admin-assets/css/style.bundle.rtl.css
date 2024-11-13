@@ -94730,3 +94730,18 @@ body {
         right: 70px;
     }
 }
+
+@media (max-width: 992px) {
+    .footer-fixed .footer {
+        position: fixed;
+        z-index: 97;
+        -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
+        box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .aside-enabled.aside-minimize.footer-fixed .footer {
+        right: 70px; 
+    }
+}
