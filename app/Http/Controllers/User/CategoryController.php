@@ -38,8 +38,8 @@ class CategoryController extends Controller
     public function show(string $id)
     {
         $itemsPerPage = 10;
-        $category_products = Category::with(['products' => function($query) use ($itemsPerPage) {$query->paginate(10);}])->findOrFail($id);        
-        $products = $category_products->products()->with('colors')->with(['photos'=>function($query){$query->Limit(1);}])->paginate($itemsPerPage);
+        $category_products = Category::with(['products' => function($query) use ($itemsPerPage) {$query->where('status', '!=', 'inactive')->paginate($itemsPerPage);}])->findOrFail($id);
+        $products = $category_products->products()->where('status', '!=', 'inactive')->with('colors')->with(['photos'=>function($query){$query->Limit(1);}])->paginate($itemsPerPage);
         return view('user.category.category-products',compact('category_products','products'));
     }
 

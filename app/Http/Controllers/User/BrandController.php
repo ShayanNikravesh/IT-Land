@@ -38,8 +38,8 @@ class BrandController extends Controller
     public function show(string $id)
     {
         $itemsPerPage = 10;
-        $brand_products = Brand::with(['products' => function($query) use ($itemsPerPage) {$query->paginate(10);}])->findOrFail($id);        
-        $products = $brand_products->products()->with('colors')->with(['photos'=>function($query){$query->Limit(1);}])->paginate($itemsPerPage);
+        $brand_products = Brand::with(['products' => function($query) use ($itemsPerPage) {$query->where('status', '!=', 'inactive')->paginate(10);}])->findOrFail($id);        
+        $products = $brand_products->products()->where('status', '!=', 'inactive')->with('colors')->with(['photos'=>function($query){$query->Limit(1);}])->paginate($itemsPerPage);
         return view('user.brand.brand-products',compact('brand_products','products'));
     }
 

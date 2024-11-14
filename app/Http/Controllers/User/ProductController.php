@@ -91,7 +91,8 @@ class ProductController extends Controller
                 $color_name = $color->name;
                 $price = $color->pivot->price;
                 $price_discounted = $color->pivot->price_discounted;
-                return response()->json(['price' => $price,'price_discounted' => $price_discounted,'color_name'=> $color_name]);
+                $stock = $color->pivot->stock;
+                return response()->json(['price' => $price,'price_discounted' => $price_discounted,'color_name'=> $color_name,'stock'=>$stock]);
             }
         }
     }
@@ -152,7 +153,7 @@ class ProductController extends Controller
             });
         }
 
-        $products = $query->with(['photos'=>function($query){$query->Limit(1);}])->paginate(10)->appends($request->except('page'));
+        $products = $query->where('status', '!=', 'inactive')->with(['photos'=>function($query){$query->Limit(1);}])->paginate(10)->appends($request->except('page'));
 
         return view('user.product.filter-products', compact('products'));
     }

@@ -75,13 +75,15 @@ class ProductController extends Controller
                 'color_price_discounted.*'=>['required'],
             ]);
 
-            // $tracking_code = strtoupper(bin2hex(random_bytes(10 / 2)));
+            $code = rand(111111111,999999999);
+            $tracking_code = 'P-'.$code;
 
             $product = new Product();
             $product->title = $request->title; 
             $product->english_title = $request->english_title;
             $product->category_id = $request->category;
             $product->brand_id = $request->brand;
+            $product->tracking_code = $tracking_code;
             $product->memory_id = $request->memory;
             $product->ram_id = $request->ram;
             $product->description = $request->description;

@@ -74,21 +74,27 @@ document.querySelectorAll('.color-radio').forEach(radio => {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.price) {
-                document.getElementById('selectedColor').innerText =  data.color_name;
-                document.getElementById('price').innerText =  `${data.price.toLocaleString('fa-IR')} تومان`;
-                if (data.price_discounted) {
-                    document.getElementById('price_discounted').innerText = `${data.price_discounted.toLocaleString('fa-IR')} تومان`;
-                }else {
-                    document.getElementById('price_discounted').innerText = 'بدون تخفیف';
+            if(data.stock > 0){
+                if (data.price) {
+                    document.getElementById('stock').innerText =  'موجود در انبار آیتی لند.';
+                    document.getElementById('selectedColor').innerText =  data.color_name;
+                    document.getElementById('price').innerText =  `${data.price.toLocaleString('fa-IR')} تومان`;
+                    if (data.price_discounted) {
+                        document.getElementById('price_discounted').innerText = `${data.price_discounted.toLocaleString('fa-IR')} تومان`;
+                    }else {
+                        document.getElementById('price_discounted').innerText = 'بدون تخفیف';
+                    }
+    
+                    div.style.display = "block";
+                    const newUrl = route('add_to_cart',[ productId , colorId]);
+                    addToCartLink.href = newUrl;
+    
+                } else {
+                    console.error(data.error);
                 }
-
-                div.style.display = "block";
-                const newUrl = route('add_to_cart',[ productId , colorId]);
-                addToCartLink.href = newUrl;
-
-            } else {
-                console.error(data.error);
+            }else{
+                document.getElementById('stock').innerText =  'این رنگ ناموجود است.';
+                div.style.display = "none";
             }
         })
         .catch(error => console.error('Error:', error));

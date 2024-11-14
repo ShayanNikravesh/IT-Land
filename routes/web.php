@@ -22,7 +22,7 @@ Route::get('/', function () {
     $carousel_photos = Banner::with('photos')->findOrFail(1);
     $small_banner_photos = Banner::with('photos')->findOrFail(2);
     $medium_banner_photos = Banner::with('photos')->findOrFail(3);
-    $products = Product::where('price_discounted','>',0)->with(['photos'=>function($query){$query->Limit(1);}])->take(6)->get();
+    $products = Product::where('price_discounted','>',0)->where('status', '!=', 'inactive')->with(['photos'=>function($query){$query->Limit(1);}])->take(6)->get();
     return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos','products'));
 })->name('index');
 

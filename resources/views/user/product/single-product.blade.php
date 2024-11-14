@@ -205,73 +205,105 @@
                         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
                             <!--Product Details Right:start-->
                             <div class="product-details-left p-3 border-radius-xl">
-
-                                <!--Stock:start-->
-                                <div class="warranty my-2 border-bottom-gray-300 pb-2">
-                                    <span class="fw-bold  fs-7">
-                                        <i class="fa fa-box pe-3 align-middle text-info"></i>
-                                        موجود در انبار آیتی لند
-                                    </span>
-                                    <!--Send Details:start-->
-                                    <ul class="ps-4">
-                                        <li class="pb-1 gray-600 fs-8">
-                                            <i class="fa fa-user text-info pe-2 fa-xs"></i>
-                                            ارسال 
-                                        </li>
-                                        <li class="pb-1 gray-600 fs-8">
-                                            <i class="fa fa-rocket text-primary pe-2 fa-xs"></i>
-                                            ارسال فوری (شهر تهران)
-                                        </li>
-                                    </ul>
-                                    <!--Send Details:end-->
-                                </div>
-                                <!--Stock:end-->
-
-                                <!--Product Price:start-->
-                                @if ($product->has_color == 1)
-                                    <div id="div" style="display: none">
-                                        <div class="price py-2 d-flex justify-content-between align-items-center">
-                                            <p class="gray-600 fs-7">
-                                                قیمت :
-                                            </p>    
-                                            <div>
-                                                <span class="fw-bold pe-1 fs-4" id="price"></span>
+                                @switch($product->status)
+                                        @case('active')
+                                            @if ($product->has_color == 1)
+                                                <!--Status:start-->
+                                                <div class="warranty my-2 border-bottom-gray-300 pb-2">
+                                                    <span class="fw-bold fs-7" id="stock">
+                                                        <i class="fa fa-box pe-3 align-middle text-info"></i>
+                                                        موجود در انبار آیتی لند
+                                                    </span>
+                                                </div>
+                                                <!--Status:end-->
+                                                <!--Product Price:start-->
+                                                <div id="div" style="display: none">
+                                                    <div class="price py-2 d-flex justify-content-between align-items-center">
+                                                        <p class="gray-600 fs-7">
+                                                            قیمت :
+                                                        </p>    
+                                                        <div>
+                                                            <span class="fw-bold pe-1 fs-4" id="price"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="price py-2 d-flex justify-content-between align-items-center">
+                                                        <p class="gray-600 fs-7">
+                                                            قیمت با تخفیف :
+                                                        </p>
+                                                        <div>
+                                                            <span class="fw-bold pe-1 fs-4" id="price_discounted"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-grid gap-2 mt-2" id="add_cart">
+                                                        <a href="" id="add_to_cart" class="btn btn-primary border-radius-xl fs-6">افزودن به سبد خرید</a>
+                                                    </div>
+                                                </div>
+                                                <!--Product Price:end-->
+                                            @else
+                                                @if ($product->stock > 0)
+                                                    <!--Status:start-->
+                                                    <div class="warranty my-2 border-bottom-gray-300 pb-2">
+                                                        <span class="fw-bold  fs-7">
+                                                            <i class="fa fa-box pe-3 align-middle text-info"></i>
+                                                            موجود در انبار آیتی لند
+                                                        </span>
+                                                    </div>
+                                                    <!--Status:end-->
+                                                @else
+                                                    <!--Status:start-->
+                                                    <div class="warranty my-2 border-bottom-gray-300 pb-2">
+                                                        <span class="fw-bold  fs-7">
+                                                            <i class="fa fa-box pe-3 align-middle text-danger"></i>
+                                                            این محصول ناموجود است.
+                                                        </span>
+                                                    </div>
+                                                    <!--Status:end-->
+                                                @endif
+                                                <!--Product Price:start-->
+                                                <div class="price py-2 d-flex justify-content-between align-items-center">
+                                                    <p class="gray-600 fs-7">
+                                                        قیمت :
+                                                    </p>
+                                                    <div>
+                                                        <span class="fw-bold pe-1 fs-4">{{priceFormatter($product->price)}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="price py-2 d-flex justify-content-between align-items-center">
+                                                    <p class="gray-600 fs-7">
+                                                        قیمت با تخفیف :
+                                                    </p>
+                                                    <div>
+                                                        <span class="fw-bold pe-1 fs-4">{{priceFormatter($product->price_discounted)}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-grid gap-2 mt-2">
+                                                    <a href="{{route('add_to_cart',['product_id' => $product->id, 'color_id' => 0])}}" class="btn btn-primary border-radius-xl fs-6">افزودن به سبد خرید</a>
+                                                </div>
+                                                <!--Product Price:end-->
+                                            @endif
+                                        @break
+                                        @case('stop_selling')
+                                            <!--Status:start-->
+                                            <div class="warranty my-2 border-bottom-gray-300 pb-2">
+                                                <span class="fw-bold  fs-7">
+                                                    <i class="fa fa-box pe-3 align-middle text-warning"></i>
+                                                    فروش این محصول متوقف شده است.
+                                                </span>
                                             </div>
-                                        </div>
-                                        <div class="price py-2 d-flex justify-content-between align-items-center">
-                                            <p class="gray-600 fs-7">
-                                                قیمت با تخفیف :
-                                            </p>
-                                            <div>
-                                                <span class="fw-bold pe-1 fs-4" id="price_discounted"></span>
+                                            <!--Status:end-->
+                                        @break
+                                        @case('unavailable')
+                                            <!--Status:start-->
+                                            <div class="warranty my-2 border-bottom-gray-300 pb-2">
+                                                <span class="fw-bold  fs-7">
+                                                    <i class="fa fa-box pe-3 align-middle text-danger"></i>
+                                                    این محصول ناموجود است.
+                                                </span>
                                             </div>
-                                        </div>
-                                        <div class="d-grid gap-2 mt-2" id="add_cart">
-                                            <a href="" id="add_to_cart" class="btn btn-primary border-radius-xl fs-6">افزودن به سبد خرید</a>
-                                        </div>
-                                    </div>
-                                @else
-                                    <div class="price py-2 d-flex justify-content-between align-items-center">
-                                        <p class="gray-600 fs-7">
-                                            قیمت :
-                                        </p>
-                                        <div>
-                                            <span class="fw-bold pe-1 fs-4">{{priceFormatter($product->price)}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="price py-2 d-flex justify-content-between align-items-center">
-                                        <p class="gray-600 fs-7">
-                                            قیمت با تخفیف :
-                                        </p>
-                                        <div>
-                                            <span class="fw-bold pe-1 fs-4">{{priceFormatter($product->price_discounted)}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-grid gap-2 mt-2">
-                                        <a href="{{route('add_to_cart',['product_id' => $product->id, 'color_id' => 0])}}" class="btn btn-primary border-radius-xl fs-6">افزودن به سبد خرید</a>
-                                    </div>
-                                @endif
-                                <!--Product Price:end-->
+                                            <!--Status:end-->
+                                        @break
+                                        @default
+                                    @endswitch
                             </div>
                             <!--Product Details Right:end-->
                         </div>
