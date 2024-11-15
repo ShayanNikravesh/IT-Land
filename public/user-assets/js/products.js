@@ -179,6 +179,12 @@ function ProductQuantity(id,status) {
             if (re.is_remove){
                 $('#cart_item_'+id).remove();
                 document.location.reload();
+                swal.fire({
+                    title: "موفق!",
+                    text: "محصول از سبد حذف شد!",
+                    icon: "success",
+                    timer: 2000,
+                });
             }
             if (re.is_minus){ 
                 $('#product_minus_' + id).load(document.URL + ' #product_minus_' + id);

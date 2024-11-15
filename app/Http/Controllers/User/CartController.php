@@ -67,9 +67,14 @@ class CartController extends Controller
         ));
         
         //amount_payable
-        $amount_payable = !empty(session('amount_payable')) ? session('amount_payable') + $price_discounted : $price_discounted;
-        session()->put('amount_payable',$amount_payable);
-
+        if($price_discounted > 0){
+            $amount_payable = !empty(session('amount_payable')) ? session('amount_payable') + $price_discounted : $price_discounted;
+            session()->put('amount_payable',$amount_payable);
+        }else{
+            $amount_payable = !empty(session('amount_payable')) ? session('amount_payable') + $price : $price;
+            session()->put('amount_payable',$amount_payable);
+        }
+        
         Alert::success('عملیات موفق', 'محصول به سبد خرید اضافه شد.');
         return redirect()->back();
         
@@ -120,13 +125,21 @@ class CartController extends Controller
             }
             
             if ($product->status == 'active' && $stock > ($product_in_cart->quantity+1)){
+
                 //amount payable + plus
-                $amount_payable = $product_in_cart->attributes->price_discounted + session()->get('amount_payable');
-                session()->put('amount_payable', $amount_payable);
+                if($product_in_cart->attributes->price_discounted > 0){
+                    $amount_payable = $product_in_cart->attributes->price_discounted + session()->get('amount_payable');
+                    session()->put('amount_payable', $amount_payable);
+                }else{
+                    $amount_payable = $product_in_cart->price + session()->get('amount_payable');
+                    session()->put('amount_payable', $amount_payable);
+                }
+                
                 $result = CartFacade::update($id, array(
                     'quantity' => 1,
                 ));
                 return response()->json(['is_plus' => $result]);
+
             }else{
                 return response()->json(['status' => 400]);
             }
@@ -137,17 +150,32 @@ class CartController extends Controller
             $product_in_cart = CartFacade::get($id);
 
             if ($product->status != 'inactive' && $product_in_cart->quantity > 1){
+
                 //amount payable - minus
-                $amount_payable =  session()->get('amount_payable') - $product_in_cart->attributes->price_discounted;
-                session()->put('amount_payable', $amount_payable);
+                if($product_in_cart->attributes->price_discounted > 0){
+                    $amount_payable =  session()->get('amount_payable') - $product_in_cart->attributes->price_discounted;
+                    session()->put('amount_payable', $amount_payable);
+                }else{
+                    $amount_payable =  session()->get('amount_payable') - $product_in_cart->price;
+                    session()->put('amount_payable', $amount_payable);
+                }
+            
                 $result = CartFacade::update($id, array(
                     'quantity' => -1,
                 ));
                 return  response()->json(['is_minus' => $result]);
+
             }else{
+
                 //amount payable->remove
-                $amount_payable =  session()->get('amount_payable') - $product_in_cart->attributes->price_discounted;
-                session()->put('amount_payable', $amount_payable);
+                if($product_in_cart->attributes->price_discounted > 0){
+                    $amount_payable =  session()->get('amount_payable') - $product_in_cart->attributes->price_discounted;
+                    session()->put('amount_payable', $amount_payable);
+                }else{
+                    $amount_payable =  session()->get('amount_payable') - $product_in_cart->price;
+                    session()->put('amount_payable', $amount_payable);
+                }
+                
                 $result = CartFacade::remove($Request->id);
                 return response()->json(['is_remove' => $result]);
             }

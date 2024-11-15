@@ -68,35 +68,13 @@
                                     <input class="" type="radio" id="wallet" checked>
                                     <label class="fw-bold" for="wallet">
                                         <i class="fa fa-wallet fs-3 px-2 gray-500"></i>
-                                        ID Pay
+                                        Zarinpal
                                     </label>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <!--Payment Method:end-->
-
-                    {{-- <!--Payment Address:start-->
-                    <div class="border border-radius-xl p-3 mb-4">
-                        <div>
-                            <h2 class="fs-5 fw-bold mb-4">خلاصه سفارش</h2>
-                            <p class="fw-bold my-2">
-                                <i class="fa fa-truck rotate-3d text-danger"></i>
-                                <span class="px-1">
-                                    یک شنبه 20 فروردین -
-                                </span>
-                                <span class="px-1">
-                                    بازه 9 - 11
-                                </span>
-                                <span class="badge bg-gray-500">
-                                    2 کالا
-                                </span>
-                            </p>
-                            <span class="fs-7">ارسال عادی - 39,000 تومان</span>
-                        </div>
-                    </div>
-                    <!--Payment Address:end--> --}}
-
                 </div>
 
                 <!--Products Prices:start-->
@@ -138,7 +116,7 @@
 
                         <!--Checkout Btn:start-->
                             <div class="d-grid gap-2 p-3">
-                                <a href="" class="btn custom-btn-danger border-radius-xl">پرداخت</a>
+                                <a href="{{route('payment-request')}}" class="btn custom-btn-danger border-radius-xl">پرداخت</a>
                             </div>  
                         <!--Checkout Btn:end-->
                     </div>
