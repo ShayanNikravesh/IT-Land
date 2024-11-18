@@ -27,7 +27,7 @@ Route::get('/', function () {
 })->name('index');
 
 //about us
-Route::get('about-us',function(){ return view('user.about-us'); })->name('about-us');
+Route::get('about-us',function(){ return view('user.about.about-us'); })->name('about-us');
 
 //guide
 Route::get('guide',function(){ return view('user.guide.guide'); })->name('guide');
