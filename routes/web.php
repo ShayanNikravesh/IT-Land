@@ -29,6 +29,9 @@ Route::get('/', function () {
 //about us
 Route::get('about-us',function(){ return view('user.about-us'); })->name('about-us');
 
+//guide
+Route::get('guide',function(){ return view('user.guide.guide'); })->name('guide');
+
 Route::middleware([RedirectUser::class])->group(function () {
     //login & register
     Route::get('login',function(){ return view('user.login'); })->name('login');

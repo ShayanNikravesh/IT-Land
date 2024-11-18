@@ -427,7 +427,7 @@
                                             <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
                                         </svg>
                                         <!--end::Svg Icon-->
-                                        مقاله ها
+                                        مقالات
                                     </a>
                                 </li> 
                                 <li class="border-bottom-gray-150 px-2 py-3">
@@ -439,6 +439,17 @@
                                         </svg>
                                         <!--end::Svg Icon-->
                                         درباره ما 
+                                    </a>
+                                </li>
+                                <li class="border-bottom-gray-150 px-2 py-3">
+                                    <a href="{{route('guide')}}" class="fs-6 fw-bold d-block">
+                                        <!--begin::Svg-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+                                        </svg>
+                                        <!--end::Svg Icon-->
+                                        راهنمای خرید 
                                     </a>
                                 </li>     
                             </ul>
@@ -454,7 +465,7 @@
                 <div class="top-mobile-navbar-middle d-flex justify-content-between align-items-center">
                     <!--Logo:start-->
                     <a href="{{route('index')}}" class="navbar-brand pb-2" title="">
-                        <img src="{{asset('user-assets/img/Logo/logo(letter).png')}}" alt="لوگوی برگ شاپ">
+                        <img src="{{asset('user-assets/img/Logo/logo(letter).png')}}" alt="لوگوی آیتی لند">
                     </a>
                     <!--Logo:end-->
                 </div>
@@ -577,9 +588,10 @@
                             <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
                         </svg>
                         <!--end::Svg Icon-->
-                        <a class="mx-2 py-2" href="{{route('blogs')}}">مقاله ها</a>
+                        <a class="mx-2 py-2" href="{{route('blogs')}}">مقالات</a>
                     </li>
                     <!--Navbar Item:end-->
+                    <!--Navbar Item:start-->
                     <li class="nav-item d-flex justify-content-between align-items-center me-3">
                         <!--begin::Svg Icon-->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
@@ -588,6 +600,17 @@
                         </svg>
                         <!--end::Svg Icon-->
                         <a class="mx-2 py-2" href="{{route('about-us')}}">درباره ما</a>
+                    </li>
+                    <!--Navbar Item:end-->
+                    <!--Navbar Item:start-->
+                    <li class="nav-item d-flex justify-content-between align-items-center me-3">
+                        <!--begin::Svg Icon-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+                        </svg>
+                        <!--end::Svg Icon-->
+                        <a class="mx-2 py-2" href="{{route('guide')}}">راهنمای خرید</a>
                     </li>
                     <!--Navbar Item:end-->
                 </ul>
@@ -784,7 +807,7 @@
             <div class="footer-top-detial d-flex justify-content-between align-items-center">
                 <div class="">
                     <a href="{{route('index')}}" title=""><img src="{{asset('user-assets/img/Logo/logo-md(letter).png')}}" alt=""></a>
-                    <p class="mt-2 fs-7">تلفن پشتیبانی : 0000000</p>
+                    <p class="mt-2 fs-7">تلفن فروشگاه : 05144646594</p>
                 </div>
                 <a href="#top" class="back-to-top border-radius-xl px-3 py-2 gray-600 fs-7">
                     برگشت به بالا
@@ -794,7 +817,7 @@
             <!--Footer Top Detail:end-->
 
             <!--Footer Top Attr:start-->
-            <div class="footer-top-attr d-flex justify-content-between align-items-center my-5">
+            {{-- <div class="footer-top-attr d-flex justify-content-between align-items-center my-5">
                 <!--Top Right Item:start-->
                 <div class="top-right-item text-center">
                     <img src="{{asset('user-assets/img/express-delivery.svg')}}" alt="" title="">
@@ -822,7 +845,7 @@
                     <p class="mt-2 fs-8">ضمانت اصالت کالا</p>
                 </div>
                 <!--Top Right Item:end-->
-            </div>
+            </div> --}}
             <!--Footer Top Attr:end-->
         </div>
         <div class="footer-main my-5">
@@ -836,38 +859,19 @@
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
-                    <p class="fw-bold fs-6">خدمات مشتریان</p>
+                    <p class="fw-bold fs-6">آدرس فروشگاه :</p>
                     <ul>
-                        <li class="my-2"><a href="">پاسخ به پرسش های متدوال</a></li>
-                        <li class="my-2"><a href="">رویه های بازگشت کالا</a></li>
-                        <li class="my-2"><a href="">شرایط استفاده</a></li>
-                        <li class="my-2"><a href="">حریم خصوصی</a></li>
-                        <li class="my-2"><a href="">گزارش باگ</a></li>
+                        <li class="my-2"><a>سبزوار - چهارراه ولیعصر - ولیعصر شرقی - آیتی لند</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
                     
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
-                    <p class="fw-bold fs-6">همراه ما باشید!</p>
+                    <p class="fw-bold fs-6">آیتی لند را در تلگرام دنبال کنید!</p>
                     <ul class="social-list d-flex justify-content-around align-items-center mt-3">
-                        <li class="my-2 instagram">
-                            <a href="">
-                                <i class="fab fa-instagram fa-2x gray-500"></i>
-                            </a>
-                        </li>
-                        <li class="my-2 twitter">
-                            <a href="">
-                                <i class="fab fa-twitter fa-2x gray-500"></i>
-                            </a>
-                        </li>
-                        <li class="my-2 linkedin">
-                            <a href="">
-                                <i class="fab fa-linkedin fa-2x gray-500"></i>
-                            </a>
-                        </li>
                         <li class="my-2 telegram">
-                            <a href="">
+                            <a href="https://t.me/ITlandKHorasan">
                                 <i class="fab fa-telegram fa-2x gray-500"></i>
                             </a>
                         </li>
@@ -1085,6 +1089,9 @@
 <script src="{{asset('user-assets/js/products.js')}}"></script>
 
 <script src="{{asset('user-assets/js/vendors/xzoom/xzoom.min.js')}}"></script>
+
+<script src="{{asset('user-assets/js/index.js')}}"></script>
+
 <!--XZoom::end-->
 {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 <script src="{{asset('user-assets/js/vendors/sweetalert/jsdeliver.js')}}"></script>
