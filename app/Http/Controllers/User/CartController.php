@@ -33,13 +33,13 @@ class CartController extends Controller
         }
 
         if($color_id == 0){
-            $id = $product_id.'.'.'0';
+            $id = $product_id.'-'.'0';
             $price = $product->price;
             $price_discounted = $product->price_discounted;
         }else{
             $color = $product->colors()->where('color_id', $color_id)->first();
             if($color){
-                $id = $product_id.'.'.$color_id;
+                $id = $product_id.'-'.$color_id;
                 $price = $color->pivot->price;
                 $price_discounted = $color->pivot->price_discounted;
             }else{
@@ -105,13 +105,14 @@ class CartController extends Controller
             return response()->json(['message' =>'این محصول از قبل در سبد خرید شما موجود نیست.']);
         }
 
-        list($product_id, $color_id) = explode('.', $id);
+        list($product_id, $color_id) = explode('-', $id);
         
         if ($status === 'plus'){
             
             $product = Product::findorfail($product_id);
             $product_in_cart = CartFacade::get($id);
 
+            //checking stock
             if($color_id == 0){
                 $stock = $product->stock;
             }else{
