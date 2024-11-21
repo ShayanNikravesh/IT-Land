@@ -36,12 +36,14 @@ class CartController extends Controller
             $id = $product_id.'-'.'0';
             $price = $product->price;
             $price_discounted = $product->price_discounted;
+            $stock = $product->stock;
         }else{
             $color = $product->colors()->where('color_id', $color_id)->first();
             if($color){
                 $id = $product_id.'-'.$color_id;
                 $price = $color->pivot->price;
                 $price_discounted = $color->pivot->price_discounted;
+                $stock = $color->pivot->stock;
             }else{
                 Alert::error('خطا', 'خطایی رخ داده است.');
                 return redirect()->back();
@@ -54,29 +56,35 @@ class CartController extends Controller
         }
         
 
-        CartFacade::add(array(
-            'id' => $id, // inique row ID
-            'name' => $product->title,
-            'price' => $price,
-            'quantity' => 1,
-            'attributes' => array(
-                'english_title' => $product->english_title,
-                'price_discounted' =>$price_discounted,
-                'photo' =>$photo_src,
-            )
-        ));
-        
-        //amount_payable
-        if($price_discounted > 0){
-            $amount_payable = !empty(session('amount_payable')) ? session('amount_payable') + $price_discounted : $price_discounted;
-            session()->put('amount_payable',$amount_payable);
+        if($stock > 0){
+            CartFacade::add(array(
+                'id' => $id, // inique row ID
+                'name' => $product->title,
+                'price' => $price,
+                'quantity' => 1,
+                'attributes' => array(
+                    'english_title' => $product->english_title,
+                    'price_discounted' =>$price_discounted,
+                    'photo' =>$photo_src,
+                )
+            ));
+            
+            //amount_payable
+            if($price_discounted > 0){
+                $amount_payable = !empty(session('amount_payable')) ? session('amount_payable') + $price_discounted : $price_discounted;
+                session()->put('amount_payable',$amount_payable);
+            }else{
+                $amount_payable = !empty(session('amount_payable')) ? session('amount_payable') + $price : $price;
+                session()->put('amount_payable',$amount_payable);
+            }
+            
+            Alert::success('عملیات موفق', 'محصول به سبد خرید اضافه شد.');
+            return redirect()->back();
         }else{
-            $amount_payable = !empty(session('amount_payable')) ? session('amount_payable') + $price : $price;
-            session()->put('amount_payable',$amount_payable);
+            Alert::success('خطا', 'این محصول نامجود است.');
+            return redirect()->back();
         }
         
-        Alert::success('عملیات موفق', 'محصول به سبد خرید اضافه شد.');
-        return redirect()->back();
         
     }
 
@@ -91,7 +99,7 @@ class CartController extends Controller
 
     public function clear()
     {
-        //amount payable : ClearCart
+        //amount payable & ClearCart
         session()->put('amount_payable');
         CartFacade::clear();
 

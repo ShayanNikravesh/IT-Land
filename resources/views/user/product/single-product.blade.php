@@ -249,6 +249,27 @@
                                                         </span>
                                                     </div>
                                                     <!--Status:end-->
+                                                    <!--Product Price:start-->
+                                                    <div class="price py-2 d-flex justify-content-between align-items-center">
+                                                        <p class="gray-600 fs-7">
+                                                            قیمت :
+                                                        </p>
+                                                        <div>
+                                                            <span class="fw-bold pe-1 fs-4">{{priceFormatter($product->price)}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="price py-2 d-flex justify-content-between align-items-center">
+                                                        <p class="gray-600 fs-7">
+                                                            قیمت با تخفیف :
+                                                        </p>
+                                                        <div>
+                                                            <span class="fw-bold pe-1 fs-4">{{priceFormatter($product->price_discounted)}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-grid gap-2 mt-2">
+                                                        <a href="{{route('add_to_cart',['product_id' => $product->id, 'color_id' => 0])}}" class="btn btn-primary border-radius-xl fs-6">افزودن به سبد خرید</a>
+                                                    </div>
+                                                    <!--Product Price:end-->
                                                 @else
                                                     <!--Status:start-->
                                                     <div class="warranty my-2 border-bottom-gray-300 pb-2">
@@ -259,27 +280,6 @@
                                                     </div>
                                                     <!--Status:end-->
                                                 @endif
-                                                <!--Product Price:start-->
-                                                <div class="price py-2 d-flex justify-content-between align-items-center">
-                                                    <p class="gray-600 fs-7">
-                                                        قیمت :
-                                                    </p>
-                                                    <div>
-                                                        <span class="fw-bold pe-1 fs-4">{{priceFormatter($product->price)}}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="price py-2 d-flex justify-content-between align-items-center">
-                                                    <p class="gray-600 fs-7">
-                                                        قیمت با تخفیف :
-                                                    </p>
-                                                    <div>
-                                                        <span class="fw-bold pe-1 fs-4">{{priceFormatter($product->price_discounted)}}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="d-grid gap-2 mt-2">
-                                                    <a href="{{route('add_to_cart',['product_id' => $product->id, 'color_id' => 0])}}" class="btn btn-primary border-radius-xl fs-6">افزودن به سبد خرید</a>
-                                                </div>
-                                                <!--Product Price:end-->
                                             @endif
                                         @break
                                         @case('stop_selling')

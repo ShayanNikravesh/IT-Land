@@ -179,7 +179,7 @@ function ProductQuantity(id,status) {
             if (re.is_remove){
                 $('#cart_item_'+id).remove();
                 document.location.reload();
-                swal.fire({
+                Swal.fire({
                     title: "موفق!",
                     text: "محصول از سبد حذف شد!",
                     icon: "success",
@@ -212,7 +212,7 @@ function ProductQuantity(id,status) {
                 });
             }
             if (re.status===400) {
-                swal.fire({
+                Swal.fire({
                     title: "ناموفق!",
                     text: "تعداد سفارش از تعداد محصول بیشتر است!",
                     icon: "warning",
@@ -220,7 +220,7 @@ function ProductQuantity(id,status) {
             }
         },
         error: function (re){
-            swal.fire({
+            Swal.fire({
                 title: "خطا!",
                 text: "خطای داخلی رخ داده است",
                 icon: "warning",
