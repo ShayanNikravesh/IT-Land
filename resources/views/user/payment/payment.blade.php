@@ -115,9 +115,13 @@
                         <!--Purchase:end-->
 
                         <!--Checkout Btn:start-->
-                            <div class="d-grid gap-2 p-3">
-                                <a href="{{route('payment-request')}}" class="btn custom-btn-danger border-radius-xl">پرداخت</a>
-                            </div>  
+                            <form action="{{route('payment-request')}}" method="POST">
+                                @csrf
+                                <div class="d-grid gap-2 p-3">
+                                    <button type="submit" class="btn custom-btn-danger border-radius-xl">پرداخت</button>
+                                </div> 
+                            </form>
+                                {{-- <a href="{{route('payment-request')}}" class="btn custom-btn-danger border-radius-xl">پرداخت</a> --}}
                         <!--Checkout Btn:end-->
                     </div>
                     <p class="text-start mt-3 fs-8">

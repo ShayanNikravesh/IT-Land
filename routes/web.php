@@ -18,6 +18,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     $carousel_photos = Banner::with('photos')->findOrFail(1);
     $small_banner_photos = Banner::with('photos')->findOrFail(2);
@@ -64,6 +65,9 @@ Route::get('remove/{id}',[CartController::class,'remove'])->name('remove_from_ca
 Route::get('clear',[CartController::class,'clear'])->name('cart_clear');
 Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('cart-Quantity');
 
+//payment callback
+Route::get('callback',[PaymentController::class,'callback'])->name('callback');
+
 //UserAuth
 Route::middleware([UserAuth::class])->group(function () {
 
@@ -86,11 +90,14 @@ Route::middleware([UserAuth::class])->group(function () {
     //shiping & payment
     Route::get('shipping',[PaymentController::class,'shipping'])->name('to-shipping');
     Route::get('payment',[PaymentController::class,'payment'])->name('payment');
+    Route::post('paymentrequest',[PaymentController::class,'paymentrequest'])->name('payment-request');
+    Route::get('payment/{status}/{tracking_code}',[PaymentController::class,'paymentcheck'])->name('payment-check');
 
     //logout
     Route::get('logout',[AuthController::class,'logout'])->name('user-logout');
 
 });
+
 
 //404
 Route::fallback(function(){
