@@ -36,15 +36,15 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                                                 aria-label="Position: activate to sort column ascending" style="width: 112px;">
-                                                شماره سفارش
+                                                کد سفارش
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                                                 aria-label="Office: activate to sort column ascending" style="width: 99px;">
                                                 تاریخ ثبت سفارش
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
-                                                aria-label="Age: activate to sort column ascending" style="width: 41px;">مبلغ
-                                                پرداختی
+                                                aria-label="Age: activate to sort column ascending" style="width: 41px;">
+                                                مبلغ پرداختی
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                                                 aria-label="Start date: activate to sort column ascending" style="width: 88px;">
@@ -74,8 +74,8 @@
                                                         @case('sending')
                                                             <span class="badge bg-primary">در حال ارسال</span>
                                                         @break 
-                                                        @case('sent')
-                                                            <span class="badge bg-success">ارسال شده</span>
+                                                        @case('done')
+                                                            <span class="badge bg-success">تحویل داده شده</span>
                                                         @break
 
                                                         @default

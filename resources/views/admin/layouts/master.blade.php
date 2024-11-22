@@ -26,6 +26,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Fonts-->
 		<!--begin::Page Vendors Styles(used by this page)-->
 		<link href="{{asset('admin-assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{asset('admin-assets/css/pages/invoice/invoice-6.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendors Styles-->
 		<!--begin::Global Theme Styles(used by all pages)-->
 		<link href="{{asset('admin-assets/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />

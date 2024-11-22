@@ -59,7 +59,7 @@
                                 </p>
                                 {{-- <p class="gray-600 border-bottom-gray-150 py-3 fw-lighter">
                                     تاریخ ثبت :
-                                    <span class="fw-bold"><?php echo verta($order->created_at)->format('Y/m/d');?></span>
+                                    <span class="fw-bold"></span>
 
                                 </p> --}}
                                 <div class="ordered-products">

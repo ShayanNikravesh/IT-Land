@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\ManagerController;
 use App\Http\Controllers\Admin\MemoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RamController;
@@ -36,6 +37,11 @@ Route::middleware([AdminAuth::class])->group(function () {
     Route::resource('manager',ManagerController::class);
     Route::post('manager/ChangeStatus/{id}',[ManagerController::class,'ChangeStatus'])->name('change_Status_manager');
     Route::post('manager/ChangeLevel/{id}',[ManagerController::class,'ChangeLevel'])->name('change_Level_manager');
+
+    //order
+    Route::get('Orders/{status}',[OrderController::class,'Orders'])->name('Show-Orders');
+    Route::get('Order/{id}',[OrderController::class,'Order'])->name('Order-Details');
+    Route::get('ChangeStatus/{id}',[OrderController::class,'ChangeStatus'])->name('change_Status_order');
 
     //category
     Route::resource('category', CategoryController::class);
