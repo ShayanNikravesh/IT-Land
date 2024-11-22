@@ -8,11 +8,11 @@
 			<!--begin::Info-->
 			<div class="d-flex align-items-center flex-wrap mr-2">
 				<!--begin::Page Title-->
-				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">ویرایش مقاله</h5>
+				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">ایجاد خبر</h5>
 				<!--end::Page Title-->
 				<!--begin::Actions-->
 				<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-				<span class="font-weight-bold mr-4">در این صفحه می توانید مقاله را ویرایش کنید.</span>
+				<span class="font-weight-bold mr-4">در این صفحه می توانید خبر درج کنید.</span>
 				<!--end::Actions-->
 			</div>
 			<!--end::Info-->
@@ -33,12 +33,11 @@
         <div class="container">
             <div class="card card-custom gutter-b">
                 <div class="card-header">
-                    <h3 class="card-title">ویرایش مقاله</h3>
+                    <h3 class="card-title">افزودن خبر</h3>
                 </div>
                 <!--begin::Form-->
-                <form class="form" method="post" action="{{route('article.update',$article)}}" id="kt_form">
+                <form class="form" method="post" action="{{route('info.store')}}" id="kt_form">
                     @csrf
-                    @method('PUT')
                     <div class="card-body">
                         @if ($errors->any())
                             @foreach ($errors->all() as $error)
@@ -47,28 +46,18 @@
                         @endif
                         <div class="form-group row">
                             <div class="col-lg-6">
-                                <label>نام :</label>
-                                <input type="text" name="first_name" class="form-control" value="{{$article->first_name}}">
-                            </div>
-                            <div class="col-lg-6">
-                                <label>نام خانوادگی :</label>
-                                <input type="text" name="last_name" class="form-control" value="{{$article->last_name}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
                                 <label>عنوان :</label>
-                                <input type="text" name="title" class="form-control" value="{{$article->title}}">
+                                <input type="text" name="title" class="form-control" placeholder="عنوان را وارد کنید...">
                             </div>
                             <div class="col-lg-6">
                                 <label>عنوان انگلیسی :</label>
-                                <input type="text" name="english_title" class="form-control" value="{{$article->english_title}}">
+                                <input type="text" name="english_title" class="form-control" placeholder="عنوان انگلیسی را وارد کنید...">
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-12">
-                                <label class="text-right"> متن مقاله :</label>
-                                <textarea class="summernote" name="article" style="display: none;">{{$article->article}}</textarea>
+                                <label class="text-right"> متن خبر :</label>
+                                <textarea class="summernote" name="text" style="display: none;"></textarea>
                             </div>
                         </div>
                     </div>

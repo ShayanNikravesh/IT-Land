@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\CommentController;
+use App\Http\Controllers\Admin\InfoController;
 use App\Http\Controllers\Admin\ManagerController;
 use App\Http\Controllers\Admin\MemoryController;
 use App\Http\Controllers\Admin\OrderController;
@@ -78,6 +79,10 @@ Route::middleware([AdminAuth::class])->group(function () {
     Route::resource('article',ArticleController::class);
     Route::post('storePhoto',[ArticleController::class,'storePhoto'])->name('store_article_photo');
     Route::post('article/changeStatus/{id}',[ArticleController::class,'changeStatus'])->name('change_Status_article');
+
+    //info
+    Route::resource('info',InfoController::class);
+    Route::post('storephoto',[InfoController::class,'storephoto'])->name('store_info_photo');
 
     //logout
     Route::get('admin-logout', [AuthController::class, 'logout'])->name('admin-logout');

@@ -8,7 +8,7 @@
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">مدیریت تصاویر</h5>
                 <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-                <span class="text-muted font-weight-bold mr-4">در این بخش می توانید تصویر مقاله مورد نظر را مدیریت کنید.</span>
+                <span class="text-muted font-weight-bold mr-4">در این بخش می توانید تصویر خبر مورد نظر را مدیریت کنید.</span>
             </div>
             <div class="d-flex align-items-center">
                 <!--begin::Daterange-->
@@ -21,7 +21,7 @@
     
     <div class="d-flex flex-column-fluid">
         <div class="container">
-            <form method="post" enctype="multipart/form-data" action="{{route('store_article_photo',$article->id)}}">
+            <form method="post" enctype="multipart/form-data" action="{{route('store_info_photo',$info->id)}}">
                 @method('PUT')
                 @csrf
                 <div class="card card-custom gutter-b">
@@ -29,8 +29,8 @@
                         <h3 class="card-title">اندازه تصاویر ترجیحا 400 در 650 باشد.</h3>
                     </div>
                     <div class="card-body">
-                        <input id="input_article_id" type="hidden" value="{{$article->id}}">
-                        <div class="dropzone dropzone-default dropzone-success" id="upload_article_photo">
+                        <input id="input_info_id" type="hidden" value="{{$info->id}}">
+                        <div class="dropzone dropzone-default dropzone-success" id="upload_info_photo">
                             <div class="dropzone-msg dz-message needsclick">
                                 <h3 class="dropzone-msg-title">برای آپلود فایل یا به اینجا بکشید یا کلیک کنید.</h3>
                                 <span class="dropzone-msg-desc">حجم تصاویر بنر حداکثر باید 1 مگابایت باشد</span>
@@ -45,8 +45,8 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        @if ($article)
-                            @foreach ($article->photos as $photo)
+                        @if ($info)
+                            @foreach ($info->photos as $photo)
                             <div class="col-lg-2 text-center" id="photo{{$photo->id}}">
                                 <label for="">«{{++$loop->index}}»</label>
                                 <br>

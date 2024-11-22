@@ -15,6 +15,7 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Middleware\RedirectUser;
 use App\Http\Middleware\UserAuth;
 use App\Models\Banner;
+use App\Models\Info;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +26,8 @@ Route::get('/', function () {
     $small_banner_photos = Banner::with('photos')->findOrFail(2);
     $medium_banner_photos = Banner::with('photos')->findOrFail(3);
     $products = Product::where('price_discounted','>',0)->where('status', '!=', 'inactive')->with(['photos'=>function($query){$query->Limit(1);}])->take(6)->get();
-    return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos','products'));
+    $infos = Info::with(['photos'=>function($query){$query->Limit(1);}])->latest()->take(3)->get();
+    return view('user/index',compact('carousel_photos','small_banner_photos','medium_banner_photos','products','infos'));
 })->name('index');
 
 //about us

@@ -176,69 +176,38 @@
 
     <!--Blog Section:start-->
     <section class="blog mt-5">
-        <div class="d-flex justify-content-between align-items-baseline mb-3">
-            <h2 class="fw-bold fs-6">خواندنی ها</h2>
-            <a href="" class="text-info fs-8">
-                مطالب بیشتر در برگ شاپ مگ
-                <i class="fa fa-angle-left ps-1"></i>
-            </a>
-        </div>
-
-        <!--        Blog Items:start-->
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">
-                <div class="blog-item border-radius-2xl overflow-hidden mb-3">
-                    <div class="blog-item-img">
-                        <a href=""><img src="{{asset('user-assets/img/blog-2.jpg')}}" alt="" title="" class="img-fluid card-img"></a>
-                    </div>
-                    <div class="blog-item-contents px-2 pb-3">
-                        <h2 class="mt-1">
-                            <a href="" title="" class="fs-6 fw-bold">
-                                چگونه برنامه نویس شویم؟
-                            </a>
-                        </h2>
-                        <p class="fs-8">
-                            بهترین راهکار های موجود برای تبدیل به برنامه نویس شدن حرفه ای و ماندگار شدن در این کار
-                        </p>
-                    </div>
-                </div>
+        @if (count($infos) > 0)
+            <div class="d-flex justify-content-between align-items-baseline mb-3">
+                <h2 class="text-center my-4 section-title fs-4">
+                    تازه ترین ها :
+                </h2>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">
-                <div class="blog-item border-radius-2xl overflow-hidden mb-3">
-                    <div class="blog-item-img">
-                        <a href=""><img src="{{asset('user-assets/img/blog-3.jpg')}}" alt="" title="" class="img-fluid card-img"></a>
+            <!--Info Items:start-->
+            <div class="row">
+                @foreach ($infos as $info)
+                    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">
+                        <div class="blog-item border-radius-2xl overflow-hidden mb-3">
+                            <div class="blog-item-img">
+                                @foreach ($info->photos as $photo)
+                                    <img src="{{asset($photo->src)}}" alt="" title="" class="img-fluid card-img"></a>
+                                @endforeach
+                            </div>
+                            <div class="blog-item-contents px-2 pb-3">
+                                <h2 class="mt-1">
+                                    <p class="fs-6 fw-bold">
+                                        {{$info->title}}
+                                    </p>
+                                </h2>
+                                <p class="fs-8">
+                                    {!!$info->text!!}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="blog-item-contents px-2 pb-3">
-                        <h2 class="mt-1">
-                            <a href="" title="" class="fs-6 fw-bold">
-                                چگونه برنامه نویس شویم؟
-                            </a>
-                        </h2>
-                        <p class="fs-8">
-                            بهترین راهکار های موجود برای تبدیل به برنامه نویس شدن حرفه ای و ماندگار شدن در این کار
-                        </p>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">
-                <div class="blog-item border-radius-2xl overflow-hidden mb-3">
-                    <div class="blog-item-img">
-                        <a href=""><img src="{{asset('user-assets/img/blog-1.jpg')}}" alt="" title="" class="img-fluid card-img"></a>
-                    </div>
-                    <div class="blog-item-contents px-2 pb-3">
-                        <h2 class="mt-1">
-                            <a href="" title="" class="fs-6 fw-bold">
-                                چگونه برنامه نویس شویم؟
-                            </a>
-                        </h2>
-                        <p class="fs-8">
-                            بهترین راهکار های موجود برای تبدیل به برنامه نویس شدن حرفه ای و ماندگار شدن در این کار
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--        Blog Items:end-->
+            <!--Info Items:end-->
+        @endif
     </section>
     <!--Blog Section:end-->
 

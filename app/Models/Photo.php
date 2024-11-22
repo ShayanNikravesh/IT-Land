@@ -21,6 +21,10 @@ class Photo extends Model
         return $this->belongsToMany(Article::class,'article_photo','photo_id','article_id')->withTimestamps();
     }
 
+    public function info(){
+        return $this->belongsToMany(Article::class,'info_photo','photo_id','info_id')->withTimestamps();
+    }
+
     public function manager(){
         return $this->belongsToMany(Manager::class,'manager_photo','photo_id','manager_id');
     }

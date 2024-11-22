@@ -66,12 +66,11 @@ class ArticleController extends Controller
     //show article photo
     public function show(string $id)
     {
-        $article_id = $id;
-        $article_photos = Article::with('photos')->findOrFail($id);
+        $article = Article::with('photos')->findOrFail($id);
         $title = 'حذف عکس!';
         $text = "آیا از حذف این عکس اطمینان دارید؟";
         confirmDelete($title, $text);
-        return view('admin.article.managePhoto',compact('article_id','article_photos'));
+        return view('admin.article.managePhoto',compact('article'));
     }
 
     /**
@@ -80,9 +79,6 @@ class ArticleController extends Controller
     public function edit(string $id)
     {
         $article = Article::findOrFail($id);
-        $title = 'حذف عکس!';
-        $text = "آیا از حذف این عکس اطمینان دارید؟";
-        confirmDelete($title, $text);
         return view('admin.article.edit',compact('article'));
     }
 
@@ -120,17 +116,16 @@ class ArticleController extends Controller
      */
     public function destroy(string $id)
     { 
-        $article_photos = Article::with('photos')->findOrFail($id);
+        $article = Article::with('photos')->findOrFail($id);
 
-        if($article_photos){
-            foreach($article_photos->photos as $photo){
+        if($article){
+            foreach($article->photos as $photo){
                 $photo = Photo::findorFail($photo->id);
                 File::delete(public_path($photo->src));
                 $photo->forceDelete();
             }    
         }
 
-        $article = Article::findOrFail($id);
         $article->forceDelete();
 
         Alert::success('عملیات موفق', 'مقاله حذف شد.');

@@ -116,6 +116,7 @@ return [
         'title' => 'عنوان',
         'english_title' => 'عنوان انگلیسی',
         'article' => 'متن',
+        'text' => 'متن',
         'name' => 'عنوان',
         'size' => 'حجم',
         'brand' => 'برند',
