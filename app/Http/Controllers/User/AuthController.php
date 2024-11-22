@@ -74,6 +74,7 @@ class AuthController extends Controller
             $user = User::find($otp->user_id);
             auth()->guard('web')->login($user);
             session()->forget('OtpMobile');
+            $otp->forcedelete();
             Alert::success('عملیات موفق.', 'خوش آمدید.');
             return redirect('/');
         }else{
