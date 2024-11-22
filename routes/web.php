@@ -8,6 +8,7 @@ use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\CategoryController;
 use App\Http\Controllers\User\CommentController;
 use App\Http\Controllers\User\FavoriteController;
+use App\Http\Controllers\User\OrderController;
 use App\Http\Controllers\user\PaymentController;
 use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\UserController;
@@ -86,6 +87,10 @@ Route::middleware([UserAuth::class])->group(function () {
     Route::get('add/{id}',[FavoriteController::class,'add'])->name('add-to-favorite');
     Route::get('delete/{id}',[FavoriteController::class,'delete'])->name('delete-favorite');
     Route::get('favorites',[FavoriteController::class,'favorites'])->name('show-favorites');
+
+    //order
+    Route::get('orders',[OrderController::class,'orders'])->name('show-orders');
+    Route::get('order/{id}',[OrderController::class,'order'])->name('order-details');
 
     //shiping & payment
     Route::get('shipping',[PaymentController::class,'shipping'])->name('to-shipping');

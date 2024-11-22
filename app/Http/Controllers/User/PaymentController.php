@@ -153,7 +153,7 @@ class PaymentController extends Controller
             $order->tracking_code = $tracking_code;
             $order->total_amount = $total;
             $order->user_id = $user_id;
-            $order->amount_payable =  $amount_payable * 10;
+            $order->amount_payable =  $amount_payable;
             $order->save();
 
             //create payment
@@ -216,7 +216,7 @@ class PaymentController extends Controller
         //geting Payment
         $payment = Payment::where('pay_key', $authority)->latest()->first();
         // geting Order
-        $order = Order::where('user_id', $payment->order_id)->latest()->first();
+        $order = Order::where('id', $payment->order_id)->latest()->first();
 
         //checking status
         if ($status !='OK'){

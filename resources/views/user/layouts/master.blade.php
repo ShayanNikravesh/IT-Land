@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="{{asset('user-assets/css/vendors/fontawesome/fontawesome.min.css')}}">
     <!--SwiperJs Styles-->
     <link rel="stylesheet" href="{{asset('user-assets/css/vendors/swiper/swiper-bundle.min.css')}}">
+    <!--DataTables-->
+    <link rel="stylesheet" href="{{asset('user-assets/css/vendors/dataTables/responsive.dataTables.min.css')}}">
+    <!--Jquery DataTables-->
+    <link rel="stylesheet" href="{{asset('user-assets/css/vendors/jquery/jquery.dataTables.min.css')}}">
     <!--Main Styles-->
     <link rel="stylesheet" href="{{asset('user-assets/css/style.css')}}">
     <!--Single product-->
@@ -91,7 +95,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item py-2 fw-bold" href="">
+                                <a class="dropdown-item py-2 fw-bold" href="{{route('show-orders')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -670,7 +674,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item py-2 fw-bold" href="#">
+                                    <a class="dropdown-item py-2 fw-bold" href="{{route('show-orders')}}">
                                         <span class="pe-1">
                                             <!--begin::Svg Icon-->
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1086,11 +1090,26 @@
 <!--Jquery::start (!Only For product Page!)-->
 <script src="{{asset('user-assets/js/vendors/jquery/jquery-3.6.0.min.js')}}"></script>
 
+<!--Jquery DataTables:start-->
+<script src="{{asset('user-assets/js/vendors/jquery/jquery.dataTables.min.js.js')}}"></script>
+<!--Jquery DataTables:end-->
+
+<!--DataTables:start-->
+<script src="{{asset('user-assets/js/vendors/dataTables/dataTables.responsive.min.js')}}"></script>
+<!--DataTables:end-->
+
 <script src="{{asset('user-assets/js/products.js')}}"></script>
 
 <script src="{{asset('user-assets/js/vendors/xzoom/xzoom.min.js')}}"></script>
 
 <script src="{{asset('user-assets/js/index.js')}}"></script>
+
+<!--Data Table-->
+<script>
+    $(document).ready(function () {
+        $('#ordersTable').DataTable();
+    });
+</script>
 
 <!--XZoom::end-->
 {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}

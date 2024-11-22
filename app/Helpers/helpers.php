@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\City;
 use App\Models\Favorite;
 use App\Models\Manager;
 use Darryldecode\Cart\Facades\CartFacade;
@@ -87,4 +88,9 @@ function Profit(){
     $amount_payable = session()->get('amount_payable');
     $profit = $total - $amount_payable;
     return $profit;
+}
+
+function getcity($id){
+    $city = City::find($id);
+    return $city->name;
 }

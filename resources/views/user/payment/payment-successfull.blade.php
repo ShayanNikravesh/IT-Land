@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="payment-details mt-5 mb-2">
-                    <a href="" class="btn custom-btn-danger border-radius-xl me-3">مشاهده جزئیات سفارش</a>
+                    <a href="{{route('order-details',$order->id)}}" class="btn custom-btn-danger border-radius-xl me-3">مشاهده جزئیات سفارش</a>
                     <a href="{{route('index')}}" class="text-danger">ادامه خرید</a>
                 </div>
             </div>
@@ -33,23 +33,19 @@
                 <p class="my-3 fw-bold">
                     جزئیات پرداخت
                 </p>
-
-
                 <div class="payment-table">
                     <div class="col-12">
                         <table class="table">
                             <thead>
                             <tr class="gray-500">
                                 <th scope="col" class="fw-lighter">درگاه</th>
-                                <th scope="col" class="fw-lighter">شماره پیگیری</th>
                                 <th scope="col" class="fw-lighter">تاریخ</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr class="fs-8">
-                                <th scope="row">سامان</th>
-                                <td>1586378</td>
-                                <td>14 فروردین 1401</td>
+                                <th scope="row">زرین پال</th>
+                                <td><?php echo verta($order->created_at)->format('Y/m/d');?></td>
                             </tr>
                             </tbody>
                         </table>
