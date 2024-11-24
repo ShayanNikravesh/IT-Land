@@ -36,7 +36,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link href="{{asset('admin-assets/css/themes/layout/brand/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('admin-assets/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="{{asset('admin-assets/media/logos/favicon.ico')}}"/>
+		<link rel="shortcut icon" href="{{asset('admin-assets/media/logos/iconco.ico')}}"/>
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{asset('user-assets/css/vendors/fontawesome/fontawesome.min.css')}}">
     <!--    Main Styles-->
     <link rel="stylesheet" href="{{asset('user-assets/css/style.css')}}">
+
+    <link rel="shortcut icon" href="{{asset('user-assets/img/Logo/iconco.ico')}}" />
 </head>
 <!--Head::end-->
 
