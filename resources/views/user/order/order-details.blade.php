@@ -55,7 +55,13 @@
                                     <span class="fw-bold">{{priceFormatter($order->amount_payable)}}</span>
                                     <i class="fa fa-circle fs-11 gray-300 px-2"></i>
                                     هزینه ارسال :
-                                    <span class="fw-bold">{{priceFormatter($order->submit_cost)}}</span>
+                                    <span class="fw-bold">
+                                        @if ($order->submit_cost == 0)
+                                            رایگان
+                                        @else
+                                            {{priceFormatter($order->submit_cost)}}
+                                        @endif
+                                    </span>
                                 </p>
                                 {{-- <p class="gray-600 border-bottom-gray-150 py-3 fw-lighter">
                                     تاریخ ثبت :

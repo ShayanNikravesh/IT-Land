@@ -46,9 +46,7 @@
                                         <h1 class="display-4 font-weight-boldest mb-10">جزئیات سفارش</h1>
                                         <div class="d-flex flex-column align-items-md-end px-0">
                                             <!--begin::Logo-->
-                                            <a href="javascript:;" class="mb-5">
-                                                <img src="{{asset('admin-assets/media/logos/logo-letter.png')}}" alt="" />
-                                            </a>
+                                            <h1 class="display-4 font-weight-boldest mb-10">IT Land</h1>
                                             <!--end::Logo-->
                                         </div>
                                     </div>
@@ -129,6 +127,7 @@
                                                 <tr>
                                                     <th class="font-weight-bold text-uppercase">نوع پرداخت :</th>
                                                     <th class="font-weight-bold text-uppercase">وضعیت سفارش :</th>
+                                                    <th class="font-weight-bold text-uppercase">هزینه ارسال :</th>
                                                     <th class="font-weight-bold text-uppercase text-right">مبلغ کل :</th>
                                                 </tr>
                                             </thead>
@@ -151,6 +150,13 @@
 
                                                         @default
                                                     @endswitch
+                                                    <td>
+                                                        @if ($order->submit_cost == 0)
+                                                            رایگان
+                                                        @else
+                                                            {{$order->submit_cost}}
+                                                        @endif
+                                                    </td>
                                                     <td class="text-primary font-size-h3 font-weight-boldest text-right">{{priceFormatter($order->amount_payable)}}</td>
                                                 </tr>
                                             </tbody>

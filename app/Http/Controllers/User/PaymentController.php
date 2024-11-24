@@ -147,6 +147,13 @@ class PaymentController extends Controller
             $total = CartFacade::getSubTotal();
             $user_id = Auth::guard('web')->user()->id;
             $amount_payable = session()->get('amount_payable');
+            //submit cost
+            if($amount_payable < 3000000){
+                $amount_payable += 70000;
+                $submit_cost = 70000;
+            }else{
+                $submit_cost = 0;
+            }
             $mobile = Auth::guard('web')->user()->mobile;
 
             $order = new Order();
@@ -154,6 +161,7 @@ class PaymentController extends Controller
             $order->total_amount = $total;
             $order->user_id = $user_id;
             $order->amount_payable =  $amount_payable;
+            $order->submit_cost = $submit_cost;
             $order->save();
 
             //create payment
@@ -224,6 +232,10 @@ class PaymentController extends Controller
         }
 
         $amount_payable = session()->get('amount_payable');
+         //submit cost
+        if($amount_payable < 3000000){
+            $amount_payable += 70000;
+        }
 
         $response = zarinpal()
         ->merchantId('00000000-0000-0000-0000-000000000000') // تعیین مرچنت کد در حین اجرا - اختیاری
@@ -247,8 +259,7 @@ class PaymentController extends Controller
         // دریافت شماره کارتی که مشتری برای پرداخت استفاده کرده است (بصورت ماسک شده)
         // $response->cardPan();
 
-        // پرداخت موفقیت آمیز بود
-        $order->submit_cost = $response->fee();
+        // پرداخت موفقیت آمیز بود      
         $order->status = 'success';
         if($order->save()){
             $address = new AddressOrder();
