@@ -219,7 +219,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					</a>
 					<!--end:Item-->
 					<!--begin::Item-->
-					<a href="custom/apps/user/profile-3.html" class="navi-item">
+					{{-- <a href="custom/apps/user/profile-3.html" class="navi-item">
 						<div class="navi-link">
 							<div class="symbol symbol-40 bg-light mr-3">
 								<div class="symbol-label">
@@ -237,7 +237,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="text-muted">پیام های کاربران</div>
 							</div>
 						</div>
-					</a>
+					</a> --}}
 					<!--end:Item-->
 				</div>
 				<!--end::Nav-->
