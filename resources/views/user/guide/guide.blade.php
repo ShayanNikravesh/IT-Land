@@ -22,13 +22,12 @@
         <div class="faq-content container mt-5">
             <div class="accordion accordion-flush" id="faqAccordion">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseTwo">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
                             چطور می توانم وارد سایت بشوم ؟
                         </button>
                     </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
                          data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <p>
@@ -86,13 +85,12 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
                             چطور می توانم از سایت خرید کنم ؟
                         </button>
                     </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                         data-bs-parent="#faqAccordion">
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
                             <p>
                                 <span class="fw-bold">
@@ -170,6 +168,39 @@
                                 </span>
                                 <br>
                                     درصورت عدم موجودی ، کالا به صورت خودکار حذف می شود.                                
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
+                            چطور ارسال محصولات انجام میشه ؟
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>
+                                <span class="fw-bold">
+                                    1. پردازش سفارش :
+                                </span>
+                                <br>
+                                    سفارش شما پس از تأیید پرداخت، به سرعت پردازش می‌شود. معمولاً این فرآیند بین 1 تا 2 روز کاری طول می‌کشد. در این مرحله، ما محصول را بررسی کرده و بسته‌بندی آن را آماده می‌کنیم.
+                                <br>
+                                
+                                <span class="fw-bold">
+                                    2. هزینه ارسال :
+                                </span>
+                                <br>
+                                    هزینه ارسال برای سفارش های بیشتر از 3,000,000 تومان رایگان است.
+                                <br>
+
+                                <span class="fw-bold">
+                                    3. تحویل سفارش :
+                                </span>
+                                <br>
+                                    سفارش شما در مدت سه روز تا یک هفته به آدرسی که در سایت ثبت کرده اید تحویل داده خواهد شد .
                                 <br>
                             </p>
                         </div>
