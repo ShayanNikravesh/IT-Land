@@ -80,6 +80,11 @@
                                                     <span class="badge bg-gray-200 position-absolute top-0">{{$product->pivot->quantity}}</span>
                                                     <a href="{{route('Product.show',$product->id)}}" target="_blank" class="stretched-link"></a>
                                                 </div>
+                                                @if ($product->pivot->color_id == 0)
+                                                    <span>رنگ ندارد</span>
+                                                @else
+                                                    <span>رنگ : {{colorname($product->pivot->color_id)}}</span>  
+                                                @endif
                                             </div>
                                         @endforeach
                                     </div>

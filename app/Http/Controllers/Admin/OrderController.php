@@ -23,7 +23,7 @@ class OrderController extends Controller
 
         if(!empty($order)){
             $address = AddressOrder::where('order_id',$id)->first();
-            return view('admin.order.order-details',compact('order','address'));
+            return view('admin.order.details',compact('order','address'));
         }
 
         Alert::error('خطا','سفارش یافت نشد.');

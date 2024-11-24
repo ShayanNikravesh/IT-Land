@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\City;
+use App\Models\Color;
 use App\Models\Favorite;
 use App\Models\Manager;
 use Darryldecode\Cart\Facades\CartFacade;
@@ -93,4 +94,9 @@ function Profit(){
 function getcity($id){
     $city = City::find($id);
     return $city->name;
+}
+
+function colorname($id){
+    $color = Color::find($id);
+    return $color->name;
 }
