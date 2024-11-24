@@ -97,7 +97,11 @@
                                                                 @endforeach
                                                             @endif
                                                             <!--end::Symbol-->
-                                                            {{$product->title}}
+                                                            @if ($product->pivot->color_id != 0)
+                                                                {{$product->title.' ( '.colorname($product->pivot->color_id).' )'}}
+                                                            @else
+                                                                {{$product->title}}
+                                                            @endif
                                                         </td>
                                                         <td class="text-right pt-7 align-middle">{{$product->pivot->quantity}}</td>
                                                         <td class="text-right pt-7 align-middle">{{priceFormatter($product->pivot->price)}}</td>
