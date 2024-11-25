@@ -1,66 +1,43 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/ShayanNikravesh/IT-Land/blob/main/IT-Land.png" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Project Description:
+IT Land is an e-commerce website designed and developed for selling digital products. This project is built on the Laravel framework (version 11) and utilizes pre-made HTML, CSS, and JavaScript templates for the front-end.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+• Utilization of various packages for payment gateways, shopping cart, and other functionalities.
+<br>
+• Ability to select products from a variety of options with different colors.
+<br>
+• Shopping Cart: Users can add their desired products to the shopping cart and can view, edit, or remove items from their cart at any time.
+<br>
+• Secure Payment: Users can make purchases securely using credit cards.
+<br>
+• Simple and user-friendly process for placing orders and delivery to the desired location.
+<br>
+## This project was developed by Shayan for IT-Land shop.
+With IT Land, users can easily search for and order their desired products.
+<hr>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# توضیحات پروژه:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<div dir="rtl">
+آیتی لند یک سایت فروشگاهی است که برای فروشگاه لوازم دیجیتال طراحی و توسعه یافته است. این پروژه بر پایه فریمورک لاراول (نسخه 11) ساخته شده و برای بخش فرانت‌اند از قالب‌های آماده HTML، CSS و JavaScript استفاده شده است:
+    <br>
+- استفاده از پکیج‌های مختلف برای درگاه پرداخت، سبد خرید و سایر بخش‌ها.
+    <br>
+- امکان انتخاب محصولات از میان گزینه‌های متنوع با رنگ‌های مختلف.
+    <br>
+- سبد خرید: کاربران می‌توانند محصولات مورد نظر خود را به سبد خرید اضافه کنند و در هر زمان نسبت به مشاهده، ویرایش و حذف محصولات از سبد خرید خود اقدام کنند.
+    <br>
+- پرداخت امن: کاربران می‌توانند با استفاده از کارت‌های اعتباری به صورت امن خریدهای خود را انجام دهند.
+    <br>
+- فرآیند ساده و کاربرپسند برای ثبت سفارش و تحویل در محل دلخواه.
+</div>
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## این پروژه توسط شایان برای فروشگاه IT Land توسعه یافته است.
+<div dir="rtl">
+با استفاده از آیتی لند ، کاربران می‌توانند به راحتی محصولات مورد نظر خود را جستجو کرده و سفارش دهند.
+</div>
