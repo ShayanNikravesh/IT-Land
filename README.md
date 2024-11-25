@@ -5,7 +5,6 @@
 </p>
 
 ## Project Description:
-
 IT Land is an e-commerce website designed and developed for selling digital products. This project is built on the Laravel framework (version 11) and utilizes pre-made HTML, CSS, and JavaScript templates for the front-end.
 
 • Utilization of various packages for payment gateways, shopping cart, and other functionalities.
@@ -23,6 +22,7 @@ With IT Land, users can easily search for and order their desired products.
 <hr>
 
 # توضیحات پروژه:
+
 <div dir="rtl">
 آیتی لند یک سایت فروشگاهی است که برای فروشگاه لوازم دیجیتال طراحی و توسعه یافته است. این پروژه بر پایه فریمورک لاراول (نسخه 11) ساخته شده و برای بخش فرانت‌اند از قالب‌های آماده HTML، CSS و JavaScript استفاده شده است:
 - استفاده از پکیج‌های مختلف برای درگاه پرداخت، سبد خرید و سایر بخش‌ها.
@@ -31,7 +31,8 @@ With IT Land, users can easily search for and order their desired products.
 - پرداخت امن: کاربران می‌توانند با استفاده از کارت‌های اعتباری به صورت امن خریدهای خود را انجام دهند.
 - فرآیند ساده و کاربرپسند برای ثبت سفارش و تحویل در محل دلخواه.
 </div>
-# توضیحات پروژه:
+
+## این پروژه توسط شایان برای فروشگاه IT Land توسعه یافته است.
 <div dir="rtl">
 با استفاده از آیتی لند ، کاربران می‌توانند به راحتی محصولات مورد نظر خود را جستجو کرده و سفارش دهند.
 </div>
