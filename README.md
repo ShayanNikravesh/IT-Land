@@ -9,11 +9,17 @@
 IT Land is an e-commerce website designed and developed for selling digital products. This project is built on the Laravel framework (version 11) and utilizes pre-made HTML, CSS, and JavaScript templates for the front-end.
 
 • Utilization of various packages for payment gateways, shopping cart, and other functionalities.
+<br>
 • Ability to select products from a variety of options with different colors.
+<br>
 • Shopping Cart: Users can add their desired products to the shopping cart and can view, edit, or remove items from their cart at any time.
+<br>
 • Secure Payment: Users can make purchases securely using credit cards.
+<br>
 • Simple and user-friendly process for placing orders and delivery to the desired location.
+<br>
 ## This project was developed by Shayan for IT-Land shop.
+<br>
 With IT Land, users can easily search for and order their desired products.
 <hr>
 
