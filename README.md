@@ -19,7 +19,6 @@ IT Land is an e-commerce website designed and developed for selling digital prod
 • Simple and user-friendly process for placing orders and delivery to the desired location.
 <br>
 ## This project was developed by Shayan for IT-Land shop.
-<br>
 With IT Land, users can easily search for and order their desired products.
 <hr>
 
@@ -27,11 +26,17 @@ With IT Land, users can easily search for and order their desired products.
 
 <div dir="rtl">
 آیتی لند یک سایت فروشگاهی است که برای فروشگاه لوازم دیجیتال طراحی و توسعه یافته است. این پروژه بر پایه فریمورک لاراول (نسخه 11) ساخته شده و برای بخش فرانت‌اند از قالب‌های آماده HTML، CSS و JavaScript استفاده شده است:
+    <br>
 • استفاده از پکیج‌های مختلف برای درگاه پرداخت، سبد خرید و سایر بخش‌ها.
+    <br>
 • امکان انتخاب محصولات از میان گزینه‌های متنوع با رنگ‌های مختلف.
+    <br>
 • سبد خرید: کاربران می‌توانند محصولات مورد نظر خود را به سبد خرید اضافه کنند و در هر زمان نسبت به مشاهده، ویرایش و حذف محصولات از سبد خرید خود اقدام کنند.
+    <br>
 • پرداخت امن: کاربران می‌توانند با استفاده از کارت‌های اعتباری به صورت امن خریدهای خود را انجام دهند.
+    <br>
 • فرآیند ساده و کاربرپسند برای ثبت سفارش و تحویل در محل دلخواه.
+    <br>
 </div>
 ## این پروژه توسط شایان برای فروشگاه آیتی لند توسعه داده شده است.
 <div dir="rtl">
