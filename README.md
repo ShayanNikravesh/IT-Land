@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/ShayanNikravesh/IT-Land/blob/main/IT-Land.png" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/ShayanNikravesh/IT-Land/blob/main/it-land.png" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
