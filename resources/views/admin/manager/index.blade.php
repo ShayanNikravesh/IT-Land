@@ -71,7 +71,7 @@
 														<button class="badge bg-light-success text-dark w-50 btn" onclick="ChangeLevelManager('{{$manager->id}}')"><span id="1{{$manager->id}}">{{FetchLevel($manager->level)}}</span></button>
 														@break
 													@case('operator')
-														<button class="badge bg-light-warning text-dark w-50 btn" onclick="ChangeLevelManager('{{$manager->id}}')"><span id="1{{$manager->id}}">{{FetchLevel($manager->level)}}</span></button>
+														<button class="badge bg-light-warning text-dark w-60 btn" onclick="ChangeLevelManager('{{$manager->id}}')"><span id="1{{$manager->id}}">{{FetchLevel($manager->level)}}</span></button>
 														@break    
 													@default
 											@endswitch

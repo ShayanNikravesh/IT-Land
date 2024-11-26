@@ -161,7 +161,7 @@ class ProductController extends Controller
     {
 
         $product = Product::with('colors','category','brand','ram','memory')->findorFail($id);
-        return view('admin.product.show',compact('product'));
+        return view('admin.product.details',compact('product'));
 
     }
 
