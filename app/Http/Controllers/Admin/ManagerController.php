@@ -185,4 +185,28 @@ class ManagerController extends Controller
         $manager->level = $level;
         $manager->save();
     }
+
+    public function resetPassword(Request $request, string $id)
+    {
+        $manager_id = $id;
+        return view('admin.password.reset-password',compact('manager_id'));
+    }
+
+    public function Password(Request $request, string $id)
+    {
+
+        Alert::error('عملیات ناموفق');
+
+        $request -> validate([
+            'password'=>['nullable','min:6','confirmed'],
+        ]);
+
+        $manager = Manager::findOrfail($id);
+        $manager->password = $request->password;
+
+        Alert::success('عملیات موفق.', 'رمز ویرایش شد.');
+
+        return redirect()->back();
+    }
+
 }

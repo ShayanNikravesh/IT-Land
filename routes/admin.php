@@ -38,6 +38,9 @@ Route::middleware([AdminAuth::class])->group(function () {
     Route::resource('manager',ManagerController::class);
     Route::post('manager/ChangeStatus/{id}',[ManagerController::class,'ChangeStatus'])->name('change_Status_manager');
     Route::post('manager/ChangeLevel/{id}',[ManagerController::class,'ChangeLevel'])->name('change_Level_manager');
+    Route::get('manager/reset-Password/{id}',[ManagerController::class,'resetPassword'])->name('reset-password');
+    Route::post('Password/{id}',[ManagerController::class,'Password'])->name('Password');
+
 
     //order
     Route::get('Orders/{status}',[OrderController::class,'Orders'])->name('Show-Orders');
