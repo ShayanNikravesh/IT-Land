@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\AddressOrder;
 use App\Models\Order;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -55,5 +56,11 @@ class OrderController extends Controller
 
         Alert::success('عملیات موفق','وضعیت سفارش تغییر کرد.');
         return redirect()->back();
+    }
+
+    public function payments()
+    {
+        $payments = Payment::where('status','success')->get();
+        return view('admin.payment.index',compact('payments'));
     }
 }

@@ -44,6 +44,9 @@ Route::middleware([AdminAuth::class])->group(function () {
     Route::get('Order/{id}',[OrderController::class,'Order'])->name('Order-Details');
     Route::get('ChangeStatus/{id}',[OrderController::class,'ChangeStatus'])->name('change_Status_order');
 
+    //payment
+    Route::get('payments',[OrderController::class,'payments'])->name('payments');
+
     //category
     Route::resource('category', CategoryController::class);
     Route::post('category/ChangeStatus/{id}', [CategoryController::class, 'ChangeStatus'])->name('change_Status_category');
