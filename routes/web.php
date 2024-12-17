@@ -71,6 +71,9 @@ Route::post('Quantity/{id}/{status}',[CartController::class,'Quantity'])->name('
 //payment callback
 Route::get('callback',[PaymentController::class,'callback'])->name('callback');
 
+//add favorite
+Route::get('add/{id}',[FavoriteController::class,'add'])->name('add-to-favorite');
+
 //UserAuth
 Route::middleware([UserAuth::class])->group(function () {
 
@@ -86,7 +89,6 @@ Route::middleware([UserAuth::class])->group(function () {
     Route::get('setDefault/{id}',[AddressController::class,'setDefault'])->name('set-default');
 
     //favorite
-    Route::get('add/{id}',[FavoriteController::class,'add'])->name('add-to-favorite');
     Route::get('delete/{id}',[FavoriteController::class,'delete'])->name('delete-favorite');
     Route::get('favorites',[FavoriteController::class,'favorites'])->name('show-favorites');
 

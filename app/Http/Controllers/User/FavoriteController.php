@@ -35,7 +35,7 @@ class FavoriteController extends Controller
             
         }else{
             
-            Alert::warning('ابتدا وارد سایت شوید.');
+            Alert::toast('ابتدا وارد سایت شوید.', 'error');
 
             return redirect()->back();
         }
