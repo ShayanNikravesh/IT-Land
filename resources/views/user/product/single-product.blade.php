@@ -43,84 +43,10 @@
                             </a>                            
                         @endif
                     </div>
-                    <div class="share mb-3" data-bs-toggle="tooltip" data-bs-placement="right" title="اشتراک گذاری">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                             class="bi bi-share" viewBox="0 0 16 16" data-bs-toggle="modal"
-                             data-bs-target="#shareModal">
+                    <div class="share mb-3" id="copyButton" data-bs-toggle="tooltip" data-bs-placement="right" title="اشتراک گذاری">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
                             <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
                         </svg>
-                        <!-- Modal -->
-                        <div class="modal fade" id="shareModal" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title fw-bold fs-6" id="exampleModalLabel">اشتراک گذاری</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="text-center fw-bold fs-7">این کالا را با دوستان خود به اشتراک
-                                            گذارید!</p>
-                                        <div class="d-grid gap-2 mt-2">
-                                            <a href="" class="btn btn-outline-secondary border-radius-xl fs-7">
-                                                <i class="fa fa-copy align-middle pe-2"></i>
-                                                کپی کردن لینک
-                                            </a>
-                                        </div>
-                                        <div class="row mt-3 border-bottom-gray-300 pb-3">
-                                            <div class="col-6">
-                                                <div class="d-grid gap-2 mt-2">
-                                                    <a href=""
-                                                       class="btn custom-btn-success py-2 border-radius-xl fs-7">
-                                                        <i class="fab fa-whatsapp align-middle pe-2"></i>
-                                                        واتس اپ
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="d-grid gap-2 mt-2">
-                                                    <a href=""
-                                                       class="btn custom-btn-primary py-2 border-radius-xl fs-7">
-                                                        <i class="fab fa-twitter align-middle pe-2"></i>
-                                                        تویتر
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="d-grid gap-2 mt-2">
-                                                    <a href="" class="btn custom-btn-info py-2 border-radius-xl fs-7">
-                                                        <i class="fab fa-facebook align-middle pe-2"></i>
-                                                        فیسبوک
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="discount-code d-flex justify-content-between align-items-center p-4">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                    <div class="discount-detail">
-                                                        <p class="fw-bold fs-6">کد تخفیف شما</p>
-                                                        <p class="fs-7">
-                                                            کد را برای دوستان خود بفرستید و پس از
-                                                            اولین خرید آنها، کد تخفیف و امتیاز بگیرید!
-                                                        </p>
-                                                        <a href="" class="btn btn-outline-danger mt-3">
-                                                            <i class="fa fa-percent pe-2 fa-xs"></i>
-                                                            دریافت کد تخفیف
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                    <div class="discount-img mt-3 text-center">
-                                                        <img src="{{asset('user-assets/img/share-modal.svg')}}" alt="" title="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!--Product Action:end-->
@@ -615,5 +541,21 @@
 
 </main>
 <!--Main:end-->
+<script>
+    document.getElementById('copyButton').addEventListener('click', function() {
+        // لینک صفحه را دریافت کنید
+        const url = window.location.href;
 
+        // ایجاد یک عنصر موقت input برای کپی کردن لینک
+        const tempInput = document.createElement('input');
+        tempInput.value = url;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        // نمایش پیغام موفقیت
+        alert('لینک محصول کپی شد.');
+    });
+</script>
 @endsection
