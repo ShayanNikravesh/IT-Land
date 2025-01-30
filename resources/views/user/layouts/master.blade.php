@@ -37,7 +37,7 @@
 <!--Navbar:start-->
 <div class="custom-navbar" id="customNavbar">
     <!--Ads Banner:start-->
-    <a href="" class="ads-banner" title="">
+    <a href="https://www.instagram.com/it_land_khorasan?igsh=cjB5cWtwbTJoM2dh" class="ads-banner" title="">
         <img src="{{asset('user-assets/img/insta-banner.jpg')}}" alt="" class="img-fluid object-cover">
     </a>
     <!--Ads Banner:end-->
