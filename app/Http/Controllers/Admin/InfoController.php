@@ -17,7 +17,7 @@ class InfoController extends Controller
     public function index()
     {
         $infos = Info::all();
-        $title = 'حذف مقاله!';
+        $title = 'حذف خبر!';
         $text = "آیا از حذف این خبر اطمینان دارید؟";
         confirmDelete($title, $text);
         return view('admin.info.index',compact('infos'));
