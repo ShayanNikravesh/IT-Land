@@ -30,11 +30,11 @@
         <img src="{{asset('user-assets/img/logo/logo.png')}}" alt="" title="" class="mx-auto d-block w-50">
         <a href="{{route('login')}}"><i class="fa fa-arrow-right position-absolute"></i></a>
         <div class="form-info text-right my-3">
-            <h1 class="fw-bold fs-5">کد تایید را وارد کنید</h1>
+            <h1 class="fw-bold fs-5">کد تایید را وارد کنید.</h1>
             <div class="form-info-text my-4 gray-600 fs-7">
-                <p>
+                {{-- <p>
                     حساب کاربری با شماره 09305468874 وجود ندارد، برای ساخت حساب جدید کد ارسال شده را وارد نمایید.
-                </p>
+                </p> --}}
             </div>
         </div>
         <form action="{{route('Verify',$token)}}" method="POST">
