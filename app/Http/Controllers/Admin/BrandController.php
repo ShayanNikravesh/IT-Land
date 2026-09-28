@@ -37,7 +37,7 @@ class BrandController extends Controller
 
         Alert::error('عملیات ناموفق');
 
-        $Category = $request -> validate([
+        $request -> validate([
             'title' => ['required'],
             'english_title' => ['required'],
         ]);
@@ -119,6 +119,8 @@ class BrandController extends Controller
     {
         $brand = Brand::findOrFail($id);
 
+        $status = $brand->status;
+        
         switch ($brand->status) {
             case 'active':
                 $status = 'inactive';

@@ -62,7 +62,7 @@ class UserController extends Controller
             'national_code'=>['nullable','min:10','numeric'],
         ]);
 
-        $user = User::find(auth('web')->id());
+        $user = User::findOrfail(auth('web')->id());
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->national_code = $request->national_code;

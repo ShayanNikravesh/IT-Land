@@ -18,14 +18,17 @@ class AddressController extends Controller
     public function index()
     {
         if(Auth::guard('web')->check()){
+
             $user_id = Auth::guard('web')->user()->id;
+
+            $addresses = Address::with('city')->where('user_id',$user_id)->get();
+            $provinces = Province::all();
+            $title = 'حذف آدرس!';
+            $text = "آیا از حذف این آدرس اطمینان دارید؟";
+            confirmDelete($title, $text);
+            return view('user.address.index',compact('provinces','addresses'));
         }
-        $addresses = Address::with('city')->where('user_id',$user_id)->get();
-        $provinces = Province::all();
-        $title = 'حذف آدرس!';
-        $text = "آیا از حذف این آدرس اطمینان دارید؟";
-        confirmDelete($title, $text);
-        return view('user.address.index',compact('provinces','addresses'));
+        
     }
 
     /**
@@ -44,30 +47,33 @@ class AddressController extends Controller
         Alert::error('عملیات ناموفق');
 
         if(Auth::guard('web')->check()){
-            $user_id = Auth::guard('web')->user()->id;
-        }
 
-        $request -> validate([
+            $user_id = Auth::guard('web')->user()->id;
+
+            $request -> validate([
             'first_name' => ['required'],
             'last_name' => ['required'],
             'city' => ['required','numeric'],
             'post_code' => ['required'],
             'mobile' => ['required','numeric'],
             'address' => ['required'],
-        ]);
+            ]);
 
-        $address = new Address();
-        $address->user_id = $user_id;
-        $address->first_name = $request->first_name;
-        $address->last_name = $request->last_name;
-        $address->city_id = $request->city;
-        $address->post_code = $request->post_code;
-        $address->mobile = $request->mobile;
-        $address->address = $request->address;
-        $address->save();
+            $address = new Address();
+            $address->user_id = $user_id;
+            $address->first_name = $request->first_name;
+            $address->last_name = $request->last_name;
+            $address->city_id = $request->city;
+            $address->post_code = $request->post_code;
+            $address->mobile = $request->mobile;
+            $address->address = $request->address;
+            $address->save();
 
-        Alert::success('عملیات موفق', 'آدرس گیرنده ثبت شد.');
-        return redirect()->back();
+            Alert::success('عملیات موفق', 'آدرس گیرنده ثبت شد.');
+            return redirect()->back();
+            
+        }
+
     }
 
     /**
@@ -105,7 +111,7 @@ class AddressController extends Controller
             'address' => ['required'],
         ]);
 
-        $address = Address::where('user_id',$user_id)->where('id',$id)->firstOrFail();
+        $address = Address::where('user_id','=',$user_id)->where('id',$id)->firstOrFail();
         $address->first_name = $request->first_name;
         $address->last_name = $request->last_name;
         if ($request->filled('city')) {
@@ -127,18 +133,18 @@ class AddressController extends Controller
     {
         if(Auth::guard('web')->check()){
             $user_id = Auth::guard('web')->user()->id;
-        }
 
-        $address = Address::where('id',$id)->where('user_id',$user_id)->first();
+            $address = Address::where('id',$id)->where('user_id',$user_id)->first();
         
-        if($address){
-            $address->forceDelete();
-            Alert::success('عملیات موفق', 'آدرس حذف شد.');
+            if($address){
+                $address->forceDelete();
+                Alert::success('عملیات موفق', 'آدرس حذف شد.');
+                return redirect()->back();
+            }
+
+            Alert::error('خطا', 'آدرس یافت نشد.');
             return redirect()->back();
         }
-
-        Alert::error('خطا', 'آدرس یافت نشد.');
-        return redirect()->back();
 
     }
 

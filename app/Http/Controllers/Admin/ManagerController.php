@@ -99,7 +99,7 @@ class ManagerController extends Controller
         //saving photo
         if($request->hasFile('profile_photo','name')){
 
-            $manager = Manager::find(auth('admin')->id());
+            $manager = Manager::findOrfail(auth('admin')->id());
             $existing_photo = $manager->photos()->first();
             if($existing_photo){
                 File::delete(public_path($existing_photo->src));
@@ -149,6 +149,8 @@ class ManagerController extends Controller
     {
         $manager = Manager::findOrFail($id);
 
+        $status = $manager->status;
+        
         switch ($manager->status) {
             case 'active':
                 $status = 'banned';
@@ -171,6 +173,7 @@ class ManagerController extends Controller
     {
         $manager = Manager::findOrFail($id);
 
+        $level = $manager->level;
         switch ($manager->level) {
             case 'manager':
                 $level = 'operator';

@@ -132,6 +132,8 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
 
+        $status = $category->status;
+
         switch ($category->status) {
             case 'active':
                 $status = 'inactive';
