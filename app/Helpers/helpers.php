@@ -7,7 +7,7 @@ use App\Models\Manager;
 use Darryldecode\Cart\Facades\CartFacade;
 use Illuminate\Support\Facades\Auth;
 
-function FetchStatus ($status){
+function FetchStatus (string $status){
     switch ($status) {
         case 'active':
             return 'فعال';
@@ -34,7 +34,7 @@ function FetchStatus ($status){
     }
 }
 
-function FetchLevel($level){
+function FetchLevel(string $level){
     switch ($level){
         case 'manager':
             return 'مدیر';
@@ -64,8 +64,8 @@ function getpercent($value){
     return round( (($value['price']-$value['price_discounted']) / $value['price_discounted']) * 100 );
 }
 
-function getPhoto($id){
-    $manager = Manager::find($id);
+function getPhoto(int $id){
+    $manager = Manager::find($id , 'id');
     $existing_photo = $manager->photos()->first();
     if(!empty($existing_photo->src)){
         return $existing_photo->src;
@@ -75,10 +75,10 @@ function getPhoto($id){
     
 }
 
-function isFavorite($product_id){
+function isFavorite(int $product_id){
     if(Auth::guard('web')->check()){
         $user_id = Auth::guard('web')->user()->id;
-        return Favorite::where('user_id',$user_id)->where('product_id', $product_id)->exists();
+        return Favorite::where('user_id' , $user_id)->where('product_id', $product_id)->exists();
     }else{
         return false;
     }  
@@ -91,12 +91,17 @@ function Profit(){
     return $profit;
 }
 
-function getcity($id){
-    $city = City::find($id);
+function getcity(int $id){
+    $city = City::find($id , 'id');
     return $city->name;
 }
 
-function colorname($id){
-    $color = Color::find($id);
+function colorname(int $id){
+    $color = Color::find($id , 'id');
     return $color->name;
+}
+
+function ChangeStatus(string $status){
+    $status = $status === 'active' ? 'inactive' : 'active';
+    return $status;
 }
