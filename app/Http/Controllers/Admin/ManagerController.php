@@ -174,7 +174,8 @@ class ManagerController extends Controller
         $manager = Manager::findOrFail($id);
 
         $level = $manager->level;
-        switch ($manager->level) {
+
+        switch ($level) {
             case 'manager':
                 $level = 'operator';
                 break;
