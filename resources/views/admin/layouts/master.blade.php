@@ -186,7 +186,11 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="navi-text text-muted text-hover-primary">{{Auth::guard('admin')->user()->email}}</span>
 								</span>
 							</a>
-							<a href="{{route('admin-logout')}}" class="btn btn-sm btn-light-danger font-weight-bolder py-2 px-5">خروج</a>
+							<form method="POST" action="{{ route('admin_logout') }}">
+								@csrf
+								<button type="submit" class="btn btn-sm btn-light-danger font-weight-bolder py-2 px-5">خروج</button>
+							</form>
+							{{-- <a href="{{route('admin-logout')}}" class="btn btn-sm btn-light-danger font-weight-bolder py-2 px-5">خروج</a> --}}
 						</div>
 					</div>
 				</div>

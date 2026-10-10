@@ -17,13 +17,12 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RamController;
 use App\Http\Middleware\AdminAuth;
 use App\Http\Middleware\RedirectAdmin;
-use App\Models\Manager;
 use Illuminate\Support\Facades\Auth;
 
 //login page
-Route::get('login-form',function(){
+Route::get('login_form',function(){
     return view('admin.login');
-})->name('login-form')->middleware(RedirectAdmin::class);
+})->name('login_form')->middleware(RedirectAdmin::class);
 
 //login
 Route::post('admin-login',[AuthController::class,'login'])->name('admin-login');
@@ -91,7 +90,7 @@ Route::middleware([AdminAuth::class])->group(function () {
     Route::post('storephoto',[InfoController::class,'storephoto'])->name('store_info_photo');
 
     //logout
-    Route::get('admin-logout', [AuthController::class, 'logout'])->name('admin-logout');
+    Route::post('/admin_logout', [AuthController::class, 'logout'])->name('admin_logout');
 
 });
 

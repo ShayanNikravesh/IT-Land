@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Manager;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -47,9 +48,14 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout()
+    public function logout(Request $request): RedirectResponse
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('login-form');
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login_form');
     }
+
 }
