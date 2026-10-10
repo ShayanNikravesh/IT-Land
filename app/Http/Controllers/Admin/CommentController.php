@@ -77,16 +77,9 @@ class CommentController extends Controller
     {
         $comment = Comment::findOrFail($id);
 
-        switch ($comment->status) {
-            case 'active':
-                $status = 'inactive';
-                break;
-            case 'inactive':
-                $status = 'active';
-                break;
-            default:
-                break;
-        }
+        $status = $comment->status;
+        
+        $status = ChangeStatus($status);
 
         $comment->status = $status;
         $comment->save();

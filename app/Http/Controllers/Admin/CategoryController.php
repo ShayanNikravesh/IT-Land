@@ -134,16 +134,7 @@ class CategoryController extends Controller
 
         $status = $category->status;
 
-        switch ($category->status) {
-            case 'active':
-                $status = 'inactive';
-                break;
-            case 'inactive':
-                $status = 'active';
-                break;
-            default:
-                break;
-        }
+        $status = ChangeStatus($status);
 
         $category->status = $status;
         $category->save();

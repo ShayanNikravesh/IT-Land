@@ -138,7 +138,7 @@ class ArticleController extends Controller
 
         if($request->hasFile('article_photo','name')){
 
-            $article = Article::find($request->article_id);
+            $article = Article::findOrFail($request->article_id);
             $existing_photo = $article->photos()->first();
             if($existing_photo){
                 File::delete(public_path($existing_photo->src));
@@ -163,16 +163,9 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
 
-        switch ($article->status) {
-            case 'active':
-                $status = 'inactive';
-                break;
-            case 'inactive':
-                $status = 'active';
-                break;
-            default:
-                break;
-        }
+        $status = $article->status;
+
+        $status = ChangeStatus($status);
 
         $article->status = $status;
         $article->save();

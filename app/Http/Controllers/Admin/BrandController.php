@@ -121,16 +121,7 @@ class BrandController extends Controller
 
         $status = $brand->status;
         
-        switch ($brand->status) {
-            case 'active':
-                $status = 'inactive';
-                break;
-            case 'inactive':
-                $status = 'active';
-                break;
-            default:
-                break;
-        }
+        $status = ChangeStatus($status);
 
         $brand->status = $status;
         $brand->save();
