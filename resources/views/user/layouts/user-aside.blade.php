@@ -71,12 +71,20 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('user-logout')}}">
+                    <form method="POST" action="{{ route('user_logout') }}">
+                        @csrf
+                        <button type="submit" style="all: unset"><i class="fa fa-sign-out-alt"></i>
+                            <span class="ps-2">
+                                خروج
+                            </span>
+                        </button>
+                    </form>
+                    {{-- <a href="{{route('user_logout')}}">
                         <i class="fa fa-sign-out-alt"></i>
                         <span class="ps-2">
                             خروج
                         </span>
-                    </a>
+                    </a> --}}
                 </li>
             </ul>
         </div>

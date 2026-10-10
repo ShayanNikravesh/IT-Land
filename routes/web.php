@@ -103,7 +103,7 @@ Route::middleware([UserAuth::class])->group(function () {
     Route::get('payment/{status}/{tracking_code}',[PaymentController::class,'paymentcheck'])->name('payment-check');
 
     //logout
-    Route::get('logout',[AuthController::class,'logout'])->name('user-logout');
+    Route::post('logout',[AuthController::class,'logout'])->name('user_logout');
 
 });
 

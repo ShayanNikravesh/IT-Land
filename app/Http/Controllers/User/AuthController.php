@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Otp;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -83,9 +84,13 @@ class AuthController extends Controller
         }
     }
 
-    public function logout()
+    public function logout(Request $request) : RedirectResponse
     {
         Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
         Alert::success('عملیات موفق.', 'از سایت خارج شدید.');
         return redirect('/');
     }
