@@ -125,7 +125,8 @@ class InfoController extends Controller
 
         if($request->hasFile('info_photo','name')){
 
-            $info = Info::find($request->info_id);
+            $id = $request->info_id;
+            $info = Info::find($id , 'id');
             $existing_photo = $info->photos()->first();
             if($existing_photo){
                 File::delete(public_path($existing_photo->src));

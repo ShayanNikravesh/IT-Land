@@ -45,7 +45,8 @@ class BannerController extends Controller
             $photo->suffix = $suffix_photo;
             $photo->save();
 
-            $banner = Banner::find($request->banner_id);
+            $id = $request->banner_id;
+            $banner = Banner::find($id , 'id');
             $photo->banner()->attach($banner);
         }
     }

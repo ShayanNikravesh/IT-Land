@@ -94,7 +94,7 @@ class PhotoController extends Controller
         $photo = Photo::findorFail($id);
         File::delete(public_path($photo->src));
 
-        $product_id = ProductPhoto::where('photo_id', $photo->id)->pluck('product_id')->first();
+        $product_id = ProductPhoto::where('photo_id', $photo->id)->pluck('product_id')->firstOrFail();
         
         $photo->forceDelete();
 
