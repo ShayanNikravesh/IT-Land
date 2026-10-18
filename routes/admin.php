@@ -21,9 +21,6 @@ use Illuminate\Support\Facades\Auth;
 
 //login page
 Route::view('login', 'admin.login')->name('login_form')->middleware(RedirectAdmin::class);
-// Route::get('login',function(){
-//     return view('admin.login');
-// })->name('login_form')->middleware(RedirectAdmin::class);
 
 //login
 Route::post('admin-login',[AuthController::class,'login'])->name('admin-login');
