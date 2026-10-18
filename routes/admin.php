@@ -20,7 +20,7 @@ use App\Http\Middleware\RedirectAdmin;
 use Illuminate\Support\Facades\Auth;
 
 //login page
-Route::get('login_form',function(){
+Route::get('login',function(){
     return view('admin.login');
 })->name('login_form')->middleware(RedirectAdmin::class);
 
@@ -29,7 +29,7 @@ Route::post('admin-login',[AuthController::class,'login'])->name('admin-login');
 
 Route::middleware([AdminAuth::class])->group(function () {
     
-    Route::get('admin-index', function () {
+    Route::get('/', function () {
         return view('admin.index');
     })->name('admin-index');
 
